@@ -27,7 +27,7 @@ public class Player_Clone : MonoBehaviour {
             {
                 GameObject lookingAt = hit.transform.gameObject;
 
-                if (lookingAt.tag == "Cloneable" || lookingAt.tag == "Grabbable,Cloneable")
+                if (lookingAt.GetComponent<Cloneable>() != null)
                 {
                     targetObject = lookingAt;
                     Debug.Log("Object copied to clipboard");

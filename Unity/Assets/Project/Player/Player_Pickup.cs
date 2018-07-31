@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player_Pickup : MonoBehaviour {
 
-    public GameObject testCube;
+    private GameObject heldCube;
     public GameObject pickupLocation;
     public GameObject RayStart;
-    public float maxPickupDistance;
+    public float maxPickupDistance = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -27,19 +27,21 @@ public class Player_Pickup : MonoBehaviour {
             {
                 GameObject lookingAt = hit.transform.gameObject;
 
-                if (lookingAt.tag == "Grabbable" && hit.distance <= maxPickupDistance)
+                if ((lookingAt.tag == "Grabbable" || lookingAt.tag == "Grabbable,Cloneable") && hit.distance <= maxPickupDistance)
                 {
                     lookingAt.transform.position = pickupLocation.transform.position;
                     lookingAt.transform.rotation = pickupLocation.transform.rotation;
                     lookingAt.GetComponent<Rigidbody>().isKinematic = true;
+                    heldCube = lookingAt;
                 }
                 
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && heldCube != null)
         {
-            testCube.GetComponent<Rigidbody>().isKinematic = false;
+            heldCube.GetComponent<Rigidbody>().isKinematic = false;
+            heldCube = null;
         }
 
 	}

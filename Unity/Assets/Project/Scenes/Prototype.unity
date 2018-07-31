@@ -164,6 +164,14 @@ Prefab:
       propertyPath: m_Height
       value: 1.87
       objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 25e3ab2d6992a48f3ab7455baed062e0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 25e3ab2d6992a48f3ab7455baed062e0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e3ab2d6992a48f3ab7455baed062e0, type: 2}
   m_IsPrefabParent: 0
@@ -232,6 +240,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 13.351001, y: -30.000002, z: 0}
+--- !u!1 &205200133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 205200134}
+  m_Layer: 0
+  m_Name: Raycast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &205200134
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205200133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 305981300}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &305981300 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 25e3ab2d6992a48f3ab7455baed062e0, type: 2}
@@ -518,6 +554,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testCube: {fileID: 1573729840}
   pickupLocation: {fileID: 990276739}
+  RayStart: {fileID: 205200133}
+  maxPickupDistance: 3
+--- !u!114 &1119896113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1119896104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea651b12ed2f46743a6d2fc96068e99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
+  clonedObject: {fileID: 0}
+  targetPosition: {fileID: 0}
+  emptyClone: {fileID: 0}
 --- !u!1 &1333525765
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +746,7 @@ GameObject:
   - component: {fileID: 1573729841}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

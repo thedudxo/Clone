@@ -8,9 +8,10 @@ public class Player_Clone : MonoBehaviour {
     public GameObject clonedObject;   // The current cloned object visible in the world
     public GameObject targetPosition; // Position to clone new objects at (in front of player)
     public GameObject emptyClone;    // An emptyGameobject used to reset the clone gun
+    public GameObject RayStart;
 
 
-	void Start () {
+    void Start () {
         clonedObject = emptyClone;
         //targetObject = emptyClone;
 	}
@@ -20,7 +21,10 @@ public class Player_Clone : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1)) //right click
         {
-            // When the player selects an object to clone
+            Debug.Log("object Copied");
+
+            Ray cloneRay = new Ray(RayStart.transform.position, RayStart.transform.forward);
+            RaycastHit hit = new RaycastHit();
         }
 
 

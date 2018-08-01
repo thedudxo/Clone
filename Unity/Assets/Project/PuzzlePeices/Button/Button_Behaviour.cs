@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class Button_Behaviour : MonoBehaviour {
 
-    public List<IToggleableObject> linked;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool isPressed = false;
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Weighted>() != null){
-            Debug.Log("yes! :D");
-            foreach(IToggleableObject puzzlepeice in linked)
-            {
-                puzzlepeice.Toggle();
-            }
+
+            isPressed = true;
         }
     }
 
@@ -31,11 +18,7 @@ public class Button_Behaviour : MonoBehaviour {
     {
         if (collision.gameObject.GetComponent<Weighted>() != null)
         {
-            Debug.Log("No :c");
-            foreach (IToggleableObject puzzlepeice in linked)
-            {
-                puzzlepeice.Toggle(false);
-            }
+            isPressed = false; // might cause button to unpress is there were two cubes on it
         }
     }
 

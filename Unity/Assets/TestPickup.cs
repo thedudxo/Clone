@@ -22,10 +22,24 @@ public class TestPickup : MonoBehaviour {
             transform.parent = playerCam;
             beingCarried = true;
         }
+        if (beingCarried) {
+            if (touched) {
+                GetComponent<Rigidbody>().isKinematic = false;
+                transform.parent = null;
+                beingCarried = false;
+                touched = false;
+            }
+        }
         if (Input.GetKeyUp(KeyCode.E)) {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
             beingCarried = false;
         }
 	}
+
+    private void OnTriggerEnter(Collider other) {
+        if (beingCarried) {
+            touched = true;
+        }
+    }
 }

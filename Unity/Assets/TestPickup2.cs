@@ -45,6 +45,7 @@ public class TestPickup2 : MonoBehaviour {
 
     void pickup() {
         if(Input.GetKeyDown(KeyCode.E) && hasPlayer) {
+            Debug.Log("Pick up");
             int x = Screen.width / 2;
             int y = Screen.height / 2;
 

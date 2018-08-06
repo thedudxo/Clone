@@ -42,7 +42,7 @@ public class Player_Clone : MonoBehaviour {
             {
                 Destroy(clonedObject);
                 clonedObject = Instantiate(targetObject);
-                clonedObject.SetActive(false);
+                //clonedObject.SetActive(false);
             }
 
             clonedObject.transform.position = targetPosition.transform.position;

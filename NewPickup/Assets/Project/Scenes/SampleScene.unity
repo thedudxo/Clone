@@ -378,6 +378,16 @@ Prefab:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 1732122307}
+    - target: {fileID: 136699980663623526, guid: 3bd4cabd22264564da10489e781850bb,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 136699980663623526, guid: 3bd4cabd22264564da10489e781850bb,
+        type: 2}
+      propertyPath: m_Height
+      value: 2.15
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114058314160438204, guid: 3bd4cabd22264564da10489e781850bb, type: 2}
     - {fileID: 114432639615508504, guid: 3bd4cabd22264564da10489e781850bb, type: 2}
@@ -507,9 +517,10 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   carrying: 0
   carriedObject: {fileID: 0}
-  distance: 3
+  distance: 2
   smooth: 20
   hasPlayer: 0
+  cloning: 0
 --- !u!1001 &1765274333
 Prefab:
   m_ObjectHideFlags: 0

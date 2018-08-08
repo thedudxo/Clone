@@ -13,7 +13,7 @@ public class Grabbable : MonoBehaviour {
 
     void Update () {
         float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
-        if (dist <= 2.5f)
+        if (dist <= 3f)
         {
             TestPickup2.Instance.hasPlayer = true;
         }

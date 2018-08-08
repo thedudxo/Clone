@@ -42,8 +42,16 @@ public class Player_Clone : MonoBehaviour {
             {
                 Destroy(clonedObject);
                 clonedObject = Instantiate(targetObject);
+<<<<<<< Updated upstream
                 //clonedObject.SetActive(false);
+=======
+                clonedObject.SetActive(false);
+                if (Button_Behaviour.Instance.weight >= 1) {
+                    Button_Behaviour.Instance.ButtonCheck();
+                }
+>>>>>>> Stashed changes
             }
+            
 
             clonedObject.transform.position = targetPosition.transform.position;
             clonedObject.transform.rotation = targetPosition.transform.rotation;

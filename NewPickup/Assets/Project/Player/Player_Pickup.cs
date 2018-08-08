@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour {
+public class Player_Pickup : MonoBehaviour {
 
     public GameObject mainCamera;
     public bool carrying;
@@ -12,17 +12,17 @@ public class PickUp : MonoBehaviour {
     public bool hasPlayer;
     float pickupDistance = 3;
 
-    private static PickUp instance;
+    private static Player_Pickup instance;
 
-    public static PickUp Instance
+    public static Player_Pickup Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<PickUp>();
+                instance = GameObject.FindObjectOfType<Player_Pickup>();
             }
-            return PickUp.instance;
+            return Player_Pickup.instance;
         }
     }
 

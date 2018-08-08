@@ -6,8 +6,8 @@ public class Grabbable : MonoBehaviour {
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (PickUp.Instance.carriedObject != null) {
-            PickUp.Instance.dropObject();
+        if (Player_Pickup.Instance.carriedObject != null) {
+            Player_Pickup.Instance.dropObject();
         }
     }
 }

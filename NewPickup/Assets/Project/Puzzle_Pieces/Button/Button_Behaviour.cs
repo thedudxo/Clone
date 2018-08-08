@@ -5,6 +5,7 @@ using UnityEngine;
 public class Button_Behaviour : MonoBehaviour {
 
     public bool isPressed = false;
+    public int weights = 0;
 
     private static Button_Behaviour instance;
 
@@ -23,8 +24,9 @@ public class Button_Behaviour : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Weighted>() != null){
-            Debug.Log("Press button");
+            weights++;
             isPressed = true;
+            Debug.Log(weights);
         }
     }
 
@@ -32,7 +34,11 @@ public class Button_Behaviour : MonoBehaviour {
     {
         if (collision.gameObject.GetComponent<Weighted>() != null)
         {
-            isPressed = false;
+            weights--;
+            Debug.Log(weights);
+            if (weights == 0) {
+                isPressed = false;
+            }
         }
     }
   

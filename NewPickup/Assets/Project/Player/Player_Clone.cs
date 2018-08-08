@@ -10,6 +10,7 @@ public class Player_Clone : MonoBehaviour {
     public Material cloneMaterial;
     GameObject mainCamera;
     bool cloned = false;
+    bool noClone = false;
 
     void Start ()
     {
@@ -40,20 +41,27 @@ public class Player_Clone : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(0) && targetObject != null && cloned == false) {
-            clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * PickUp.Instance.distance, Quaternion.identity);
-            PickUp.Instance.carrying = true;
+            
+            clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
+            clonedObject.name = "Clone";
+            Player_Pickup.Instance.carrying = true;
             clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            PickUp.Instance.carriedObject = clonedObject;
+            Player_Pickup.Instance.carriedObject = clonedObject;
             cloned = true;
 
             clonedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
         }
 
         if (Input.GetMouseButtonDown(0) && targetObject != null && cloned == true) {
-            clonedObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * PickUp.Instance.distance;
+            if (targetObject.name == "Clone") {
+                noClone = true;
+                targetObject = null;
+                Debug.Log("No clone");
+            }
+            clonedObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
             clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            PickUp.Instance.carriedObject = clonedObject;
-            PickUp.Instance.carrying = true;
+            Player_Pickup.Instance.carriedObject = clonedObject;
+            Player_Pickup.Instance.carrying = true;
         }
 
     }

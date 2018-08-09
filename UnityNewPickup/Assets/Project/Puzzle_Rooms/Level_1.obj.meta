@@ -3,14 +3,26 @@ guid: c0823b76c0dac8c4eab4bc17ea9bb257
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Room
-    400000: //RootNode
-    400002: Room
-    2100000: RoomMat
-    2300000: Room
-    3300000: Room
-    4300000: Room
+    100000: Celling_Room
+    100002: //RootNode
+    100004: polySurface5
+    100006: Room_Celling1
+    400000: Celling_Room
+    400002: //RootNode
+    400004: polySurface5
+    400006: Room_Celling1
+    2100000: Celling_RoomMat
+    2100002: polySurface5Mat
+    2100004: Room_Celling1Mat
+    2300000: Celling_Room
+    2300002: polySurface5
+    2300004: Room_Celling1
+    3300000: Celling_Room
+    3300002: polySurface5
+    3300004: Room_Celling1
+    4300000: Celling_Room
+    4300002: polySurface5
+    4300004: Room_Celling1
   externalObjects: {}
   materials:
     importMaterials: 1

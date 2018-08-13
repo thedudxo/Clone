@@ -4,20 +4,40 @@ using UnityEngine;
 
 public class Door : MonoBehaviour{
 
+<<<<<<< HEAD
+
+
+    [SerializeField] private GameObject[] buttons;
+
+=======
     public GameObject button;
     public Animator doorOpenAnimation;
+>>>>>>> Jordan
 
     // Use this for initialization
     void Start () {
-		if(button.GetComponent<Button_Behaviour>() == null)
+        foreach(GameObject button in buttons)
         {
-            throw new MissingComponentException();
+            if (button.GetComponent<Button_Behaviour>() == null)
+            {
+                throw new MissingComponentException();
+            }
         }
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (button.GetComponent<Button_Behaviour>().isPressed)
+        int buttonsPressed = 0;
+        foreach (GameObject button in buttons)
+        {
+            if (button.GetComponent<Button_Behaviour>().isPressed)
+            {
+                buttonsPressed++;
+            }
+        }
+
+        if (buttonsPressed >= buttons.Length)
         {
             doorOpenAnimation.SetBool("ButtonPush", true);
         }

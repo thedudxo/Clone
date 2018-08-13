@@ -35,6 +35,7 @@ public class CharacterController : MonoBehaviour {
 		if (Physics.Raycast(physicsCentre, Vector3.down, out hit, 1.1f)) {
 			if(hit.transform.gameObject.tag != "Player") {
 				onGround = true;
+                speed = 10f;
 			}
 		} else {
 			onGround = false;
@@ -43,8 +44,14 @@ public class CharacterController : MonoBehaviour {
 		
 		
 		if (Input.GetKeyDown("space") && onGround) {
-			this.GetComponent<Rigidbody>().AddForce(Vector3.up*300);
+			this.GetComponent<Rigidbody>().AddForce(Vector3.up*500);
 		}
 	
 	}
+
+    void OnCollisionEnter(Collision collision) {
+        if (!onGround) {
+            speed = 0f;
+        }
+    }
 }

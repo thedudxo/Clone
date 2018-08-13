@@ -40,7 +40,7 @@ public class Player_Clone : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(0) && targetObject != null && cloned == false) {
-            
+            Player_Pickup.Instance.cloning = true;
             clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
             clonedObject.name = "Clone";
             Player_Pickup.Instance.carrying = true;
@@ -56,6 +56,7 @@ public class Player_Clone : MonoBehaviour {
                 targetObject = null;
                 Debug.Log("No clone");
             }
+            Player_Pickup.Instance.cloning = true;
             clonedObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
             clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
             Player_Pickup.Instance.carriedObject = clonedObject;

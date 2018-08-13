@@ -4,19 +4,35 @@ using UnityEngine;
 
 public class Door : MonoBehaviour{
 
-    public GameObject button;
+
+
+    [SerializeField] private GameObject[] buttons;
+
 
     // Use this for initialization
     void Start () {
-		if(button.GetComponent<Button_Behaviour>() == null)
+        foreach(GameObject button in buttons)
         {
-            throw new MissingComponentException();
+            if (button.GetComponent<Button_Behaviour>() == null)
+            {
+                throw new MissingComponentException();
+            }
         }
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (button.GetComponent<Button_Behaviour>().isPressed)
+        int buttonsPressed = 0;
+        foreach (GameObject button in buttons)
+        {
+            if (button.GetComponent<Button_Behaviour>().isPressed)
+            {
+                buttonsPressed++;
+            }
+        }
+
+        if (buttonsPressed >= buttons.Length)
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;

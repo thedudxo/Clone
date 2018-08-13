@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Door : MonoBehaviour{
 
-<<<<<<< HEAD
-
-
     [SerializeField] private GameObject[] buttons;
 
-=======
-    public GameObject button;
+
     public Animator doorOpenAnimation;
->>>>>>> Jordan
 
     // Use this for initialization
     void Start () {

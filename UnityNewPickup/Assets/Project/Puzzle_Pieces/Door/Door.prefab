@@ -1008,5 +1008,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78ca9b1e778923479fcee3cd61529f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  buttons: []
   doorOpenAnimation: {fileID: 95350694452891544}

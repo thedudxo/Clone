@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4954419823475042}
+  - component: {fileID: 95816297366092114}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -216,6 +217,24 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: e1821923cda5e9d44b521e9304976f75, type: 3}
+--- !u!95 &95816297366092114
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471340790223654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 836f39d4babc2cd4bb32316d4c4ba8db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114198022292251098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,3 +248,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressed: 0
   weights: 0
+  ButtonAnim: {fileID: 95816297366092114}

@@ -27,7 +27,7 @@ public class Player_Pickup : MonoBehaviour {
             {
                 GameObject lookingAt = hit.transform.gameObject;
 
-                if ((lookingAt.tag == "Grabbable" || lookingAt.tag == "Grabbable,Cloneable") && hit.distance <= maxPickupDistance)
+                if ((lookingAt.GetComponent<Grabbable>() != null) && hit.distance <= maxPickupDistance)
                 {
                     lookingAt.transform.position = pickupLocation.transform.position;
                     lookingAt.transform.rotation = pickupLocation.transform.rotation;

@@ -10,6 +10,7 @@ public class Player_Pickup : MonoBehaviour {
     public float distance;
     public float smooth;
     public bool hasPlayer;
+    public bool cloning = false;
     float pickupDistance = 3;
 
     private static Player_Pickup instance;
@@ -42,6 +43,22 @@ public class Player_Pickup : MonoBehaviour {
     void carry (GameObject o) {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
         o.transform.rotation = Quaternion.identity;
+        if (Input.GetAxis ("Mouse ScrollWheel") > 0 && cloning) {
+            if (distance < 8) {
+                distance++;
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && cloning)
+        {
+            if (distance > 2){
+                distance--;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            distance = 2;
+        }
     }
 
     void pickup() {
@@ -72,5 +89,7 @@ public class Player_Pickup : MonoBehaviour {
         carrying = false;
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         carriedObject = null;
+        cloning = false;
+        distance = 2;
     }
 }

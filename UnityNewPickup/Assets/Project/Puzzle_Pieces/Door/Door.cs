@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour{
 
     public GameObject button;
+    public Animator doorOpenAnimation;
 
     // Use this for initialization
     void Start () {
@@ -18,13 +19,11 @@ public class Door : MonoBehaviour{
 	void Update () {
 		if (button.GetComponent<Button_Behaviour>().isPressed)
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
+            doorOpenAnimation.SetBool("ButtonPush", true);
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = true;
-            GetComponent<Collider>().enabled = true;
+            doorOpenAnimation.SetBool("ButtonPush", false);
         }
     }
 }

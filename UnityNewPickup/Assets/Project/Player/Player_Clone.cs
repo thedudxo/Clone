@@ -10,7 +10,6 @@ public class Player_Clone : MonoBehaviour {
     public Material cloneMaterial;
     GameObject mainCamera;
     bool cloned = false;
-    bool noClone = false;
 
     void Start ()
     {
@@ -54,7 +53,6 @@ public class Player_Clone : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0) && targetObject != null && cloned == true) {
             if (targetObject.name == "Clone") {
-                noClone = true;
                 targetObject = null;
                 Debug.Log("No clone");
             }

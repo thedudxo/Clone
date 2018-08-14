@@ -13,6 +13,18 @@ public class Grabbable : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Player_Pickup.Instance.carriedObject.GetComponent<MeshRenderer>().material = Player_Pickup.Instance.holoError;
+        Player_Pickup.Instance.drop = false;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Player_Pickup.Instance.carriedObject.GetComponent<MeshRenderer>().material = Player_Pickup.Instance.hologram;
+        Player_Pickup.Instance.drop = true;
+    }
+
     private void Start()
     {
         spawnPostion = transform.position;

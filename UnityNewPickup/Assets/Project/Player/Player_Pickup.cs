@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player_Pickup : MonoBehaviour {
 
@@ -12,6 +13,12 @@ public class Player_Pickup : MonoBehaviour {
     public bool hasPlayer;
     public bool cloning = false;
     float pickupDistance = 3;
+    public bool drop = true;
+
+    //materials
+    public Material cloneMaterial;
+    public Material hologram;
+    public Material holoError;
 
     private static Player_Pickup instance;
 
@@ -57,7 +64,7 @@ public class Player_Pickup : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(2))
         {
-            distance = 2;
+            distance = 3;
         }
     }
 
@@ -80,16 +87,21 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     void checkDrop() {
-        if (Input.GetKeyDown (KeyCode.E)) {
+        if (Input.GetKeyDown (KeyCode.E) && drop) {
             dropObject();
         }
     }
 
     public void dropObject() {
         carrying = false;
+        if(cloning) {
+            carriedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
+            carriedObject.GetComponent<BoxCollider>().isTrigger = false;
+            carriedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
+        }
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         carriedObject = null;
         cloning = false;
-        distance = 2;
+        distance = 3;
     }
 }

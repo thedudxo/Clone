@@ -23,13 +23,14 @@ public class Resseter_Behaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Grabbable>() != null)
+        if(other.gameObject.GetComponent<Grabbable>() != null && destroyGrabbables)
         {
             if(other.gameObject.GetComponent<Cloneable>() != null)
             {
                 if (other.gameObject.GetComponent<Cloneable>().isClone)
                 {
                     other.gameObject.GetComponent<Cloneable>().destroyClone();
+                    player.GetComponent<Player_Clone>().cloned = false;
                 }
                 else
                 {

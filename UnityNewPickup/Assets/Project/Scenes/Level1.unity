@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -307,102 +307,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Scenes/Level1.unity
-=======
---- !u!1 &324289543 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1570896036400906, guid: 3bd4cabd22264564da10489e781850bb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1082552106}
---- !u!114 &324289550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 324289543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 919d7488b2d65de40b82688b8aa6544a, type: 2}
---- !u!1 &357009382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1187456953959612, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 357009383}
-  - component: {fileID: 357009385}
-  - component: {fileID: 357009384}
-  m_Layer: 0
-  m_Name: Back_Bricks4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &357009383
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4552317479255904, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 357009382}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1944079907}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &357009384
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23535410534597250, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 357009382}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 5c3960072477378468688decb6adda86, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &357009385
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 33823480559409922, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 357009382}
-  m_Mesh: {fileID: 4300002, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
->>>>>>> Jordan:UnityNewPickup/Assets/Project/Scenes/Assets.unity
 --- !u!1 &523103800 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: c0823b76c0dac8c4eab4bc17ea9bb257, type: 3}
@@ -531,17 +435,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 141.425
       objectReference: {fileID: 0}
-    - target: {fileID: 4482947198499036, guid: 37aa67961e328cd4a8fd988d01a3b2ea, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4482947198499036, guid: 37aa67961e328cd4a8fd988d01a3b2ea, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64226519438887458, guid: 37aa67961e328cd4a8fd988d01a3b2ea, type: 2}
-    - {fileID: 114198022292251098, guid: 37aa67961e328cd4a8fd988d01a3b2ea, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 37aa67961e328cd4a8fd988d01a3b2ea, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &877310548
@@ -704,44 +599,41 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -60
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 669194047}
-    - target: {fileID: 0}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2c51c5d3646f944e8c2619b45b9c74f, type: 2}
-    - target: {fileID: 114893691260430500, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+    - target: {fileID: 114934884564291750, guid: dc52974a8a2bef747b3598ca9d77f9ca,
         type: 2}
       propertyPath: button
       value: 
       objectReference: {fileID: 669194047}
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Scenes/Level1.unity
+    - target: {fileID: 114910178639820660, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 669194047}
+    - target: {fileID: 114815977262008946, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 669194047}
+    - target: {fileID: 114792494462272698, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 669194047}
+    - target: {fileID: 114022582975997282, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 669194047}
+    - target: {fileID: 114065852716348298, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 669194047}
+    - target: {fileID: 114213598701798274, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 669194047}
     - target: {fileID: 114065852716348298, guid: dc52974a8a2bef747b3598ca9d77f9ca,
         type: 2}
       propertyPath: buttons.Array.data[0]
@@ -778,110 +670,8 @@ Prefab:
       value: 
       objectReference: {fileID: 669194047}
     m_RemovedComponents: []
-=======
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
->>>>>>> Jordan:UnityNewPickup/Assets/Project/Scenes/Assets.unity
   m_ParentPrefab: {fileID: 100100000, guid: dc52974a8a2bef747b3598ca9d77f9ca, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &978112501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1639990399396844, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 978112502}
-  - component: {fileID: 978112505}
-  - component: {fileID: 978112504}
-  - component: {fileID: 978112503}
-  m_Layer: 0
-  m_Name: Wall4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &978112502
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4648990026678530, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 978112501}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1944079907}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &978112503
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64675786402750846, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 978112501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300020, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
---- !u!23 &978112504
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23532660404345378, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 978112501}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 5c3960072477378468688decb6adda86, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &978112505
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 33117427566704224, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 978112501}
-  m_Mesh: {fileID: 4300020, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
 --- !u!1 &992476707
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1944079907}
-  m_RootOrder: 4
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &992476709
 MonoBehaviour:
@@ -924,35 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressed: 1
   weights: 1
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Scenes/Level1.unity
 --- !u!1001 &1094937678
-=======
-  ButtonAnim: {fileID: 0}
---- !u!1 &1015239259 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1471340790223654, guid: 37aa67961e328cd4a8fd988d01a3b2ea,
-    type: 2}
-  m_PrefabInternal: {fileID: 824585781}
---- !u!95 &1015239260
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1015239259}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 836f39d4babc2cd4bb32316d4c4ba8db, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &1082552106
->>>>>>> Jordan:UnityNewPickup/Assets/Project/Scenes/Assets.unity
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1073,12 +835,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114893691260430500, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+    - target: {fileID: 114934884564291750, guid: dc52974a8a2bef747b3598ca9d77f9ca,
         type: 2}
       propertyPath: button
       value: 
       objectReference: {fileID: 1914411168}
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Scenes/Level1.unity
+    - target: {fileID: 114815977262008946, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1914411168}
+    - target: {fileID: 114792494462272698, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1914411168}
+    - target: {fileID: 114910178639820660, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1914411168}
+    - target: {fileID: 114065852716348298, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1914411168}
+    - target: {fileID: 114022582975997282, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1914411168}
+    - target: {fileID: 114213598701798274, guid: dc52974a8a2bef747b3598ca9d77f9ca,
+        type: 2}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1914411168}
     - target: {fileID: 23939611407862392, guid: dc52974a8a2bef747b3598ca9d77f9ca,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -1119,8 +910,6 @@ Prefab:
       propertyPath: buttons.Array.data[0]
       value: 
       objectReference: {fileID: 1914411168}
-=======
->>>>>>> Jordan:UnityNewPickup/Assets/Project/Scenes/Assets.unity
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc52974a8a2bef747b3598ca9d77f9ca, type: 2}
   m_IsPrefabParent: 0
@@ -1316,91 +1105,14 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f018bfedbbbcce4c9f19a9afdc93841, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1616685646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1843588928477798, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1616685647}
-  - component: {fileID: 1616685649}
-  - component: {fileID: 1616685648}
-  m_Layer: 0
-  m_Name: Back_Bricks3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1616685647
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4576934872336462, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1616685646}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1944079907}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1616685648
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23897442844605010, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1616685646}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 5c3960072477378468688decb6adda86, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1616685649
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 33322133969011030, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1616685646}
-  m_Mesh: {fileID: 4300000, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
 --- !u!1 &1914411168 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1678714228092594, guid: 37aa67961e328cd4a8fd988d01a3b2ea,
     type: 2}
   m_PrefabInternal: {fileID: 824585781}
---- !u!114 &1914411171
-MonoBehaviour:
+--- !u!1001 &1928211762
+Prefab:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Scenes/Level1.unity
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
@@ -1665,165 +1377,10 @@ MonoBehaviour:
   m_ParentPrefab: {fileID: 100100000, guid: dc52974a8a2bef747b3598ca9d77f9ca, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1944079907 stripped
-=======
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1914411168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77bb1653f1f98d946a00c3095387a17b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPressed: 0
-  weights: 0
-  ButtonAnim: {fileID: 1015239260}
---- !u!1 &1928211763
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1860755917868512, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1944079907}
-  - component: {fileID: 1928211764}
-  m_Layer: 0
-  m_Name: Door (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1928211764
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1928211763}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &1944079907
->>>>>>> Jordan:UnityNewPickup/Assets/Project/Scenes/Assets.unity
 Transform:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4915533423001128, guid: dc52974a8a2bef747b3598ca9d77f9ca,
     type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1928211763}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48, y: 0.04, z: -14.18}
-  m_LocalScale: {x: 0.002784932, y: 0.0027849306, z: 0.0027849306}
-  m_Children:
-  - {fileID: 1616685647}
-  - {fileID: 357009383}
-  - {fileID: 1967667072}
-  - {fileID: 978112502}
-  - {fileID: 992476708}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1967667071
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1543696239185712, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1967667072}
-  - component: {fileID: 1967667075}
-  - component: {fileID: 1967667074}
-  - component: {fileID: 1967667073}
-  m_Layer: 0
-  m_Name: Doorframe5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1967667072
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4610339259199012, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967667071}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1944079907}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1967667073
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64658429906505466, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967667071}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
---- !u!23 &1967667074
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23939611407862392, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967667071}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 5c3960072477378468688decb6adda86, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1967667075
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 33984443845223482, guid: dc52974a8a2bef747b3598ca9d77f9ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967667071}
-  m_Mesh: {fileID: 4300004, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
+  m_PrefabInternal: {fileID: 1928211762}
 --- !u!1 &2039013397 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: c0823b76c0dac8c4eab4bc17ea9bb257, type: 3}

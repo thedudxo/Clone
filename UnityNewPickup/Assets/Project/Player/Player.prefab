@@ -331,7 +331,7 @@ MonoBehaviour:
   carrying: 0
   carriedObject: {fileID: 0}
   distance: 3
-  smooth: 20
+  smooth: 50
   hasPlayer: 0
   cloning: 0
 --- !u!114 &114280977785973270
@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
   cloneMaterial: {fileID: 2100000, guid: 48dc2d0a988c4ac45bf233d9c6ed4cd8, type: 2}
+  cloned: 0
 --- !u!124 &124986001622515760
 Behaviour:
   m_ObjectHideFlags: 1

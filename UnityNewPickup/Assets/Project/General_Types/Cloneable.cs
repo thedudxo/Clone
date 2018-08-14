@@ -21,6 +21,7 @@ public class Cloneable : MonoBehaviour {
         if (Player_Pickup.Instance.carriedObject == this.gameObject)
         {
             Player_Pickup.Instance.dropObject();
+            Debug.Log("dropped");
         }
         Destroy(gameObject);
     }

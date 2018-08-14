@@ -17,6 +17,13 @@ public class Player_Clone : MonoBehaviour {
     }
 	
 
+    public void reset()
+    {
+        targetObject = null;
+        Destroy(clonedObject);
+        cloned = false;
+    }
+
 	void Update () {
 
         if (Input.GetMouseButtonDown(1))    //right click
@@ -43,6 +50,7 @@ public class Player_Clone : MonoBehaviour {
             Player_Pickup.Instance.cloning = true;
             clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
             clonedObject.name = "Clone";
+            clonedObject.GetComponent<Cloneable>().isClone = true;
             Player_Pickup.Instance.carrying = true;
             clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
             Player_Pickup.Instance.carriedObject = clonedObject;

@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Door : MonoBehaviour{
 
-<<<<<<< HEAD
-
-
     [SerializeField] private GameObject[] buttons;
-
-=======
+    
     public GameObject button;
     public Animator doorOpenAnimation;
->>>>>>> Jordan
-
-    // Use this for initialization
+    
     void Start () {
         foreach(GameObject button in buttons)
         {
@@ -26,7 +20,6 @@ public class Door : MonoBehaviour{
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
         int buttonsPressed = 0;
         foreach (GameObject button in buttons)

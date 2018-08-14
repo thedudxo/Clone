@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114237124961651794}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,6 +333,7 @@ MonoBehaviour:
   distance: 3
   smooth: 20
   hasPlayer: 0
+  cloning: 0
 --- !u!114 &114280977785973270
 MonoBehaviour:
   m_ObjectHideFlags: 1

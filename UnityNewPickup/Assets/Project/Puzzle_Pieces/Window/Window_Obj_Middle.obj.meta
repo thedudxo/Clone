@@ -3,26 +3,32 @@ guid: dbebfd83b11b3904f83bcb29195dfc84
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: polySurface42
-    100002: pPlane11
-    100004: pPlane9
-    100006: //RootNode
-    400000: polySurface42
-    400002: pPlane11
-    400004: pPlane9
-    400006: //RootNode
-    2100000: polySurface42Mat
-    2100002: pPlane11Mat
-    2100004: pPlane9Mat
-    2300000: polySurface42
-    2300002: pPlane11
-    2300004: pPlane9
-    3300000: polySurface42
-    3300002: pPlane11
-    3300004: pPlane9
-    4300000: polySurface42
-    4300002: pPlane11
-    4300004: pPlane9
+    100000: Glass_2_Middle
+    100002: Middle_Frame
+    100004: Middle_Glass_1
+    100006: Middle_Glass_3
+    100008: //RootNode
+    400000: Glass_2_Middle
+    400002: Middle_Frame
+    400004: Middle_Glass_1
+    400006: Middle_Glass_3
+    400008: //RootNode
+    2100000: Glass_2_MiddleMat
+    2100002: Middle_FrameMat
+    2100004: Middle_Glass_1Mat
+    2100006: Middle_Glass_3Mat
+    2300000: Glass_2_Middle
+    2300002: Middle_Frame
+    2300004: Middle_Glass_1
+    2300006: Middle_Glass_3
+    3300000: Glass_2_Middle
+    3300002: Middle_Frame
+    3300004: Middle_Glass_1
+    3300006: Middle_Glass_3
+    4300000: Glass_2_Middle
+    4300002: Middle_Frame
+    4300004: Middle_Glass_1
+    4300006: Middle_Glass_3
   externalObjects: {}
   materials:
     importMaterials: 1

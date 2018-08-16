@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player_Pickup : MonoBehaviour {
 
@@ -12,6 +13,12 @@ public class Player_Pickup : MonoBehaviour {
     public bool hasPlayer;
     public bool cloning = false;
     float pickupDistance = 3;
+    public bool drop = true;
+
+    //materials
+    public Material cloneMaterial;
+    public Material hologram;
+    public Material holoError;
 
     private static Player_Pickup instance;
 
@@ -42,7 +49,8 @@ public class Player_Pickup : MonoBehaviour {
 
     void carry (GameObject o) {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
-        o.transform.rotation = Quaternion.identity;
+        o.transform.parent = mainCamera.transform;
+        o.GetComponent<Rigidbody>().freezeRotation = true;
         if (Input.GetAxis ("Mouse ScrollWheel") > 0 && cloning) {
             if (distance < 8) {
                 distance++;
@@ -57,7 +65,7 @@ public class Player_Pickup : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(2))
         {
-            distance = 2;
+            distance = 3;
         }
     }
 
@@ -80,19 +88,29 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     void checkDrop() {
-        if (Input.GetKeyDown (KeyCode.E)) {
+        if (Input.GetKeyDown (KeyCode.E) && drop) {
             dropObject();
         }
     }
 
     public void dropObject() {
-        if(carriedObject != null)
-        {
-            carrying = false;
-            carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            carriedObject = null;
-            cloning = false;
-            distance = 2;
-        }
+        carrying = false;
+        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        carriedObject = null;
+        cloning = false;
+        distance = 2;
     }
 }
+
+        carrying = false;
+        if(cloning) {
+            carriedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
+            carriedObject.GetComponent<BoxCollider>().isTrigger = false;
+            carriedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
+        }
+        carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
+        carriedObject.transform.parent = null;
+        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        carriedObject = null;
+        cloning = false;
+        distance = 3;

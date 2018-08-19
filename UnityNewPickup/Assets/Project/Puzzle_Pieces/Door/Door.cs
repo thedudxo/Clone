@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Door : MonoBehaviour{
 
-
-
     [SerializeField] private GameObject[] buttons;
 
+
+    public Animator doorOpenAnimation;
 
     // Use this for initialization
     void Start () {
@@ -34,13 +34,11 @@ public class Door : MonoBehaviour{
 
         if (buttonsPressed >= buttons.Length)
         {
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
+            doorOpenAnimation.SetBool("ButtonPush", true);
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = true;
-            GetComponent<Collider>().enabled = true;
+            doorOpenAnimation.SetBool("ButtonPush", false);
         }
     }
 }

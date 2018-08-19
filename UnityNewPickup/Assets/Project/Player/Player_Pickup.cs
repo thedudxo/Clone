@@ -86,10 +86,13 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     public void dropObject() {
-        carrying = false;
-        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        carriedObject = null;
-        cloning = false;
-        distance = 2;
+        if(carriedObject != null)
+        {
+            carrying = false;
+            carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            carriedObject = null;
+            cloning = false;
+            distance = 2;
+        }
     }
 }

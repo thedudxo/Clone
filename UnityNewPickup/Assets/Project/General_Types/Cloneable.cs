@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cloneable : MonoBehaviour {
 
+    public bool isClone = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +15,14 @@ public class Cloneable : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void destroyClone()
+    {
+        if (Player_Pickup.Instance.carriedObject == this.gameObject)
+        {
+            Player_Pickup.Instance.dropObject();
+            Debug.Log("dropped");
+        }
+        Destroy(gameObject);
+    }
 }

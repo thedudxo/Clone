@@ -32,7 +32,7 @@ public class CharacterController : MonoBehaviour {
 		Vector3 physicsCentre = this.transform.position + this.GetComponent<CapsuleCollider>().center;
 		
 		Debug.DrawRay(physicsCentre, Vector3.down, Color.red, 1);
-		if (Physics.Raycast(physicsCentre, Vector3.down, out hit, 1.1f)) {
+		if (Physics.Raycast(physicsCentre, Vector3.down, out hit, 1.5f)) {
 			if(hit.transform.gameObject.tag != "Player") {
 				onGround = true;
                 speed = 10f;
@@ -44,7 +44,7 @@ public class CharacterController : MonoBehaviour {
 		
 		
 		if (Input.GetKeyDown("space") && onGround) {
-			this.GetComponent<Rigidbody>().AddForce(Vector3.up*500);
+			this.GetComponent<Rigidbody>().AddForce(Vector3.up*20000);
 		}
 	
 	}

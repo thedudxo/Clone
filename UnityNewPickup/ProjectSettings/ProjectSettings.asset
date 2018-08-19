@@ -286,9 +286,12 @@ PlayerSettings:
   - m_BuildTarget: WindowsStandaloneSupport
     m_APIs: 02000000
     m_Automatic: 1
+<<<<<<< HEAD
   - m_BuildTarget: MacStandaloneSupport
     m_APIs: 1000000011000000
     m_Automatic: 1
+=======
+>>>>>>> Jordan
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 0

@@ -9,7 +9,7 @@ public class Player_Clone : MonoBehaviour {
     private GameObject clonedObject;        // The current cloned object visible in the world
     public GameObject targetPosition;       // Position to clone new objects at (in front of player)
     GameObject mainCamera;
-    bool cloned = false;
+    public bool cloned = false;
 
     void Start ()
     {
@@ -20,11 +20,17 @@ public class Player_Clone : MonoBehaviour {
     public void reset()
     {
         targetObject = null;
+        if (Player_Pickup.Instance.carriedObject != null && Player_Pickup.Instance.carriedObject.GetComponent<Cloneable>().isClone)
+        {
+            Player_Pickup.Instance.dropObject();
+        }
+        
         Destroy(clonedObject);
         cloned = false;
     }
 
 	void Update () {
+        Debug.Log(cloned);
 
         if (Input.GetMouseButtonDown(1))    //right click
         {

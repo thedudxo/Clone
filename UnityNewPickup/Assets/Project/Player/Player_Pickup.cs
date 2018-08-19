@@ -95,6 +95,14 @@ public class Player_Pickup : MonoBehaviour {
 
     public void dropObject() {
         carrying = false;
+        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        carriedObject = null;
+        cloning = false;
+        distance = 2;
+    }
+}
+
+        carrying = false;
         if(cloning) {
             carriedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
             carriedObject.GetComponent<BoxCollider>().isTrigger = false;
@@ -106,5 +114,3 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject = null;
         cloning = false;
         distance = 3;
-    }
-}

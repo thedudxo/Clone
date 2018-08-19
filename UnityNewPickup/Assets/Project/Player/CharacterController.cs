@@ -40,7 +40,7 @@ public class CharacterController : MonoBehaviour {
 		} else {
 			onGround = false;
 		}
-		Debug.Log(onGround);
+		//Debug.Log(onGround);
 		
 		
 		if (Input.GetKeyDown("space") && onGround) {

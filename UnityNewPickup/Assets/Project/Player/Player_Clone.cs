@@ -10,6 +10,11 @@ public class Player_Clone : MonoBehaviour {
     public GameObject targetPosition;       // Position to clone new objects at (in front of player)
     GameObject mainCamera;
     public bool cloned = false;
+<<<<<<< HEAD
+=======
+    public ParticleSystem GunshotParticles;
+    public ParticleSystem PasteshotParticles;
+>>>>>>> Testbuild
 
     void Start ()
     {
@@ -31,18 +36,23 @@ public class Player_Clone : MonoBehaviour {
 
 	void Update () {
         Debug.Log(cloned);
+<<<<<<< HEAD
+=======
+
+        int x = Screen.width / 2;
+        int y = Screen.height / 2;
+>>>>>>> Testbuild
 
         if (Input.GetMouseButtonDown(1))    //right click
         {
-            int x = Screen.width / 2;
-            int y = Screen.height / 2;
-
             Ray cloneRay = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
 
             if(Physics.Raycast(cloneRay, out hit))
             {
                 GameObject lookingAt = hit.transform.gameObject;
+                PasteshotParticles.transform.position = hit.point;
+                PasteshotParticles.Emit(30);
 
                 if (lookingAt.GetComponent<Cloneable>() != null)
                 {
@@ -68,12 +78,13 @@ public class Player_Clone : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(0) && targetObject != null && cloned == true && Player_Pickup.Instance.carriedObject == null) {
+            
+            Destroy(clonedObject);
+            clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
             if (targetObject.name == "Clone") {
                 targetObject = null;
                 Debug.Log("No clone");
             }
-            Destroy(clonedObject);
-            clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
             Player_Pickup.Instance.cloning = true;
             clonedObject.GetComponent<BoxCollider>().isTrigger = true;
             clonedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;

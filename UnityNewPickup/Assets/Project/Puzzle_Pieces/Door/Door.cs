@@ -5,11 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour{
 
     [SerializeField] private GameObject[] buttons;
-
-
+    
     public Animator doorOpenAnimation;
-
-    // Use this for initialization
+    
     void Start () {
         foreach(GameObject button in buttons)
         {
@@ -21,7 +19,6 @@ public class Door : MonoBehaviour{
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
         int buttonsPressed = 0;
         foreach (GameObject button in buttons)

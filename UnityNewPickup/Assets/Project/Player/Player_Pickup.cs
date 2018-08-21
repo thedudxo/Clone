@@ -50,6 +50,7 @@ public class Player_Pickup : MonoBehaviour {
     void carry (GameObject o) {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
         o.transform.parent = mainCamera.transform;
+        o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         o.GetComponent<Rigidbody>().freezeRotation = true;
         if (Input.GetAxis ("Mouse ScrollWheel") > 0 && cloning) {
             if (distance < 8) {
@@ -82,6 +83,7 @@ public class Player_Pickup : MonoBehaviour {
                     carrying = true;
                     g.gameObject.GetComponent<Rigidbody>().useGravity = false;
                     carriedObject = g.gameObject;
+                    carriedObject.transform.rotation = Quaternion.identity;
                 }
             }
         }
@@ -107,6 +109,7 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject = null;
         cloning = false;
         distance = 3;
+        
     }
 }
 

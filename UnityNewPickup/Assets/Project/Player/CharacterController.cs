@@ -6,12 +6,22 @@ public class CharacterController : MonoBehaviour {
 
 	public float speed = 10.0F;
 	bool onGround = true;
+    public float jumpForce;
 	
 	void Start () {
 		
 		Cursor.lockState = CursorLockMode.Locked;
+        InvokeRepeating("FootSteps", 0.0f, 0.5f);
 	
 	}
+
+    void FootSteps()
+    {
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        {
+            FindObjectOfType<AudioManager>().Play("Theme");
+        }
+    }
 	
 
 	void Update () {
@@ -44,7 +54,7 @@ public class CharacterController : MonoBehaviour {
 		
 		
 		if (Input.GetKeyDown("space") && onGround) {
-			this.GetComponent<Rigidbody>().AddForce(Vector3.up*20000);
+			this.GetComponent<Rigidbody>().AddForce(Vector3.up*jumpForce);
 		}
 	
 	}

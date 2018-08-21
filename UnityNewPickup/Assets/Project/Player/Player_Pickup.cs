@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Player_Pickup : MonoBehaviour {
+public class Player_Pickup : MonoBehaviour
+{
 
     public GameObject mainCamera;
     public bool carrying;
@@ -34,31 +35,40 @@ public class Player_Pickup : MonoBehaviour {
         }
     }
 
-    void Start () {
+    void Start()
+    {
         mainCamera = GameObject.FindWithTag("MainCamera");
-	}
-	
-	void Update () {
-        if (carrying) {
+    }
+
+    void Update()
+    {
+        if (carrying)
+        {
             carry(carriedObject);
             checkDrop();
-        } else {
+        }
+        else
+        {
             pickup();
         }
-	}
+    }
 
-    void carry (GameObject o) {
+    void carry(GameObject o)
+    {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
         o.transform.parent = mainCamera.transform;
         o.GetComponent<Rigidbody>().freezeRotation = true;
-        if (Input.GetAxis ("Mouse ScrollWheel") > 0 && cloning) {
-            if (distance < 8) {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloning)
+        {
+            if (distance < 8)
+            {
                 distance++;
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && cloning)
         {
-            if (distance > 2){
+            if (distance > 2)
+            {
                 distance--;
             }
         }
@@ -69,16 +79,20 @@ public class Player_Pickup : MonoBehaviour {
         }
     }
 
-    void pickup() {
-        if(Input.GetKeyDown(KeyCode.E)) {
+    void pickup()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
 
             Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit)) {
+            if (Physics.Raycast(ray, out hit))
+            {
                 Grabbable g = hit.collider.GetComponent<Grabbable>();
-                if(g != null && hit.distance <= pickupDistance) {
+                if (g != null && hit.distance <= pickupDistance)
+                {
                     carrying = true;
                     g.gameObject.GetComponent<Rigidbody>().useGravity = false;
                     carriedObject = g.gameObject;
@@ -87,28 +101,19 @@ public class Player_Pickup : MonoBehaviour {
         }
     }
 
-    void checkDrop() {
-        if (Input.GetKeyDown (KeyCode.E) && drop) {
+    void checkDrop()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && drop)
+        {
             dropObject();
         }
     }
 
-    public void dropObject() {
+    public void dropObject()
+    {
         carrying = false;
-<<<<<<< HEAD
-        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        carriedObject = null;
-        cloning = false;
-        distance = 2;
-    }
-}
-
-        carrying = false;
-        if(cloning) {
-=======
         if (cloning)
         {
->>>>>>> Testbuild
             carriedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
             carriedObject.GetComponent<BoxCollider>().isTrigger = false;
             carriedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
@@ -118,11 +123,7 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         carriedObject = null;
         cloning = false;
-<<<<<<< HEAD
         distance = 3;
-=======
         distance = 3;
     }
 }
-
->>>>>>> Testbuild

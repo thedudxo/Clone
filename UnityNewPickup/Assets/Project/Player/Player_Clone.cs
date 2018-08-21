@@ -10,11 +10,8 @@ public class Player_Clone : MonoBehaviour {
     public GameObject targetPosition;       // Position to clone new objects at (in front of player)
     GameObject mainCamera;
     public bool cloned = false;
-<<<<<<< HEAD
-=======
     public ParticleSystem GunshotParticles;
     public ParticleSystem PasteshotParticles;
->>>>>>> Testbuild
 
     void Start ()
     {
@@ -36,12 +33,9 @@ public class Player_Clone : MonoBehaviour {
 
 	void Update () {
         Debug.Log(cloned);
-<<<<<<< HEAD
-=======
 
         int x = Screen.width / 2;
         int y = Screen.height / 2;
->>>>>>> Testbuild
 
         if (Input.GetMouseButtonDown(1))    //right click
         {
@@ -78,9 +72,7 @@ public class Player_Clone : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(0) && targetObject != null && cloned == true && Player_Pickup.Instance.carriedObject == null) {
-            
-            Destroy(clonedObject);
-            clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
+            clonedObject.gameObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
             if (targetObject.name == "Clone") {
                 targetObject = null;
                 Debug.Log("No clone");

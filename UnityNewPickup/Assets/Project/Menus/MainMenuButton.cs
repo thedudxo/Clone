@@ -9,7 +9,7 @@ public class MainMenuButton : MonoBehaviour {
     public void ClonePlay()
     {
  //       SceneManager.LoadScene("Master Scene");
-        SceneManager.LoadScene("External_Final");
+        SceneManager.LoadScene("DiscardTestingSceneOutdated");
     }
 
     public void CloneControls()

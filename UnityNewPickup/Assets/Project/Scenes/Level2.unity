@@ -204,6 +204,93 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75ef2129c27e7ab4d84986a646a382cc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &798992144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 798992148}
+  - component: {fileID: 798992147}
+  - component: {fileID: 798992146}
+  - component: {fileID: 798992145}
+  m_Layer: 0
+  m_Name: Plane (1)
+  m_TagString: Grass
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &798992145
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798992144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &798992146
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798992144}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: b4a3d2f5d9e2e164cba63ae7a8b2983a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &798992147
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798992144}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &798992148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798992144}
+  m_LocalRotation: {x: -0, y: -0.63800937, z: -0, w: 0.77002865}
+  m_LocalPosition: {x: -55.577, y: 6.77, z: -69.752}
+  m_LocalScale: {x: 1.8168586, y: 1.8168586, z: 1.8168586}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -79.287, z: 0}
 --- !u!1 &976805903
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,20 +320,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: f723cb1fa89ccb54ebf9d14452400fc8, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: f258b831ac055a348ac9fc15e548e211, type: 3}
+    volume: 0.05
     pitch: 1
-    loop: 0
+    loop: 1
     mute: 0
-    output: {fileID: 0}
+    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
     source: {fileID: 0}
-  - name: Step
-    clip: {fileID: 8300000, guid: f723cb1fa89ccb54ebf9d14452400fc8, type: 3}
+  - name: Step_Concrete
+    clip: {fileID: 8300000, guid: b941557920eb4c641be89eb271ef2864, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     mute: 0
-    output: {fileID: 0}
+    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
     source: {fileID: 0}
   - name: Collision
     clip: {fileID: 8300000, guid: f723cb1fa89ccb54ebf9d14452400fc8, type: 3}
@@ -279,6 +366,22 @@ MonoBehaviour:
     loop: 0
     mute: 0
     output: {fileID: 0}
+    source: {fileID: 0}
+  - name: Step_Grass
+    clip: {fileID: 8300000, guid: 79b1a0b1aafd0b449a66176f1442c9d0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mute: 0
+    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
+    source: {fileID: 0}
+  - name: Hologram
+    clip: {fileID: 8300000, guid: bb22dd74891d64948bb930fca96b5d71, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    mute: 0
+    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
     source: {fileID: 0}
 --- !u!4 &976805905
 Transform:
@@ -336,6 +439,10 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758210988896956, guid: d3d946c69af315944b54bc7855f60a68, type: 2}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3d946c69af315944b54bc7855f60a68, type: 2}
@@ -418,7 +525,7 @@ GameObject:
   - component: {fileID: 1803691165}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

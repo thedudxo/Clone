@@ -6,22 +6,16 @@ public class CharacterController : MonoBehaviour {
 
 	public float speed = 10.0F;
 	bool onGround = true;
+    public bool concrete = true;
     public float jumpForce;
 	
 	void Start () {
 		
 		Cursor.lockState = CursorLockMode.Locked;
-        InvokeRepeating("FootSteps", 0.0f, 0.5f);
+        InvokeRepeating("FootSteps", 0.0f, 0.4f);
 	
 	}
 
-    void FootSteps()
-    {
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
-        {
-            FindObjectOfType<AudioManager>().Play("Theme");
-        }
-    }
 	
 
 	void Update () {
@@ -50,6 +44,12 @@ public class CharacterController : MonoBehaviour {
 		} else {
 			onGround = false;
 		}
+
+        if(hit.transform.gameObject.tag == "Concrete") {
+            concrete = true;
+        } else if (hit.transform.gameObject.tag == "Grass") {
+            concrete = false;
+        }
 		//Debug.Log(onGround);
 		
 		
@@ -62,6 +62,20 @@ public class CharacterController : MonoBehaviour {
     void OnCollisionEnter(Collision collision) {
         if (!onGround) {
             speed = 0f;
+        }
+    }
+
+    void FootSteps()
+    {
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        {
+            if (concrete)
+            {
+                FindObjectOfType<AudioManager>().Play("Step_Concrete");
+            } else if (!concrete)
+            {
+                FindObjectOfType<AudioManager>().Play("Step_Grass");
+            }
         }
     }
 }

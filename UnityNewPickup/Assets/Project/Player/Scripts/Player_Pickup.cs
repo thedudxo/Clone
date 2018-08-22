@@ -101,17 +101,6 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     public void dropObject() {
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Player/Player_Pickup.cs
-        carrying = false;
-        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        carriedObject = null;
-        cloning = false;
-        distance = 2;
-    }
-}
-
-=======
->>>>>>> master:UnityNewPickup/Assets/Project/Player/Scripts/Player_Pickup.cs
         carrying = false;
         if (cloning)
         {
@@ -124,12 +113,8 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         carriedObject = null;
         cloning = false;
-<<<<<<< HEAD:UnityNewPickup/Assets/Project/Player/Player_Pickup.cs
-        distance = 3;
-=======
         distance = 3;
         
     }
 }
 
->>>>>>> master:UnityNewPickup/Assets/Project/Player/Scripts/Player_Pickup.cs

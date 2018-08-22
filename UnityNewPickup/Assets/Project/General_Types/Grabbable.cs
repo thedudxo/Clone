@@ -29,10 +29,6 @@ public class Grabbable : MonoBehaviour {
         }
 
     }
-<<<<<<< HEAD
-}
-=======
->>>>>>> master
 
     private void OnTriggerEnter(Collider other)
     {
@@ -45,4 +41,3 @@ public class Grabbable : MonoBehaviour {
         Player_Pickup.Instance.drop = true;
     }
 }
->>>>>>> master

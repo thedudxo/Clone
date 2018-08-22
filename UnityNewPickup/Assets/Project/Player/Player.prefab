@@ -494,7 +494,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172aabfb0d2e273479fb3de814794208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114268435944639702
+  mainCamera: {fileID: 0}
+  carrying: 0
+  carriedObject: {fileID: 0}
+  distance: 3
+  smooth: 50
+  hasPlayer: 0
+  cloning: 0
+  drop: 1
+  cloneMaterial: {fileID: 2100000, guid: 48dc2d0a988c4ac45bf233d9c6ed4cd8, type: 2}
+  hologram: {fileID: 2100000, guid: e25be878662957c408e990192b701389, type: 2}
+  holoError: {fileID: 2100000, guid: daba53873639f5e46a07a6fe6ef94335, type: 2}
+--- !u!114 &114280977785973270
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -563,8 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebbed9009667fe4990b6c5a6f0db749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  cloneMaterial: {fileID: 2100000, guid: 48dc2d0a988c4ac45bf233d9c6ed4cd8, type: 2}
+  targetPosition: {fileID: 0}
   cloned: 0
   GunshotParticles: {fileID: 198043297227306034}
   PasteshotParticles: {fileID: 198843336702106416}

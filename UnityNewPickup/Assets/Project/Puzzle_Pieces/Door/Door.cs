@@ -6,7 +6,6 @@ public class Door : MonoBehaviour{
 
     [SerializeField] private GameObject[] buttons;
     
-    public GameObject button;
     public Animator doorOpenAnimation;
     
     void Start () {

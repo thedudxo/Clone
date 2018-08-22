@@ -76,8 +76,7 @@ public class Player_Clone : MonoBehaviour {
 
                 if (cloned == false)
                 {
-                    
-
+                    //Initial Clone
                     Player_Pickup.Instance.cloning = true;
                     clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
                     clonedObject.name = "Clone";
@@ -94,9 +93,7 @@ public class Player_Clone : MonoBehaviour {
 
                 else
                 {
-                    
-                    Destroy(clonedObject);
-                    clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
+                    clonedObject.gameObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
                     if (targetObject.name == "Clone")
                     {
                         targetObject = null;

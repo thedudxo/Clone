@@ -8,7 +8,17 @@ public class PlayerFallRespawn : MonoBehaviour {
 
     private void Start()
     {
-        spawnpoint = gameObject.transform.position;   
+        setSpawnHere();
+    }
+
+    public void setSpawnHere()
+    {
+        spawnpoint = gameObject.transform.position;
+    }
+
+    public void setSpawnThere(Vector3 newspawn)
+    {
+        spawnpoint = newspawn;
     }
 
     void Update () {

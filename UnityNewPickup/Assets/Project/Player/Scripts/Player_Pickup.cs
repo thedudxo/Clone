@@ -52,6 +52,11 @@ public class Player_Pickup : MonoBehaviour {
         o.transform.parent = mainCamera.transform;
         o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         o.GetComponent<Rigidbody>().freezeRotation = true;
+        if(o.transform.position.y < mainCamera.transform.position.y -1.5f)
+        {
+            o.transform.position = new Vector3(o.transform.position.x, mainCamera.transform.position.y - 1.5f, o.transform.position.z);
+        }
+
         if (Input.GetAxis ("Mouse ScrollWheel") > 0 && cloning) {
             if (distance < 8) {
                 distance++;

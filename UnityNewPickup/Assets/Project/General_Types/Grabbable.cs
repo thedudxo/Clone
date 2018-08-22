@@ -20,6 +20,8 @@ public class Grabbable : MonoBehaviour {
 
     public void Reset()
     {
+        GetComponent<ParticleSystem>().Emit(40);
+
         transform.position = spawnPostion;
         if(Player_Pickup.Instance.carriedObject == this.gameObject)
         {

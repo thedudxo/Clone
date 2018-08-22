@@ -353,11 +353,13 @@ Prefab:
 
         Jump: Space
 
-        PickUp: E (when close, on crosshair)
+        Turn: Mouse
 
-        Clone: ??
+        PickUp/Drop: E (on crosshair, close)
 
-        Pause: P
+        Clone: ?? Click? scroll?
+
+        Main Menu: M
 
         Quit: Esc'
       objectReference: {fileID: 0}
@@ -530,11 +532,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4810104449840382, guid: a95c0e7cb7964cc4993b7ae68c85e78f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4810104449840382, guid: a95c0e7cb7964cc4993b7ae68c85e78f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -47
+      value: -57.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a95c0e7cb7964cc4993b7ae68c85e78f, type: 2}

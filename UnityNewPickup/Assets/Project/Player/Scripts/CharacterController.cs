@@ -31,7 +31,7 @@ public class CharacterController : MonoBehaviour {
 		
 		if (Input.GetKeyDown("escape")) {
             SceneManager.LoadScene("MainMenu");
-        	Cursor.lockState = CursorLockMode.None;
+  //      	Cursor.lockState = CursorLockMode.None;
         }
 
         //jump
@@ -87,3 +87,11 @@ public class CharacterController : MonoBehaviour {
         }
     }
 }
+
+
+		if (Input.GetKeyDown("escape")) {
+            //SceneManager.LoadScene("MainMenu");
+         	Cursor.lockState = CursorLockMode.None;
+        }
+
+        //jump

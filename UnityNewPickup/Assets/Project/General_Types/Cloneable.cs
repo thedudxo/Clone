@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cloneable : MonoBehaviour {
 
     public bool isClone = false;
+    private GameObject button;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +19,25 @@ public class Cloneable : MonoBehaviour {
 
     public void destroyClone()
     {
+        Debug.Log("KILKLIGN THE CLONE");
         if (Player_Pickup.Instance.carriedObject == this.gameObject)
         {
             Player_Pickup.Instance.dropObject();
             Debug.Log("dropped");
         }
+
+        if(button != null)
+        {
+            button.GetComponent<Button_Behaviour>().weights--;
+            Debug.Log("yuep");
+        }
+
         Destroy(gameObject);
+    }
+
+    public void setButton(GameObject button)
+    {
+        this.button = button;
+        Debug.Log(button);
     }
 }

@@ -20,6 +20,8 @@ public class Player_Pickup : MonoBehaviour {
     public Material hologram;
     public Material holoError;
 
+    public AudioSource holoAudio;
+
     private static Player_Pickup instance;
 
     public static Player_Pickup Instance
@@ -50,7 +52,9 @@ public class Player_Pickup : MonoBehaviour {
     void carry (GameObject o) {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
         o.transform.parent = mainCamera.transform;
+        o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         o.GetComponent<Rigidbody>().freezeRotation = true;
+        o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         if(o.transform.position.y < mainCamera.transform.position.y -1.5f)
         {
             o.transform.position = new Vector3(o.transform.position.x, mainCamera.transform.position.y - 1.5f, o.transform.position.z);
@@ -106,7 +110,9 @@ public class Player_Pickup : MonoBehaviour {
             carriedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
             carriedObject.GetComponent<BoxCollider>().isTrigger = false;
             carriedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
+            holoAudio.Stop();
         }
+
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
         carriedObject.transform.parent = null;
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;

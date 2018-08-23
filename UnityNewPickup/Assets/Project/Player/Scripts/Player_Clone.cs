@@ -26,8 +26,9 @@ public class Player_Clone : MonoBehaviour {
         {
             Player_Pickup.Instance.dropObject();
         }
-        
-        Destroy(clonedObject);
+
+        Debug.Log("yehp");
+        if(clonedObject != null) { clonedObject.GetComponent<Cloneable>().destroyClone(); }
         cloned = false;
     }
 
@@ -67,7 +68,7 @@ public class Player_Clone : MonoBehaviour {
             }
 
 
-            if(Player_Pickup.Instance.carriedObject != null)
+            if(Player_Pickup.Instance.carriedObject != null && Player_Pickup.Instance.drop)
             {
                 Player_Pickup.Instance.dropObject();
             }
@@ -89,10 +90,13 @@ public class Player_Clone : MonoBehaviour {
                     clonedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
 
                     clonedObject.GetComponent<MeshRenderer>().material = Player_Pickup.Instance.hologram;
+                    Player_Pickup.Instance.holoAudio.Play();
                 }
 
                 else
                 {
+                    GunshotParticles.transform.position = clonedObject.transform.position;
+                    GunshotParticles.Emit(30);
                     clonedObject.gameObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
                     if (targetObject.name == "Clone")
                     {

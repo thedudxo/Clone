@@ -52,9 +52,7 @@ public class Player_Pickup : MonoBehaviour {
     void carry (GameObject o) {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
         o.transform.parent = mainCamera.transform;
-        o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         o.GetComponent<Rigidbody>().freezeRotation = true;
-        o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         if(o.transform.position.y < mainCamera.transform.position.y -1.5f)
         {
             o.transform.position = new Vector3(o.transform.position.x, mainCamera.transform.position.y - 1.5f, o.transform.position.z);
@@ -100,6 +98,9 @@ public class Player_Pickup : MonoBehaviour {
     void checkDrop() {
         if (Input.GetKeyDown (KeyCode.E) && drop) {
             dropObject();
+        } else if (Input.GetKeyDown(KeyCode.E) && !drop)
+        {
+            FindObjectOfType<AudioManager>().Play("Error_Clone");
         }
     }
 
@@ -111,6 +112,7 @@ public class Player_Pickup : MonoBehaviour {
             carriedObject.GetComponent<BoxCollider>().isTrigger = false;
             carriedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.On;
             holoAudio.Stop();
+            FindObjectOfType<AudioManager>().Play("Clone_Success");
         }
 
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;

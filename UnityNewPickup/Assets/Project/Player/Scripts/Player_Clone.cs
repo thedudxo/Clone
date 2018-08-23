@@ -50,6 +50,10 @@ public class Player_Clone : MonoBehaviour {
                 if (lookingAt.GetComponent<Cloneable>() != null)
                 {
                     targetObject = lookingAt;
+                    FindObjectOfType<AudioManager>().Play("Beeps");
+                } else if (lookingAt.GetComponent<Cloneable>() == null)
+                {
+                    FindObjectOfType<AudioManager>().Play("Error_Clone");
                 }
             }
         }
@@ -109,32 +113,10 @@ public class Player_Clone : MonoBehaviour {
                     clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
                     Player_Pickup.Instance.carriedObject = clonedObject;
                     Player_Pickup.Instance.carrying = true;
+                    Player_Pickup.Instance.holoAudio.Play();
                 }
             }
         }
 
     }
 }
-/*
-        if (Input.GetMouseButton(0) && targetObject != null) //left click
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Destroy(clonedObject);
-                clonedObject = Instantiate(targetObject);
-                clonedObject.SetActive(false);
-                if (Button_Behaviour.Instance.weight >= 1) {
-                    Button_Behaviour.Instance.ButtonCheck();
-                }
-            }
-            
-
-            clonedObject.transform.position = targetPosition.transform.position;
-            clonedObject.transform.rotation = targetPosition.transform.rotation;
-            clonedObject.GetComponent<Rigidbody>().isKinematic = true;
-            clonedObject.GetComponent<Rigidbody>().isKinematic = false; //Resets the "velocity" caused by "falling"
-            clonedObject.SetActive(true);
-
-            clonedObject.GetComponent<MeshRenderer>().material = cloneMaterial;
-            
-        }*/

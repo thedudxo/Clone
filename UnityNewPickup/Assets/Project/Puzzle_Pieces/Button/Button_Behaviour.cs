@@ -28,7 +28,10 @@ public class Button_Behaviour : MonoBehaviour {
             ButtonAnim.SetBool("ButtonPress", true);
             weights++;
             isPressed = true;
-            Debug.Log(weights);
+            if(collision.gameObject.GetComponent<Cloneable>() != null)
+            {
+                collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
+            }
         }
     }
 
@@ -41,6 +44,11 @@ public class Button_Behaviour : MonoBehaviour {
             if (weights == 0) {
                 ButtonAnim.SetBool("ButtonPress", false);
                 isPressed = false;
+            }
+
+            if (collision.gameObject.GetComponent<Cloneable>() != null)
+            {
+                collision.gameObject.GetComponent<Cloneable>().setButton(null);
             }
         }
     }

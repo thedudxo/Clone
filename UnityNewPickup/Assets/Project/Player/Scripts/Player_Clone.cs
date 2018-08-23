@@ -68,7 +68,7 @@ public class Player_Clone : MonoBehaviour {
             }
 
 
-            if(Player_Pickup.Instance.carriedObject != null)
+            if(Player_Pickup.Instance.carriedObject != null && Player_Pickup.Instance.drop)
             {
                 Player_Pickup.Instance.dropObject();
             }

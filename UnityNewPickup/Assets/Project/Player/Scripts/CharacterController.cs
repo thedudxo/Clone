@@ -88,8 +88,3 @@ public class CharacterController : MonoBehaviour {
     }
 }
 
-		if(hit.transform.gameObject.tag == "Concrete") {
-            concrete = true;
-        } else if (hit.transform.gameObject.tag == "Grass")
-        {
-            concrete = false;

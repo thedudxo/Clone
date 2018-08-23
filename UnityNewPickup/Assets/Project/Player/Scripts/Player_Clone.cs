@@ -26,8 +26,9 @@ public class Player_Clone : MonoBehaviour {
         {
             Player_Pickup.Instance.dropObject();
         }
-        
-        Destroy(clonedObject);
+
+        Debug.Log("yehp");
+        if(clonedObject != null) { clonedObject.GetComponent<Cloneable>().destroyClone(); }
         cloned = false;
     }
 

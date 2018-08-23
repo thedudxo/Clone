@@ -45,7 +45,7 @@ public class CharacterController : MonoBehaviour {
 			onGround = false;
 		}
 
-		if(hit.transform.gameObject.tag == "Concrete") {
+		if(hit.transform != null && hit.transform.gameObject.tag == "Concrete") {
             concrete = true;
         } else if (hit.transform.gameObject.tag == "Grass")
         {

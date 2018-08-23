@@ -93,6 +93,8 @@ public class Player_Clone : MonoBehaviour {
 
                 else
                 {
+                    GunshotParticles.transform.position = clonedObject.transform.position;
+                    GunshotParticles.Emit(30);
                     clonedObject.gameObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
                     if (targetObject.name == "Clone")
                     {

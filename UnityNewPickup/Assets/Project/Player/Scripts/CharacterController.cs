@@ -30,8 +30,8 @@ public class CharacterController : MonoBehaviour {
 		transform.Translate (straffe, 0, translation);
 		
 		if (Input.GetKeyDown("escape")) {
-            SceneManager.LoadScene("MainMenu");
-  //      	Cursor.lockState = CursorLockMode.None;
+            //SceneManager.LoadScene("MainMenu");
+         	Cursor.lockState = CursorLockMode.None;
         }
 
         //jump

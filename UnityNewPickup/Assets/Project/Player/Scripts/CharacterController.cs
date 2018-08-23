@@ -15,9 +15,9 @@ public class CharacterController : MonoBehaviour {
 	void Start () {
 		
 		Cursor.lockState = CursorLockMode.Locked;
-        InvokeRepeating("Footsteps", 0.0f, 0.4f);
         speed = startSpeed;
-	}
+    }
+
 	
 
 	void Update () {
@@ -43,47 +43,19 @@ public class CharacterController : MonoBehaviour {
 			if(hit.transform.gameObject.tag != "Player") {
 				onGround = true;
                 speed = startSpeed;
-			}
+            }
 		} else {
 			onGround = false;
 		}
-
-		if(hit.transform.gameObject.tag == "Concrete") {
-            concrete = true;
-        } else if (hit.transform.gameObject.tag == "Grass")
-        {
-            concrete = false;
-        }
 		
 		if (Input.GetKeyDown("space") && onGround) {
 			this.GetComponent<Rigidbody>().AddForce(Vector3.up*jumpPower);
-		}
-	
+        }
 	}
 
     void OnCollisionEnter(Collision collision) {
         if (!onGround) {
             speed = 0;
-        }
-    }
-
-    void Footsteps()
-    {
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 && onGround)
-        {
-            if (concrete)
-            {
-                FindObjectOfType<AudioManager>().Play("Concrete_Step");
-            }
-            else if (!concrete)
-            {
-                FindObjectOfType<AudioManager>().Play("Grass_Step");
-            }
-
-            if (!onGround)
-            {
-                FindObjectOfType<AudioManager>().CancelInvoke();
-            }
         }
     }
 }

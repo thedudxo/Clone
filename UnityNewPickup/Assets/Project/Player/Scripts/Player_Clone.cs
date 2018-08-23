@@ -89,6 +89,7 @@ public class Player_Clone : MonoBehaviour {
                     clonedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
 
                     clonedObject.GetComponent<MeshRenderer>().material = Player_Pickup.Instance.hologram;
+                    Player_Pickup.Instance.holoAudio.Play();
                 }
 
                 else

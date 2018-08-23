@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CharacterController : MonoBehaviour {
 
@@ -28,11 +30,12 @@ public class CharacterController : MonoBehaviour {
 		transform.Translate (straffe, 0, translation);
 		
 		if (Input.GetKeyDown("escape")) {
-			Cursor.lockState = CursorLockMode.None;
-		}
-		
-		//jump
-		RaycastHit hit;
+            //SceneManager.LoadScene("MainMenu");
+         	Cursor.lockState = CursorLockMode.None;
+        }
+
+        //jump
+        RaycastHit hit;
 		Vector3 physicsCentre = this.transform.position + this.GetComponent<CapsuleCollider>().center;
 		
 		Debug.DrawRay(physicsCentre, Vector3.down, Color.red, 1);
@@ -45,7 +48,7 @@ public class CharacterController : MonoBehaviour {
 			onGround = false;
 		}
 
-		if(hit.transform != null && hit.transform.gameObject.tag == "Concrete") {
+		if(hit.transform.gameObject.tag == "Concrete") {
             concrete = true;
         } else if (hit.transform.gameObject.tag == "Grass")
         {
@@ -84,3 +87,9 @@ public class CharacterController : MonoBehaviour {
         }
     }
 }
+
+		if(hit.transform.gameObject.tag == "Concrete") {
+            concrete = true;
+        } else if (hit.transform.gameObject.tag == "Grass")
+        {
+            concrete = false;

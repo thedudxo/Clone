@@ -22,12 +22,25 @@ public class Button_Behaviour : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+        if(weights > 0)
+        {
+            isPressed = true;
+        }
+        else
+        {
+            isPressed = false;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Weighted>() != null){
             ButtonAnim.SetBool("ButtonPress", true);
             weights++;
             isPressed = true;
+
             if(collision.gameObject.GetComponent<Cloneable>() != null)
             {
                 collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
@@ -40,7 +53,6 @@ public class Button_Behaviour : MonoBehaviour {
         if (collision.gameObject.GetComponent<Weighted>() != null)
         {
             weights--;
-            Debug.Log(weights);
             if (weights == 0) {
                 ButtonAnim.SetBool("ButtonPress", false);
                 isPressed = false;

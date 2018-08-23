@@ -8,6 +8,7 @@ ModelImporter:
     400000: //RootNode
     400002: LeftWalls
     2100000: LeftWallsMat
+    2100002: initialShadingGroup
     2300000: LeftWalls
     3300000: LeftWalls
     4300000: LeftWalls

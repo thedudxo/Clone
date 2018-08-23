@@ -19,21 +19,25 @@ public class Cloneable : MonoBehaviour {
 
     public void destroyClone()
     {
-        Debug.Log(button);
+        Debug.Log("KILKLIGN THE CLONE");
         if (Player_Pickup.Instance.carriedObject == this.gameObject)
         {
             Player_Pickup.Instance.dropObject();
             Debug.Log("dropped");
         }
-        Destroy(gameObject);
+
         if(button != null)
         {
             button.GetComponent<Button_Behaviour>().weights--;
+            Debug.Log("yuep");
         }
+
+        Destroy(gameObject);
     }
 
     public void setButton(GameObject button)
     {
         this.button = button;
+        Debug.Log(button);
     }
 }

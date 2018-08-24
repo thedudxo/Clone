@@ -7310,6 +7310,48 @@ Transform:
   m_Father: {fileID: 910435349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -113.162, z: 0}
+--- !u!1001 &545427604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.10786666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9941654
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040090414313024, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b52aabf19c83f3e49aa7498afda3df44, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &550126789
 Prefab:
   m_ObjectHideFlags: 0
@@ -31195,103 +31237,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1678714228092594, guid: 37aa67961e328cd4a8fd988d01a3b2ea,
     type: 2}
   m_PrefabInternal: {fileID: 1111721788}
---- !u!1 &2096905720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2096905722}
-  - component: {fileID: 2096905721}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2096905721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2096905720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c97da6232ced44f9f7ed608285b16f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Theme
-    clip: {fileID: 8300000, guid: f258b831ac055a348ac9fc15e548e211, type: 3}
-    volume: 0.05
-    pitch: 1
-    loop: 1
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
-  - name: Concrete_Step
-    clip: {fileID: 8300000, guid: b941557920eb4c641be89eb271ef2864, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
-  - name: Grass_Step
-    clip: {fileID: 8300000, guid: 79b1a0b1aafd0b449a66176f1442c9d0, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
-  - name: Beeps
-    clip: {fileID: 8300000, guid: 9f28fe66022ba5f45a2b9149907b6831, type: 3}
-    volume: 0.05
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
-  - name: Error_Clone
-    clip: {fileID: 8300000, guid: 64a3df5583fb56045b9d8c29b32ac385, type: 3}
-    volume: 0.05
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
-  - name: Clone_Success
-    clip: {fileID: 8300000, guid: 645fbde3a58d8ec4d973e524496517fb, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
-  - name: Door_Close
-    clip: {fileID: 8300000, guid: 66fa5c853aea31245af821a3ea747954, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    mute: 0
-    output: {fileID: 24300002, guid: 3da4285b6ccc9c940a9e9dbee637d8a3, type: 2}
-    source: {fileID: 0}
---- !u!4 &2096905722
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2096905720}
-  m_LocalRotation: {x: -0, y: -0.10786666, z: -0, w: 0.9941654}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 56.637405, y: 45.692173, z: 6.8410616}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2099482417
 Prefab:
   m_ObjectHideFlags: 0

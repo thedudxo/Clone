@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Concrete
   - Grass
-  - End
   layers:
   - Default
   - TransparentFX

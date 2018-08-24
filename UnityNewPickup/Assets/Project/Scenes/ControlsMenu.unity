@@ -747,8 +747,17 @@ Prefab:
     - target: {fileID: 114921893381822624, guid: 74dc25b29d13cbb4c80711f721c58ac7,
         type: 2}
       propertyPath: m_Text
-      value: "Main Menu: Esc\nPickUp/Drop: E (on crosshair, close)\nMove:WASD\nJump:
-        Space\nLook: Mouse \nClone: ?? "
+      value: 'Main Menu: Esc
+
+        PickUp/Drop: E (on crosshair, close)
+
+        Move:WASD
+
+        Jump: Space
+
+        Copy: Right Click
+
+        Paste: Left Click'
       objectReference: {fileID: 0}
     - target: {fileID: 224361513055017572, guid: 74dc25b29d13cbb4c80711f721c58ac7,
         type: 2}

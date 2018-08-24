@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 1fe108645d77f384b978846114fa4360,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -692,10 +693,10 @@ RectTransform:
   m_Father: {fileID: 1036207851}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.6, y: 0.29583332}
+  m_AnchorMin: {x: 0.5533669, y: 0.29583332}
   m_AnchorMax: {x: 0.84652084, y: 0.6}
-  m_AnchoredPosition: {x: -3, y: 0}
-  m_SizeDelta: {x: -286, y: -200}
+  m_AnchoredPosition: {x: 51.300003, y: -6.5000114}
+  m_SizeDelta: {x: -333.40002, y: -187.00002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109616470
 MonoBehaviour:
@@ -1306,9 +1307,9 @@ RectTransform:
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.29583332}
-  m_AnchorMax: {x: 0.3284375, y: 0.6}
-  m_AnchoredPosition: {x: 235, y: 0}
-  m_SizeDelta: {x: -458, y: -200}
+  m_AnchorMax: {x: 0.4563669, y: 0.59333336}
+  m_AnchoredPosition: {x: 107, y: -5.9999924}
+  m_SizeDelta: {x: -606, y: -171.99998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803523332
 MonoBehaviour:

@@ -52,6 +52,7 @@ public class Player_Pickup : MonoBehaviour {
     void carry (GameObject o) {
         o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
         o.transform.parent = mainCamera.transform;
+        o.transform.rotation = Quaternion.Euler(0, o.transform.rotation.y, 0);
         o.GetComponent<Rigidbody>().freezeRotation = true;
         if(o.transform.position.y < mainCamera.transform.position.y -1.5f)
         {

@@ -22,6 +22,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(moveVertical * accel, 0, moveHorizontal * accel);
         rb.AddRelativeForce(moveHorizontal * accel * Time.deltaTime, 0, moveVertical * accel * Time.deltaTime);
 
-        Debug.Log(rb.velocity.magnitude);
+ //       Debug.Log(rb.velocity.magnitude);
     }
 }

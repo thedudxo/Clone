@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 115732372}
   - component: {fileID: 115732371}
   - component: {fileID: 115732370}
+  - component: {fileID: 115732373}
   m_Layer: 0
   m_Name: Cube (25) 2
   m_TagString: Untagged
@@ -622,6 +623,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 115732368}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &115732373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 115732368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &122987558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,6 +5430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815272411}
   - component: {fileID: 815272412}
+  - component: {fileID: 815272413}
   m_Layer: 0
   m_Name: ButtonLower
   m_TagString: Untagged
@@ -5458,6 +5473,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &815272413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815272410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d966f4348710e43b5043409ef763ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
 --- !u!1 &822949466
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,6 +6165,7 @@ GameObject:
   - component: {fileID: 863805408}
   - component: {fileID: 863805407}
   - component: {fileID: 863805406}
+  - component: {fileID: 863805409}
   m_Layer: 0
   m_Name: Cube (32) 3
   m_TagString: Untagged
@@ -6215,6 +6243,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863805404}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &863805409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 863805404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &869402499
 GameObject:
   m_ObjectHideFlags: 0
@@ -23237,6 +23278,7 @@ GameObject:
   - component: {fileID: 1144227076}
   - component: {fileID: 1144227075}
   - component: {fileID: 1144227074}
+  - component: {fileID: 1144227077}
   m_Layer: 0
   m_Name: 'DoorL2 1 2 cubes '
   m_TagString: Untagged
@@ -23314,6 +23356,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1144227072}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1144227077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1144227072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &1151544795
 GameObject:
   m_ObjectHideFlags: 0
@@ -34401,6 +34456,7 @@ GameObject:
   - component: {fileID: 1713000001}
   - component: {fileID: 1713000000}
   - component: {fileID: 1712999999}
+  - component: {fileID: 1713000002}
   m_Layer: 0
   m_Name: Cube (35)
   m_TagString: Untagged
@@ -34478,6 +34534,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1712999997}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1713000002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712999997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &1733766395
 GameObject:
   m_ObjectHideFlags: 0
@@ -34574,6 +34643,7 @@ GameObject:
   - component: {fileID: 1739826569}
   - component: {fileID: 1739826568}
   - component: {fileID: 1739826567}
+  - component: {fileID: 1739826570}
   m_Layer: 0
   m_Name: Cube (34)
   m_TagString: Untagged
@@ -34651,6 +34721,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1739826565}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1739826570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1739826565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &1764951785
 GameObject:
   m_ObjectHideFlags: 0
@@ -38445,6 +38528,7 @@ GameObject:
   - component: {fileID: 1994249711}
   - component: {fileID: 1994249710}
   - component: {fileID: 1994249709}
+  - component: {fileID: 1994249712}
   m_Layer: 0
   m_Name: Cube (33)
   m_TagString: Untagged
@@ -38522,6 +38606,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1994249707}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1994249712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1994249707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &2017800822
 GameObject:
   m_ObjectHideFlags: 0
@@ -39405,6 +39502,7 @@ GameObject:
   - component: {fileID: 2038442802}
   - component: {fileID: 2038442801}
   - component: {fileID: 2038442800}
+  - component: {fileID: 2038442803}
   m_Layer: 0
   m_Name: Cube (26) 3
   m_TagString: Untagged
@@ -39482,6 +39580,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2038442798}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2038442803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038442798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &2060960223
 GameObject:
   m_ObjectHideFlags: 0
@@ -39962,6 +40073,7 @@ GameObject:
   - component: {fileID: 2109819631}
   - component: {fileID: 2109819630}
   - component: {fileID: 2109819629}
+  - component: {fileID: 2109819632}
   m_Layer: 0
   m_Name: Cube L2 0 cubes
   m_TagString: Untagged
@@ -40039,6 +40151,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109819627}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2109819632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2109819627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f3c4e5dcb5564e937a2379f877bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons: []
+  doorOpenAnimation: {fileID: 0}
 --- !u!1 &2118414893
 GameObject:
   m_ObjectHideFlags: 0

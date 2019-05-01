@@ -681,6 +681,10 @@ Prefab:
       propertyPath: m_Name
       value: HampoForUnity (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
   m_IsPrefabParent: 0
@@ -4518,6 +4522,10 @@ Prefab:
       propertyPath: m_Name
       value: HampoForUnity (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
   m_IsPrefabParent: 0
@@ -4599,6 +4607,10 @@ Prefab:
     - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
       propertyPath: m_Name
       value: HampoForUnity (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
@@ -7232,6 +7244,10 @@ Prefab:
     - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
       propertyPath: m_Name
       value: HampoForUnity (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
@@ -25508,6 +25524,10 @@ Prefab:
       propertyPath: m_Name
       value: HampoForUnity (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
   m_IsPrefabParent: 0
@@ -35078,6 +35098,10 @@ Prefab:
       propertyPath: m_Name
       value: HampoForUnity (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
   m_IsPrefabParent: 0
@@ -37211,6 +37235,10 @@ Prefab:
       propertyPath: m_Name
       value: HampoForUnity (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
   m_IsPrefabParent: 0
@@ -38246,6 +38274,10 @@ Prefab:
     - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
       propertyPath: m_Name
       value: HampoForUnity (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
@@ -41710,6 +41742,10 @@ Prefab:
       propertyPath: m_Name
       value: HampoForUnity (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
   m_IsPrefabParent: 0
@@ -41791,6 +41827,10 @@ Prefab:
     - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
       propertyPath: m_Name
       value: HampoForUnity (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
@@ -42869,6 +42909,10 @@ Prefab:
     - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
       propertyPath: m_Name
       value: HampoForUnity (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cc0d8c0e2ab0e14f8a7b439e4f5f942, type: 3}

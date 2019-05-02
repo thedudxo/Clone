@@ -8,6 +8,7 @@ public class BeamButton : MonoBehaviour {
     public Material greenArrow;
     public Material redArrow;
     public GameObject arrow;
+    public Player_Pickup player_Pickup;
 
     // Use this for initialization
     void Start () {
@@ -31,8 +32,8 @@ public class BeamButton : MonoBehaviour {
             cubes++;
             checkArrow();
 
-            if (Player_Pickup.Instance.carriedObject == other) {
-                Player_Pickup.Instance.dropObject();
+            if (player_Pickup.carriedObject == other) {
+                player_Pickup.Drop();
             }
 
             other.GetComponent<Rigidbody>().useGravity = false;

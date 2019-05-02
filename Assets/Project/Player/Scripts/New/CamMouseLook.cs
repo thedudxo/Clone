@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamMouseLook : MonoBehaviour {
 
 	public float mouseSensitivity;
-	public Transform playerBody;
+	public GameObject playerBody;
 	
 	float xAxisClamp = 0;
 	
@@ -15,6 +15,8 @@ public class CamMouseLook : MonoBehaviour {
 	
 	void Update () {
 		RotateCamera();
+        if(transform.rotation.eulerAngles.x >= 50 && transform.rotation.eulerAngles.x <= 269 && playerBody.GetComponent<Player_Pickup>().carrying) { playerBody.GetComponent<Player_Pickup>().Drop(); }
+        Debug.Log(transform.rotation.eulerAngles.x);
 	}
 	
 	
@@ -28,7 +30,7 @@ public class CamMouseLook : MonoBehaviour {
 		xAxisClamp -= rotAmountY;
 		
 		Vector3 targetRotCam = transform.rotation.eulerAngles;
-		Vector3 targetRotBody = playerBody.rotation.eulerAngles;
+		Vector3 targetRotBody = playerBody.transform.rotation.eulerAngles;
 		
 		targetRotCam.x -= rotAmountY;
 		targetRotCam.z = 0;
@@ -47,6 +49,6 @@ public class CamMouseLook : MonoBehaviour {
 		}
 		
 		transform.rotation = Quaternion.Euler(targetRotCam);
-		playerBody.rotation = Quaternion.Euler(targetRotBody);
+		playerBody.transform.rotation = Quaternion.Euler(targetRotBody);
 	}
 }

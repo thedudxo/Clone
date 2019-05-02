@@ -19,32 +19,29 @@ public class BeamButton : MonoBehaviour {
 		
 	}
 
-    private void checkArrow()
+    private void checkArrow() //change to red/green
     {
-        if (cubes > 0)
-        {
-            arrow.GetComponent<Renderer>().material = greenArrow;
-        }
-        else
-        {
-            arrow.GetComponent<Renderer>().material = redArrow;
-        }
+        if (cubes > 0) {  arrow.GetComponent<Renderer>().material = greenArrow; }
+        else { arrow.GetComponent<Renderer>().material = redArrow; }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //addcubes, make them float
     {
-        Debug.Log("yesh");
-        if (other.GetComponent<Weighted>())
-        {
+        if (other.GetComponent<Weighted>()) {
             cubes++;
             checkArrow();
+
+            if (Player_Pickup.Instance.carriedObject == other) {
+                Player_Pickup.Instance.dropObject();
+            }
+
+            other.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) //removecubes
     {
-        if (other.GetComponent<Weighted>())
-        {
+        if (other.GetComponent<Weighted>()) {
             cubes--;
             checkArrow();
         }

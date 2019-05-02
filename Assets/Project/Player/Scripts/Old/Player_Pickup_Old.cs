@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Player_Pickup : MonoBehaviour {
+public class Player_Pickup_Old : MonoBehaviour {
 
     public GameObject mainCamera;
     public bool carrying;
@@ -22,17 +22,17 @@ public class Player_Pickup : MonoBehaviour {
 
     public AudioSource holoAudio;
 
-    private static Player_Pickup instance;
+    private static Player_Pickup_Old instance;
 
-    public static Player_Pickup Instance
+    public static Player_Pickup_Old Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<Player_Pickup>();
+                instance = GameObject.FindObjectOfType<Player_Pickup_Old>();
             }
-            return Player_Pickup.instance;
+            return Player_Pickup_Old.instance;
         }
     }
 
@@ -99,7 +99,6 @@ public class Player_Pickup : MonoBehaviour {
     void checkDrop() {
         if (Input.GetKeyDown (KeyCode.E) && drop) {
             dropObject();
-            Debug.Log("yefhsd");
         } else if (Input.GetKeyDown(KeyCode.E) && !drop)
         {
             FindObjectOfType<AudioManager>().Play("Error_Clone");
@@ -123,6 +122,7 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject = null;
         cloning = false;
         distance = 3;
+        
     }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Player_Clone : MonoBehaviour {
+public class Player_Clone_Old : MonoBehaviour {
 
     private GameObject targetObject;        // The real object the player wants to clone
     private GameObject clonedObject;        // The current cloned object visible in the world
@@ -22,9 +22,9 @@ public class Player_Clone : MonoBehaviour {
     public void reset()
     {
         targetObject = null;
-        if (Player_Pickup.Instance.carriedObject != null && Player_Pickup.Instance.carriedObject.GetComponent<Cloneable>().isClone)
+        if (Player_Pickup_Old.Instance.carriedObject != null && Player_Pickup_Old.Instance.carriedObject.GetComponent<Cloneable>().isClone)
         {
-            Player_Pickup.Instance.dropObject();
+            Player_Pickup_Old.Instance.dropObject();
         }
 
         Debug.Log("yehp");
@@ -72,9 +72,9 @@ public class Player_Clone : MonoBehaviour {
             }
 
 
-            if(Player_Pickup.Instance.carriedObject != null && Player_Pickup.Instance.drop)
+            if(Player_Pickup_Old.Instance.carriedObject != null && Player_Pickup_Old.Instance.drop)
             {
-                Player_Pickup.Instance.dropObject();
+                Player_Pickup_Old.Instance.dropObject();
             }
 
             else if (targetObject != null) {
@@ -82,39 +82,39 @@ public class Player_Clone : MonoBehaviour {
                 if (cloned == false)
                 {
                     //Initial Clone
-                    Player_Pickup.Instance.cloning = true;
-                    clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance, Quaternion.identity);
+                    Player_Pickup_Old.Instance.cloning = true;
+                    clonedObject = Instantiate(targetObject, mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup_Old.Instance.distance, Quaternion.identity);
                     clonedObject.name = "Clone";
                     clonedObject.GetComponent<Cloneable>().isClone = true;
-                    Player_Pickup.Instance.carrying = true;
+                    Player_Pickup_Old.Instance.carrying = true;
                     clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                    Player_Pickup.Instance.carriedObject = clonedObject;
-                    Player_Pickup.Instance.carriedObject.GetComponent<BoxCollider>().isTrigger = true;
+                    Player_Pickup_Old.Instance.carriedObject = clonedObject;
+                    Player_Pickup_Old.Instance.carriedObject.GetComponent<BoxCollider>().isTrigger = true;
                     cloned = true;
                     clonedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
 
-                    clonedObject.GetComponent<MeshRenderer>().material = Player_Pickup.Instance.hologram;
-                    Player_Pickup.Instance.holoAudio.Play();
+                    clonedObject.GetComponent<MeshRenderer>().material = Player_Pickup_Old.Instance.hologram;
+                    Player_Pickup_Old.Instance.holoAudio.Play();
                 }
 
                 else
                 {
                     GunshotParticles.transform.position = clonedObject.transform.position;
                     GunshotParticles.Emit(30);
-                    clonedObject.gameObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup.Instance.distance;
+                    clonedObject.gameObject.transform.position = mainCamera.transform.position + mainCamera.transform.forward * Player_Pickup_Old.Instance.distance;
                     if (targetObject.name == "Clone")
                     {
                         targetObject = null;
                         Debug.Log("No clone");
                     }
-                    Player_Pickup.Instance.cloning = true;
+                    Player_Pickup_Old.Instance.cloning = true;
                     clonedObject.GetComponent<BoxCollider>().isTrigger = true;
                     clonedObject.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
-                    clonedObject.GetComponent<MeshRenderer>().material = Player_Pickup.Instance.hologram;
+                    clonedObject.GetComponent<MeshRenderer>().material = Player_Pickup_Old.Instance.hologram;
                     clonedObject.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                    Player_Pickup.Instance.carriedObject = clonedObject;
-                    Player_Pickup.Instance.carrying = true;
-                    Player_Pickup.Instance.holoAudio.Play();
+                    Player_Pickup_Old.Instance.carriedObject = clonedObject;
+                    Player_Pickup_Old.Instance.carrying = true;
+                    Player_Pickup_Old.Instance.holoAudio.Play();
                 }
             }
         }

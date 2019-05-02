@@ -20,9 +20,9 @@ public class Cloneable : MonoBehaviour {
     public void destroyClone()
     {
         Debug.Log("KILKLIGN THE CLONE");
-        if (Player_Pickup.Instance.carriedObject == this.gameObject)
+        if (Player_Pickup_Old.Instance.carriedObject == this.gameObject)
         {
-            Player_Pickup.Instance.dropObject();
+            Player_Pickup_Old.Instance.dropObject();
             Debug.Log("dropped");
         }
 

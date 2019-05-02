@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
         float speed = rb.velocity.magnitude;
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveVertical * accel, 0, moveHorizontal * accel);
         if (grounded) {
             //Relative force push in the direction player is facing.
             rb.AddRelativeForce(moveHorizontal * accel * Time.deltaTime, 0, moveVertical * accel * Time.deltaTime, ForceMode.VelocityChange);

@@ -61,7 +61,7 @@ public class EwokDestinations : MonoBehaviour
         {
             goPickupCube = true;
         }
-
+        //if carrying a Cube, when close to Altar, drop it
         if (thisEwokPicksUpCubes && isCarrying)
         {
             CarryCube();
@@ -70,8 +70,7 @@ public class EwokDestinations : MonoBehaviour
                 DropCube();
             }
         }
-
-        //        PickupCube and take it to Altar
+        //        if told to pick up a cube, go to it and when close, pick it up
         if (goPickupCube && thisEwokPicksUpCubes && !isCarrying)
         {
             TargetCube();
@@ -80,7 +79,7 @@ public class EwokDestinations : MonoBehaviour
                 GrabCube();
             }
         }
-
+        //if not picking up cubes or carruing them, wander around randomly
         if (!thisEwokPicksUpCubes || (!goPickupCube && !isCarrying))
             if (navmeshAgent.remainingDistance <= pickupProximity)
             {
@@ -89,18 +88,16 @@ public class EwokDestinations : MonoBehaviour
             }
     }
 
-    public void TargetCube() // Now assigned to go to Cube 
+    public void TargetCube() // Face and go to Cube 
     {
- //       Debug.Log("Now assigned to go to Cube");
         targetCubePos = targetCube.transform;
         thisEwokTransform.LookAt(targetCubePos);
         Vector3 targetCubeVector = targetCubePos.position;
         navmeshAgent.SetDestination(targetCubeVector);
     }
 
-    private void GrabCube()
+    private void GrabCube() //
     {
-        Debug.Log("Now close enough to carry Cube");
         cubeCollider.enabled = true;
         cubeRigidBody.detectCollisions = true;
         isCarrying = true;
@@ -121,21 +118,14 @@ public class EwokDestinations : MonoBehaviour
 
     public void DropCube() // Drop Cube at Altar
     {
-        Debug.Log("Now close enough to drop Cube");
         cubeCollider.enabled = true;
         cubeRigidBody.detectCollisions = true;
         isCarrying = false;
     }
 
-    public void ReturnToRandomDestinations()
-    {
-        SetDestination(startWayPointIndex); // revert to random destinations until the pickupCube is again set to true    
- //       isCarrying = false;
-    }
-
     public void SetDestination(int waypointIndex)
     {
-        Debug.Log(" SetDestination called on waypoint " + waypointIndex + " for Ewok " + gameObject.name);
+  //      Debug.Log(" SetDestination called on waypoint " + waypointIndex + " for Ewok " + gameObject.name);
         if (ewokPoints != null) //If the List isn't empty
         {
             if (waypointIndex >= ewokPoints.Count) //If the proposed destination is outside the List, make it inside the List

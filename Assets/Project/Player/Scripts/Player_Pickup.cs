@@ -99,6 +99,7 @@ public class Player_Pickup : MonoBehaviour {
     void checkDrop() {
         if (Input.GetKeyDown (KeyCode.E) && drop) {
             dropObject();
+            Debug.Log("yefhsd");
         } else if (Input.GetKeyDown(KeyCode.E) && !drop)
         {
             FindObjectOfType<AudioManager>().Play("Error_Clone");
@@ -122,7 +123,6 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject = null;
         cloning = false;
         distance = 3;
-        
     }
 }
 

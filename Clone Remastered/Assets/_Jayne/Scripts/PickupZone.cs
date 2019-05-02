@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupZone : MonoBehaviour {
 
-    public float radius = 3.0f;
+    public float radius = 0.5f;
 
     public void OnDrawGizmosSelected()
     {

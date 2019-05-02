@@ -14,6 +14,7 @@ public class EwokDestinations : MonoBehaviour
     public int dropWayPointIndex;
     public GameObject targetCube;
     public float pickupProximity = 0.8f;
+    public GameObject CubeHolder;
 
     int currentWayPointIndex;
     NavMeshAgent navmeshAgent;
@@ -31,7 +32,6 @@ public class EwokDestinations : MonoBehaviour
         {
             targetCubePos = targetCube.transform;
             thisEwokTransform = gameObject.transform;
-            Debug.Log("navmeshAgent speed is " + navmeshAgent.speed);
             cubeCollider = targetCube.GetComponent<Collider>();
             cubeRigidBody = targetCube.GetComponent<Rigidbody>();
         }
@@ -57,79 +57,82 @@ public class EwokDestinations : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            Debug.Log("E pressed");
             goPickupCube = true;
         }
-        //        PickupCube and take it to Altar
-        if (goPickupCube && thisEwokPicksUpCubes && !assignedToCube)
+
+        if (thisEwokPicksUpCubes && isCarrying)
         {
-            TargetCube();          
-        }
-        if (assignedToCube && thisEwokPicksUpCubes && !isCarrying)
-        {
-            if (navmeshAgent.remainingDistance <= pickupProximity)
-            {
-                CarryCube();
-            }
-        }
-  
-        if (assignedToCube && thisEwokPicksUpCubes && isCarrying)
-        {
+            CarryCube();
             if (navmeshAgent.remainingDistance <= pickupProximity)
             {
                 DropCube();
             }
         }
 
-        else if(!thisEwokPicksUpCubes || (!goPickupCube && !isCarrying) )
-        if (navmeshAgent.remainingDistance <= pickupProximity)
+        //        PickupCube and take it to Altar
+        if (goPickupCube && thisEwokPicksUpCubes && !isCarrying)
         {
-            int newWaypointIndex = UnityEngine.Random.Range(0, ewokPoints.Count);
-            SetDestination(newWaypointIndex);
+            TargetCube();
+            if (navmeshAgent.remainingDistance <= pickupProximity)
+            {
+                GrabCube();
+            }
         }
+
+        if (!thisEwokPicksUpCubes || (!goPickupCube && !isCarrying))
+            if (navmeshAgent.remainingDistance <= pickupProximity)
+            {
+                int newWaypointIndex = UnityEngine.Random.Range(0, ewokPoints.Count);
+                SetDestination(newWaypointIndex);
+            }
     }
 
     public void TargetCube() // Now assigned to go to Cube 
     {
-        Debug.Log("Now assigned to go to Cube");
+ //       Debug.Log("Now assigned to go to Cube");
         targetCubePos = targetCube.transform;
         thisEwokTransform.LookAt(targetCubePos);
         Vector3 targetCubeVector = targetCubePos.position;
         navmeshAgent.SetDestination(targetCubeVector);
-        goPickupCube = false;
-        assignedToCube = true;
+    }
+
+    private void GrabCube()
+    {
+        Debug.Log("Now close enough to carry Cube");
+        cubeCollider.enabled = true;
+        cubeRigidBody.detectCollisions = true;
+        isCarrying = true;
+        Debug.Log("isCarrying is " + isCarrying);
+        GoToAltar();
     }
 
     private void CarryCube()
     {
-        Debug.Log("Now close enough to carry Cube");
-        cubeCollider.enabled = false;
-        cubeRigidBody.detectCollisions = false;
-        gameObject.transform.SetParent(targetCube.transform.parent); // targetCube is now the child of the navmeshAgent                                                                           // targetCube.transform.parent = gameObject.transform;
-        isCarrying = true;
-        Debug.Log("Parenting; isCarrying is " + isCarrying);
-        GoToAltar();
+        targetCube.transform.position = CubeHolder.transform.position;
+        goPickupCube = false;
     }
 
     private void GoToAltar()
     {
-        Vector3 targetDropVector = ewokPoints[dropWayPointIndex].transform.position;
-        navmeshAgent.SetDestination(targetDropVector);
+        SetDestination(dropWayPointIndex);
     }
 
     public void DropCube() // Drop Cube at Altar
     {
         Debug.Log("Now close enough to drop Cube");
-        targetCube.transform.parent = null; // release the Cube (targetCube no longer child of the navmeshAgent)  
         cubeCollider.enabled = true;
         cubeRigidBody.detectCollisions = true;
         isCarrying = false;
-        assignedToCube = false;
-//        SetDestination(startWayPointIndex); // revert to random destinations until the pickupCube is again set to true    
     }
-    
+
+    public void ReturnToRandomDestinations()
+    {
+        SetDestination(startWayPointIndex); // revert to random destinations until the pickupCube is again set to true    
+ //       isCarrying = false;
+    }
+
     public void SetDestination(int waypointIndex)
     {
         Debug.Log(" SetDestination called on waypoint " + waypointIndex + " for Ewok " + gameObject.name);

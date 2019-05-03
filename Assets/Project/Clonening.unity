@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -645,13 +645,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2112236506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a544220a022af14596af608c01188c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 538a8f81c6dee9e429fbd03029cc1ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   accel: 1000
   airAccel: 0.1
   deccel: 0.1
-  maxSpeed: 20
+  maxSpeed: 0.01
   jumpForce: 800
   maxSlope: 60
 --- !u!54 &2112236508
@@ -764,8 +764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2fcd3a0690fad4b955bb447c98480f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  carrier: {fileID: 981995901}
+  clonedObject: {fileID: 0}
+  dissolve: {fileID: 0}
   cloning: 0
   hasCloned: 0
-  carrier: {fileID: 981995901}
   smooth: 20
-  clonedObject: {fileID: 0}

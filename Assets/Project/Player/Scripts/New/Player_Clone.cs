@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Clone : MonoBehaviour {
 
-    private GameObject mainCamera;
+    public GameObject mainCamera;
     private GameObject lookingAt;
     private GameObject clipboard;
     private int cloneDist = 3;

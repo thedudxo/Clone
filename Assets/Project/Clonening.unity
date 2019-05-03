@@ -374,7 +374,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e9116559eb49e1f44b38b8050e6f5d6b, type: 2}
+  - {fileID: 2100000, guid: 3d00178256a3bf44fa6a37a9244b1435, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -767,7 +767,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   carrier: {fileID: 981995901}
   clonedObject: {fileID: 0}
-  dissolve: {fileID: 0}
+  dissolve: {fileID: 2100000, guid: 19b5f8ce272b8ec49a4e191296a89bd2, type: 2}
   cloning: 0
   hasCloned: 0
   smooth: 20

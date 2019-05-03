@@ -448,7 +448,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 952a04af0668e6649a45fcf90eabb9f3, type: 2}
+  - {fileID: 2100000, guid: 9d8fd384eb8135646814e3428555bca4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -638,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2033d6e216dd8b846bbddd6f02a8763e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubes: 0
   greenArrow: {fileID: 2100000, guid: 952a04af0668e6649a45fcf90eabb9f3, type: 2}
   redArrow: {fileID: 2100000, guid: 9d8fd384eb8135646814e3428555bca4, type: 2}
   arrow: {fileID: 1307194792921464}

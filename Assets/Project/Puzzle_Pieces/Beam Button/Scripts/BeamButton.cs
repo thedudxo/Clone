@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BeamButton : MonoBehaviour {
 
-    int cubes = 0;
-    public Material greenArrow;
-    public Material redArrow;
-    public GameObject arrow;
-    public Player_Pickup player_Pickup;
+    public int cubes = 0;
+    [SerializeField] Material greenArrow;
+    [SerializeField] Material redArrow;
+    [SerializeField] GameObject arrow;
+    [SerializeField] Player_Pickup player_Pickup;
 
     // Use this for initialization
     void Start () {
@@ -26,25 +26,31 @@ public class BeamButton : MonoBehaviour {
         else { arrow.GetComponent<Renderer>().material = redArrow; }
     }
 
+
     private void OnTriggerEnter(Collider other) //addcubes, make them float
     {
-        if (other.GetComponent<Weighted>()) {
+        GameObject obj = other.gameObject;
+
+        if (obj.GetComponent<Weighted>()) {
             cubes++;
             checkArrow();
 
-            if (player_Pickup.carriedObject == other) {
+            if (player_Pickup.carriedObject == obj) { //player drops cube
                 player_Pickup.Drop();
             }
 
-            other.GetComponent<Rigidbody>().useGravity = false;
+            obj.GetComponent<Rigidbody>().useGravity = false; //cube floats
         }
     }
+
 
     private void OnTriggerExit(Collider other) //removecubes
     {
         if (other.GetComponent<Weighted>()) {
             cubes--;
             checkArrow();
+
+            other.gameObject.GetComponent<Rigidbody>().useGravity = true; //stop floaty
         }
     }
 }

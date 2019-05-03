@@ -514,7 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 2112081963}
-  cubesRequired: 2
+  cubesRequired: 0
   doorOpenAnimation: {fileID: 0}
 --- !u!65 &1147774611
 BoxCollider:

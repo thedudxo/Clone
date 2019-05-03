@@ -282,7 +282,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1671946344206184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.091831, y: -0.02, z: 0.00000015388}
+  m_LocalPosition: {x: 2.5493357, y: 8.655762e-17, z: -3.8982089}
   m_LocalScale: {x: 1.6454045, y: 1.6454043, z: 1.6454043}
   m_Children:
   - {fileID: 4001183662266220}
@@ -641,6 +641,7 @@ MonoBehaviour:
   greenArrow: {fileID: 2100000, guid: 952a04af0668e6649a45fcf90eabb9f3, type: 2}
   redArrow: {fileID: 2100000, guid: 9d8fd384eb8135646814e3428555bca4, type: 2}
   arrow: {fileID: 1307194792921464}
+  player_Pickup: {fileID: 0}
 --- !u!114 &114528663148524122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -908,7 +909,7 @@ CapsuleCollider:
   m_Radius: 0.96164
   m_Height: 1.1226166
   m_Direction: 1
-  m_Center: {x: 0.0000000037252903, y: -4.72, z: 0}
+  m_Center: {x: 0.0000000037252903, y: -0.16, z: 0}
 --- !u!136 &136646369439673840
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -921,7 +922,7 @@ CapsuleCollider:
   m_Radius: 0.09
   m_Height: 14.99
   m_Direction: 1
-  m_Center: {x: 0, y: 3.77, z: 0}
+  m_Center: {x: 0, y: 8.41, z: 0}
 --- !u!198 &198418215565375792
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -162,6 +162,16 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9d8fd384eb8135646814e3428555bca4, type: 2}
+    - target: {fileID: 114893294002594518, guid: e186f432459ebbc49a6565f9727c5f4e,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2112236507}
+    - target: {fileID: 114115820654330924, guid: e186f432459ebbc49a6565f9727c5f4e,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2112236507}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e186f432459ebbc49a6565f9727c5f4e, type: 2}
   m_IsPrefabParent: 0
@@ -699,6 +709,11 @@ MonoBehaviour:
 --- !u!1 &2112236506 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1549587991539514, guid: 2634406b84cf7b746b0dcfd64540ec93,
+    type: 2}
+  m_PrefabInternal: {fileID: 1324459608}
+--- !u!4 &2112236507 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4841499196479656, guid: 2634406b84cf7b746b0dcfd64540ec93,
     type: 2}
   m_PrefabInternal: {fileID: 1324459608}
 --- !u!114 &2112236513 stripped

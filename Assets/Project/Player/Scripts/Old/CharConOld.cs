@@ -15,6 +15,7 @@ public class CharConOld : MonoBehaviour {
 	void Start () {
 		
 		Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         speed = startSpeed;
     }
 
@@ -30,8 +31,9 @@ public class CharConOld : MonoBehaviour {
 		transform.Translate (straffe, 0, translation);
 		
 		if (Input.GetKeyDown("escape")) {
- //           SceneManager.LoadScene("MainMenu"); commented out as I only want to unlock cursor not load menu atm
+            //SceneManager.LoadScene("MainMenu");
         	Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         //jump

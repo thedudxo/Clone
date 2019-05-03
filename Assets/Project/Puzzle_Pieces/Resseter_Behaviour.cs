@@ -23,7 +23,7 @@ public class Resseter_Behaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Grabbable_Old>() != null && destroyGrabbables)
+        if(other.gameObject.GetComponent<Grabbable>() != null && destroyGrabbables)
         {
             if(other.gameObject.GetComponent<Cloneable>() != null)
             {
@@ -34,12 +34,12 @@ public class Resseter_Behaviour : MonoBehaviour {
                 }
                 else
                 {
-                    other.gameObject.GetComponent<Grabbable_Old>().Reset();
+ //                   other.gameObject.GetComponent<Grabbable>().Reset();
                 }
             }
             else
             {
-                other.gameObject.GetComponent<Grabbable_Old>().Reset();
+ //               other.gameObject.GetComponent<Grabbable>().Reset();
             }
             
         }

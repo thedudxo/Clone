@@ -4,33 +4,38 @@ using UnityEngine;
 
 public class Door : MonoBehaviour{
 
-    [SerializeField] private BeamButton[] buttons;
-    [SerializeField] private int cubesRequired; //set to a negative number for regular buttonage
-    [SerializeField] Animator doorOpenAnimation;
+    [SerializeField] private GameObject[] buttons;
+    
+    public Animator doorOpenAnimation;
     
     void Start () {
+        foreach(GameObject button in buttons)
+        {
+            if (button.GetComponent<Button_Behaviour>() == null)
+            {
+                throw new MissingComponentException();
+            }
+        }
+		
 	}
 	
 	void Update () {
-
         int buttonsPressed = 0;
-        foreach (BeamButton button in buttons) { 
-            if (button.cubes == cubesRequired)
+        foreach (GameObject button in buttons)
+        {
+            if (button.GetComponent<Button_Behaviour>().isPressed)
             {
                 buttonsPressed++;
-                Debug.Log(button.cubes);
             }
         }
 
         if (buttonsPressed >= buttons.Length)
         {
-            //doorOpenAnimation.SetBool("ButtonPush", true);
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            doorOpenAnimation.SetBool("ButtonPush", true);
         }
         else
         {
-            gameObject.GetComponent<MeshRenderer>().enabled = true;
-            //doorOpenAnimation.SetBool("ButtonPush", false);
+            doorOpenAnimation.SetBool("ButtonPush", false);
         }
     }
 }

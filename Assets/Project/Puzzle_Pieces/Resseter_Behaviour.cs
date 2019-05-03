@@ -17,7 +17,7 @@ public class Resseter_Behaviour : MonoBehaviour {
 	void Update () {
 		if (isTriggered)
         {
-            player.GetComponent<Player_Clone>().reset();
+            player.GetComponent<Player_Clone_Old>().reset();
         }
 	}
 
@@ -30,16 +30,16 @@ public class Resseter_Behaviour : MonoBehaviour {
                 if (other.gameObject.GetComponent<Cloneable>().isClone)
                 {
                     other.gameObject.GetComponent<Cloneable>().destroyClone();
-                    player.GetComponent<Player_Clone>().cloned = false;
+                    player.GetComponent<Player_Clone_Old>().cloned = false;
                 }
                 else
                 {
-                    other.gameObject.GetComponent<Grabbable>().Reset();
+ //                   other.gameObject.GetComponent<Grabbable>().Reset();
                 }
             }
             else
             {
-                other.gameObject.GetComponent<Grabbable>().Reset();
+ //               other.gameObject.GetComponent<Grabbable>().Reset();
             }
             
         }

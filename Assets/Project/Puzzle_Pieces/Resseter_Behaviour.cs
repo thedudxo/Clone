@@ -17,29 +17,29 @@ public class Resseter_Behaviour : MonoBehaviour {
 	void Update () {
 		if (isTriggered)
         {
-            player.GetComponent<Player_Clone_Old>().reset();
+            player.GetComponent<Player_Clone>().reset();
         }
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Grabbable_Old>() != null && destroyGrabbables)
+        if(other.gameObject.GetComponent<Grabbable>() != null && destroyGrabbables)
         {
             if(other.gameObject.GetComponent<Cloneable>() != null)
             {
                 if (other.gameObject.GetComponent<Cloneable>().isClone)
                 {
                     other.gameObject.GetComponent<Cloneable>().destroyClone();
-                    player.GetComponent<Player_Clone_Old>().cloned = false;
+                    player.GetComponent<Player_Clone>().cloned = false;
                 }
                 else
                 {
-                    other.gameObject.GetComponent<Grabbable_Old>().Reset();
+                    other.gameObject.GetComponent<Grabbable>().Reset();
                 }
             }
             else
             {
-                other.gameObject.GetComponent<Grabbable_Old>().Reset();
+                other.gameObject.GetComponent<Grabbable>().Reset();
             }
             
         }

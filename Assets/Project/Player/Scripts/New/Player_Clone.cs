@@ -41,10 +41,6 @@ public class Player_Clone : MonoBehaviour {
         }
     }
 
-    void DeleteClone() {
-
-    }
-
     void CloneCarry(GameObject o) {
         o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, carrier.transform.position, Time.deltaTime * smooth));
     }

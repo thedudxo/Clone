@@ -627,9 +627,9 @@ GameObject:
   - component: {fileID: 2112236510}
   - component: {fileID: 2112236509}
   - component: {fileID: 2112236508}
-  - component: {fileID: 2112236507}
   - component: {fileID: 2112236514}
   - component: {fileID: 2112236513}
+  - component: {fileID: 2112236507}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -648,11 +648,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a544220a022af14596af608c01188c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accel: 200
-  airAccel: 0.2
+  accel: 1000
+  airAccel: 0.1
   deccel: 0.1
-  maxSpeed: 10
-  jumpForce: 400
+  maxSpeed: 20
+  jumpForce: 800
   maxSlope: 60
 --- !u!54 &2112236508
 Rigidbody:
@@ -765,3 +765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloning: 0
   hasCloned: 0
+  carrier: {fileID: 981995901}
+  smooth: 20
+  clonedObject: {fileID: 0}

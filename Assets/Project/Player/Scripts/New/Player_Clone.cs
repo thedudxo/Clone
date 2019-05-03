@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Player_Clone : MonoBehaviour {
 
-    public bool cloning = false;
-    public bool hasCloned = false;
-    public Transform carrier;
-    public float smooth;
-    private int cloneDist = 3;
-    public GameObject clonedObject;
     private GameObject mainCamera;
     private GameObject lookingAt;
     private GameObject clipboard;
+    private int cloneDist = 3;
+    private float lerp = 0;
+    private string dissolveAnim = "Vector1_FA6C32DC";
+    public Transform carrier;
+    public GameObject clonedObject;
+    public Material dissolve;
+    public bool cloning = false;
+    public bool hasCloned = false;
+    public float smooth;
 
     void Start() {
         mainCamera = GameObject.FindWithTag("MainCamera");
+        dissolve.SetFloat(dissolveAnim, 1.1f);
     }
 
     void Update() {
@@ -42,6 +46,8 @@ public class Player_Clone : MonoBehaviour {
     }
 
     void CloneCarry(GameObject o) {
+            lerp += Time.deltaTime;
+            dissolve.SetFloat(dissolveAnim, Mathf.Lerp(0.5f, -1.1f, lerp));
         o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, carrier.transform.position, Time.deltaTime * smooth));
     }
 
@@ -68,12 +74,13 @@ public class Player_Clone : MonoBehaviour {
     }
 
     void Clone() {
-        if (hasCloned) {
-            Destroy(clonedObject);
-        }
-        if (clipboard != null) {
+        if (clipboard != null && this.GetComponent<Player_Pickup>().carrying == false) {
+            if (hasCloned) {
+                Destroy(clonedObject);
+            }
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
+            clonedObject.GetComponent<Renderer>().material = dissolve;
             clonedObject.GetComponent<Rigidbody>().freezeRotation = true;
             clonedObject.GetComponent<Rigidbody>().useGravity = false;
             clonedObject.name = "Clone";

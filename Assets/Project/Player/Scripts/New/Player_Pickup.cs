@@ -43,7 +43,7 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     void Pickup() {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E) && !this.GetComponent<Player_Clone>().cloning) {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
             Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));

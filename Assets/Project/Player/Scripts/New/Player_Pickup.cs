@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Pickup : MonoBehaviour {
 
     private GameObject mainCamera;
-    private GameObject carriedObject;
+    public GameObject carriedObject;
     private float pickupDist = 3;
     public GameObject carrier;
     public float smooth;
@@ -14,7 +14,8 @@ public class Player_Pickup : MonoBehaviour {
 	void Start () {
         mainCamera = GameObject.FindWithTag("MainCamera");
 	}
-	
+
+
 	void FixedUpdate () {
 		if (carrying) {
             Carry(carriedObject);
@@ -60,4 +61,5 @@ public class Player_Pickup : MonoBehaviour {
             }
         }
     }
+
 }

@@ -12,10 +12,7 @@ public class Player_Clone : MonoBehaviour {
     private Rigidbody cloneRb;
     private GameObject prevClone;
     private int cloneDist = 3;
-    private float lerp = 0;
-    private string dissolveAnim = "Vector1_FA6C32DC";
     public GameObject clonedObject;
-    public Material dissolve;
     public bool cloning = false;
     public bool hasCloned = false;
     public float smooth;

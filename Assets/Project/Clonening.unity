@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9296c271aec624caf83afef2dff756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropMe: {fileID: 0}
+  dropMe: {fileID: 1968011311}
   player: {fileID: 180943840}
 --- !u!65 &490666346
 BoxCollider:
@@ -531,3 +531,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!135 &1968011311 stripped
+SphereCollider:
+  m_PrefabParentObject: {fileID: 135146302975639636, guid: 2634406b84cf7b746b0dcfd64540ec93,
+    type: 2}
+  m_PrefabInternal: {fileID: 925356598}

@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isClone: 0
+  dissolve: {fileID: 2100000, guid: 19b5f8ce272b8ec49a4e191296a89bd2, type: 2}
 --- !u!54 &1130109884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -764,8 +765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2fcd3a0690fad4b955bb447c98480f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  carrier: {fileID: 981995901}
   clonedObject: {fileID: 0}
   dissolve: {fileID: 2100000, guid: 19b5f8ce272b8ec49a4e191296a89bd2, type: 2}
   cloning: 0

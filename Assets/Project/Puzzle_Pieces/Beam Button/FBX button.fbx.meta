@@ -97,6 +97,8 @@ ModelImporter:
     100182: rotate_2_trim
     100184: Screen
     100186: Static_NonTrims
+    100188: Screen3
+    100190: Screen4
     400000: //RootNode
     400002: Arial
     400004: Arial1
@@ -191,6 +193,8 @@ ModelImporter:
     400182: rotate_2_trim
     400184: Screen
     400186: Static_NonTrims
+    400188: Screen3
+    400190: Screen4
     2100000: phong1
     2100002: lambert1
     2300000: //RootNode
@@ -267,6 +271,7 @@ ModelImporter:
     2300142: rotate_2_trim
     2300144: Screen
     2300146: Static_NonTrims
+    2300148: Screen4
     3300000: //RootNode
     3300002: main
     3300004: pCube1
@@ -341,6 +346,7 @@ ModelImporter:
     3300142: rotate_2_trim
     3300144: Screen
     3300146: Static_NonTrims
+    3300148: Screen4
     4300000: platform
     4300002: pCube1
     4300004: polySurface6
@@ -414,9 +420,10 @@ ModelImporter:
     4300140: Arrow
     4300142: Rotate_1_Trim
     4300144: Screen
+    4300146: Screen4
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -470,7 +477,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

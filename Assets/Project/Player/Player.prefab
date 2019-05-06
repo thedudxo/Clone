@@ -222,6 +222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloning: 0
   hasCloned: 0
+  carrier: {fileID: 4514937236471442}
+  smooth: 20
+  clonedObject: {fileID: 0}
 --- !u!114 &114298335190167526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accel: 1000
   airAccel: 50
-  deccel: 5
+  deccel: 0.1
   maxSpeed: 0.4
   jumpForce: 300
   maxSlope: 60

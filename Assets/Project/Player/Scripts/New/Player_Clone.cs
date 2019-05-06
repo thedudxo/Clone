@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player_Clone : MonoBehaviour {
 
-    public bool cloning = false;
-    public bool hasCloned = false;
-    public Transform carrier;
-    public float smooth;
-    private int cloneDist = 3;
-    public GameObject clonedObject;
     private GameObject mainCamera;
     private GameObject lookingAt;
     private GameObject clipboard;
+    private Renderer renderer;
+    private Rigidbody cloneRb;
+    private GameObject prevClone;
+    private int cloneDist = 3;
+    public GameObject clonedObject;
+    public bool cloning = false;
+    public bool hasCloned = false;
+    public float smooth;
 
     void Start() {
         mainCamera = GameObject.FindWithTag("MainCamera");
@@ -32,7 +35,6 @@ public class Player_Clone : MonoBehaviour {
                 Drop();
             }
         }
-
     }
 
     void FixedUpdate() {
@@ -42,12 +44,22 @@ public class Player_Clone : MonoBehaviour {
     }
 
     void CloneCarry(GameObject o) {
-        o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, carrier.transform.position, Time.deltaTime * smooth));
+        o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Time.deltaTime * smooth));
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloneDist != 10) {
+            cloneDist++;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && cloneDist != 2) {
+            cloneDist--;
+        }
     }
 
     void Drop() {
-        clonedObject.GetComponent<Rigidbody>().freezeRotation = false;
-        clonedObject.GetComponent<Rigidbody>().useGravity = true;
+        cloneRb.freezeRotation = false;
+        cloneRb.useGravity = true;
+        renderer.shadowCastingMode = ShadowCastingMode.On;
+        renderer.receiveShadows = true;
+        prevClone = clonedObject;
+        clonedObject = null;
         cloning = false;
     }
 
@@ -68,14 +80,18 @@ public class Player_Clone : MonoBehaviour {
     }
 
     void Clone() {
-        if (hasCloned) {
-            Destroy(clonedObject);
-        }
-        if (clipboard != null) {
+        if (clipboard != null && this.GetComponent<Player_Pickup>().carrying == false) {
+            if (hasCloned) {
+                Destroy(prevClone);
+            }
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
-            clonedObject.GetComponent<Rigidbody>().freezeRotation = true;
-            clonedObject.GetComponent<Rigidbody>().useGravity = false;
+            renderer = clonedObject.GetComponent<Renderer>();
+            cloneRb = clonedObject.GetComponent<Rigidbody>();
+            renderer.shadowCastingMode = ShadowCastingMode.Off;
+            renderer.receiveShadows = false;
+            cloneRb.freezeRotation = true;
+            cloneRb.useGravity = false;
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;

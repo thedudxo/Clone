@@ -16,7 +16,6 @@ public class CamMouseLook : MonoBehaviour {
 	void Update () {
 		RotateCamera();
         if(transform.rotation.eulerAngles.x >= 50 && transform.rotation.eulerAngles.x <= 269 && playerBody.GetComponent<Player_Pickup>().carrying) { playerBody.GetComponent<Player_Pickup>().Drop(); }
-        //Debug.Log(transform.rotation.eulerAngles.x);
 	}
 	
 	

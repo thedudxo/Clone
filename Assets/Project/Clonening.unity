@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClone: 0
   dissolve: {fileID: 2100000, guid: 19b5f8ce272b8ec49a4e191296a89bd2, type: 2}
+  player: {fileID: 180943840}
 --- !u!114 &490666345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +379,11 @@ Prefab:
       propertyPath: dissolve
       value: 
       objectReference: {fileID: 2100000, guid: 19b5f8ce272b8ec49a4e191296a89bd2, type: 2}
+    - target: {fileID: 114298335190167526, guid: 2634406b84cf7b746b0dcfd64540ec93,
+        type: 2}
+      propertyPath: airAccel
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2634406b84cf7b746b0dcfd64540ec93, type: 2}
   m_IsPrefabParent: 0

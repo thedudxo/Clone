@@ -61,7 +61,11 @@ Material:
     m_Floats:
     - Vector1_122D890F: 0.05
     - Vector1_B5345175: 30
+<<<<<<< HEAD:Assets/Project/Testing/Materials/CloneShader.mat
+    - Vector1_FA6C32DC: -1.0905608
+=======
     - Vector1_FA6C32DC: -1.0912077
+>>>>>>> MasterV2:Assets/Project/Testing/Materials/Cube/Dissolve.mat
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

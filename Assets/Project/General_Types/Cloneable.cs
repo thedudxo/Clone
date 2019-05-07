@@ -89,7 +89,7 @@ public class Cloneable : MonoBehaviour {
         if (player.GetComponent<Player_Clone>().cloning) {
             triggers++;
             player.GetComponent<Player_Clone>().canClone = false;
-        }Debug.Log(triggers);
+        }//Debug.Log(triggers);
     }
 
     private void OnTriggerExit(Collider other) {

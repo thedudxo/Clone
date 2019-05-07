@@ -99,6 +99,9 @@ ModelImporter:
     100186: Static_NonTrims
     100188: Screen3
     100190: Screen4
+    100192: screen
+    100194: TV
+    100196: tv
     400000: //RootNode
     400002: Arial
     400004: Arial1
@@ -195,8 +198,12 @@ ModelImporter:
     400186: Static_NonTrims
     400188: Screen3
     400190: Screen4
+    400192: screen
+    400194: TV
+    400196: tv
     2100000: phong1
     2100002: lambert1
+    2100004: lambert3
     2300000: //RootNode
     2300002: main
     2300004: pCube1
@@ -272,6 +279,8 @@ ModelImporter:
     2300144: Screen
     2300146: Static_NonTrims
     2300148: Screen4
+    2300150: screen
+    2300152: tv
     3300000: //RootNode
     3300002: main
     3300004: pCube1
@@ -347,6 +356,8 @@ ModelImporter:
     3300144: Screen
     3300146: Static_NonTrims
     3300148: Screen4
+    3300150: screen
+    3300152: tv
     4300000: platform
     4300002: pCube1
     4300004: polySurface6
@@ -421,9 +432,26 @@ ModelImporter:
     4300142: Rotate_1_Trim
     4300144: Screen
     4300146: Screen4
-  externalObjects: {}
+    4300148: tv
+    4300150: screen
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 600c5205488efcd4e9db381424acf2ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 1e1064c9133f41b449c8234edf00b4cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 5f0f406e2df032847a977f5ee8cb51e2, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1

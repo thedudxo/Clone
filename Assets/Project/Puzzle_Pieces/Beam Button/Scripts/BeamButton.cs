@@ -8,7 +8,6 @@ public class BeamButton : MonoBehaviour {
     [SerializeField] Material greenArrow;
     [SerializeField] Material redArrow;
     [SerializeField] GameObject arrow;
-    [SerializeField] Player_Pickup player_Pickup;
 
     // Use this for initialization
     void Start () {
@@ -35,8 +34,9 @@ public class BeamButton : MonoBehaviour {
             cubes++;
             checkArrow();
 
-            if (player_Pickup.carriedObject == obj) { //player drops cube
-                player_Pickup.Drop();
+            if (PlayerManager.player_Pickup.carriedObject == obj) { //player drops cube
+                PlayerManager.player_Pickup.Drop();
+                
             }
 
             obj.GetComponent<Rigidbody>().useGravity = false; //cube floats

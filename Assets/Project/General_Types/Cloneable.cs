@@ -1,41 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Cloneable : MonoBehaviour {
 
     public bool isClone = false;
+    public bool die = false;
     public int triggers;
     private GameObject button;
     private string dissolveAnim = "Vector1_FA6C32DC";
     private Color cloneColor = new Color(0, 0.8f, 1);
     private Color errorColor = new Color(1, 0, 0);
+    public Material materialize;
     public Material dissolve;
     public GameObject player;
+    public Transform reset;
 
     public void Start() {
-        dissolve.SetFloat(dissolveAnim, 0.5f);
+        materialize.SetFloat(dissolveAnim, 0.5f);
+        dissolve.SetFloat(dissolveAnim, -1.1f);
         if (isClone) {
-            this.GetComponent<Renderer>().material = dissolve;
-            StartCoroutine(AnimateDissolve());
+            this.GetComponent<Renderer>().material = materialize;
+            StartCoroutine(Materialize());
         }
     }
 
     public void Update() {
         if(player.GetComponent<Player_Clone>().canClone == false) {
-            dissolve.SetColor("Color_711056C5", errorColor);
+            materialize.SetColor("Color_711056C5", errorColor);
         } else {
-            dissolve.SetColor("Color_711056C5", cloneColor);
+            materialize.SetColor("Color_711056C5", cloneColor);
         }
     }
 
-    public IEnumerator AnimateDissolve() {
+    public void Die() {
+        if (!die) {
+            return;
+        } else {
+            this.GetComponent<Renderer>().material = dissolve;
+            this.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
+            StartCoroutine(Dissolve());
+        }
+    }
+
+    public IEnumerator Materialize() {
         float lerp = 0.0f;
         while (lerp <= 1) {
-            dissolve.SetFloat(dissolveAnim, Mathf.Lerp(0.5f, -1.1f, lerp));
+            materialize.SetFloat(dissolveAnim, Mathf.Lerp(0.5f, -1.1f, lerp));
             lerp += Time.deltaTime;
         yield return lerp;
         }
+    }
+
+    public IEnumerator Dissolve() {
+        float lerp = 0.0f;
+        while (lerp <= 1) {
+            dissolve.SetFloat(dissolveAnim, Mathf.Lerp(-1.1f, 0.5f, lerp));
+            lerp += Time.deltaTime;
+            yield return lerp;
+        }
+        transform.position = reset.position;
+        yield return new WaitForEndOfFrame();
+        Destroy(this.gameObject);
     }
 
     public void destroyClone() {

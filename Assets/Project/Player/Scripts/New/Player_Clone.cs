@@ -8,9 +8,9 @@ public class Player_Clone : MonoBehaviour {
     private GameObject mainCamera;
     private GameObject lookingAt;
     private GameObject clipboard;
-    private Renderer renderer;
+    private Renderer render;
     private Rigidbody cloneRb;
-    private GameObject prevClone;
+    public GameObject prevClone;
     public bool canClone = true;
     private int cloneDist = 3;
     public GameObject clonedObject;
@@ -78,8 +78,8 @@ public class Player_Clone : MonoBehaviour {
     void Drop() {
         cloneRb.freezeRotation = false;
         cloneRb.useGravity = true;
-        renderer.shadowCastingMode = ShadowCastingMode.On;
-        renderer.receiveShadows = true;
+        render.shadowCastingMode = ShadowCastingMode.On;
+        render.receiveShadows = true;
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         prevClone = clonedObject;
         clonedObject = null;
@@ -97,7 +97,7 @@ public class Player_Clone : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Cant clone " + hit.transform.gameObject);
+            Debug.Log("Cant clone " + hit.transform.gameObject);
             }
         }
     }
@@ -105,14 +105,14 @@ public class Player_Clone : MonoBehaviour {
     void Clone() {
         if (clipboard != null && this.GetComponent<Player_Pickup>().carrying == false) {
             if (hasCloned) {
-                Destroy(prevClone);
+                prevClone.GetComponent<Cloneable>().die = true;
+                prevClone.GetComponent<Cloneable>().Die();
             }
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
-            renderer = clonedObject.GetComponent<Renderer>();
+            render = clonedObject.GetComponent<Renderer>();
             cloneRb = clonedObject.GetComponent<Rigidbody>();
-            renderer.shadowCastingMode = ShadowCastingMode.Off;
-            renderer.receiveShadows = false;
+            render.shadowCastingMode = ShadowCastingMode.Off;
             cloneRb.freezeRotation = true;
             cloneRb.useGravity = false;
             clonedObject.GetComponent<BoxCollider>().isTrigger = true;

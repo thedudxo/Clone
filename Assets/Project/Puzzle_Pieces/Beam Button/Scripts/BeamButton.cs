@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class BeamButton : MonoBehaviour {
 
+    //this script detects how many cubes are in the button, and holds the cubes there.
+
     public int cubes = 0;
     [SerializeField] Material greenArrow;
     [SerializeField] Material redArrow;
     [SerializeField] GameObject arrow;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    TVscreen tvscreen;
+
+    private void Start()
+    {
+        tvscreen = gameObject.GetComponent<TVscreen>();
+        tvscreen.displayCubes(cubes);
+    }
 
     private void checkArrow() //change to red/green
     {
         if (cubes > 0) {  arrow.GetComponent<Renderer>().material = greenArrow; }
         else { arrow.GetComponent<Renderer>().material = redArrow; }
+
+        tvscreen.displayCubes(cubes);
     }
 
 

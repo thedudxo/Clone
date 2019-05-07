@@ -11,4 +11,5 @@ public static class PlayerManager {
     public static Player_Clone player_Clone;
     public static PlayerController playerController;
     public static CamMouseLook camMouseLook;
+    public static GameObject Player; //and this
 }

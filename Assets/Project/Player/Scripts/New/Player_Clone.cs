@@ -11,6 +11,7 @@ public class Player_Clone : MonoBehaviour {
     private Renderer render;
     private Rigidbody cloneRb;
     public GameObject prevClone;
+    public bool overButton = false;
     public bool canClone = true;
     private int cloneDist = 3;
     public GameObject clonedObject;
@@ -20,6 +21,7 @@ public class Player_Clone : MonoBehaviour {
 
     void Start() {
         mainCamera = GameObject.FindWithTag("MainCamera");
+        PlayerManager.player_Clone = this;
         canClone = true;
     }
 
@@ -77,13 +79,15 @@ public class Player_Clone : MonoBehaviour {
 
     void Drop() {
         cloneRb.freezeRotation = false;
-        cloneRb.useGravity = true;
         render.shadowCastingMode = ShadowCastingMode.On;
         render.receiveShadows = true;
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         prevClone = clonedObject;
         clonedObject = null;
         cloning = false;
+        if (!PuzzleManager.beamButton.overButton) {
+            cloneRb.useGravity = true;
+        }
     }
 
     void Scan(int x, int y) {

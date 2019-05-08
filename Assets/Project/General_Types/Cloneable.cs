@@ -85,7 +85,7 @@ public class Cloneable : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        
+        if(PuzzleManager.beamButton.overButton) { return; }
         if (player.GetComponent<Player_Clone>().cloning) {
             triggers++;
             player.GetComponent<Player_Clone>().canClone = false;
@@ -93,7 +93,7 @@ public class Cloneable : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {
-        
+        if (PuzzleManager.beamButton.overButton) { return; }
         if (player.GetComponent<Player_Clone>().cloning) {
             triggers--;
             if (triggers == 0) {

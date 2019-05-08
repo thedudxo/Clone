@@ -38,11 +38,13 @@ public class Player_Pickup : MonoBehaviour {
         }
     }
 
-    public void Drop(){
+    public void Drop() {
         carrying = false;
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
-        carriedObject.GetComponent<Rigidbody>().useGravity = true;
         carrier.GetComponent<SphereCollider>().enabled = false;
+        if (!PuzzleManager.beamButton.overButton) {
+            carriedObject.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 
     void Pickup() {

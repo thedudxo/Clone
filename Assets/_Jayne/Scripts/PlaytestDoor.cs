@@ -34,7 +34,7 @@ public class PlaytestDoor : MonoBehaviour
 
         else
         {
-            childDoor.SetActive(false);
+            childDoor.SetActive(true);
         }
     }
 }

@@ -104,6 +104,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4900271691952324}
+  - component: {fileID: 114071194864447604}
   m_Layer: 0
   m_Name: PlaytestDoorHolder
   m_TagString: Untagged
@@ -256,7 +257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4931270537443590}
   - component: {fileID: 111294589128710330}
-  - component: {fileID: 114791772240778444}
   m_Layer: 0
   m_Name: Door_Obj L1 1
   m_TagString: Untagged
@@ -1106,12 +1106,12 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114791772240778444
+--- !u!114 &114071194864447604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762839855983972}
+  m_GameObject: {fileID: 1339144552561720}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fb488a63e2087c4d90bbf449c641929, type: 3}

@@ -18,7 +18,6 @@ public class Door : MonoBehaviour{
             if (button.cubes == cubesRequired)
             {
                 buttonsPressed++;
-                Debug.Log(button.cubes);
             }
         }
 

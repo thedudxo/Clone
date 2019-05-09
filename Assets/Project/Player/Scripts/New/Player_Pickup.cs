@@ -13,6 +13,7 @@ public class Player_Pickup : MonoBehaviour {
 
 	void Start () {
         PlayerManager.player_Pickup = this;
+        PlayerManager.Player = gameObject;
         mainCamera = GameObject.FindWithTag("MainCamera");
 	}
 
@@ -24,8 +25,6 @@ public class Player_Pickup : MonoBehaviour {
         } else {
             Pickup();
         }
-
-        Debug.Log(carriedObject);
 	}
 
     void Carry(GameObject o) {

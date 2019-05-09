@@ -5,7 +5,6 @@ using UnityEngine;
 public class BeamButton : MonoBehaviour {
 
     public int cubes = 0;
-    public bool overButton;
     [SerializeField] Material greenArrow;
     [SerializeField] Material redArrow;
     [SerializeField] GameObject arrow;

@@ -82,12 +82,12 @@ public class Player_Clone : MonoBehaviour {
         render.shadowCastingMode = ShadowCastingMode.On;
         render.receiveShadows = true;
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
+        if (!clonedObject.GetComponent<Weighted>().overButton) {
+            cloneRb.useGravity = true;
+        }
         prevClone = clonedObject;
         clonedObject = null;
         cloning = false;
-        if (!PuzzleManager.beamButton.overButton) {
-            cloneRb.useGravity = true;
-        }
     }
 
     void Scan(int x, int y) {
@@ -114,6 +114,7 @@ public class Player_Clone : MonoBehaviour {
             }
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
+            clonedObject.GetComponent<Weighted>().overButton = false;
             render = clonedObject.GetComponent<Renderer>();
             cloneRb = clonedObject.GetComponent<Rigidbody>();
             render.shadowCastingMode = ShadowCastingMode.Off;

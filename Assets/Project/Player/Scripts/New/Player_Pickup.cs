@@ -24,8 +24,6 @@ public class Player_Pickup : MonoBehaviour {
         } else {
             Pickup();
         }
-
-        Debug.Log(carriedObject);
 	}
 
     void Carry(GameObject o) {
@@ -42,7 +40,7 @@ public class Player_Pickup : MonoBehaviour {
         carrying = false;
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
         carrier.GetComponent<SphereCollider>().enabled = false;
-        if (!PuzzleManager.beamButton.overButton) {
+        if (!carriedObject.GetComponent<Weighted>().overButton) {
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }

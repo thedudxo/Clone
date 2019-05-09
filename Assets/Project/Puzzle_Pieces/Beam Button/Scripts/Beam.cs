@@ -10,7 +10,7 @@ public class Beam : MonoBehaviour {
         if (obj.GetComponent<Weighted>()) {
             PuzzleManager.beamButton.cubes++;
             PuzzleManager.beamButton.checkArrow();
-            PuzzleManager.beamButton.overButton = true;
+            obj.GetComponent<Weighted>().overButton = true;
         }
     }
 
@@ -18,12 +18,12 @@ public class Beam : MonoBehaviour {
         if (other.GetComponent<Weighted>()) {
             PuzzleManager.beamButton.cubes--;
             PuzzleManager.beamButton.checkArrow();
-            StartCoroutine(WaitTrigger());
+            other.GetComponent<Weighted>().overButton = false;
+            //StartCoroutine(WaitTrigger());
         }
     }
 
     IEnumerator WaitTrigger() {
         yield return new WaitForEndOfFrame();
-        PuzzleManager.beamButton.overButton = false;
     }
 }

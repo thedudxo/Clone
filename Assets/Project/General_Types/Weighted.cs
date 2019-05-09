@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Weighted : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool overButton = false;
+
+    private void Update() {
+        
+    }
+
 }

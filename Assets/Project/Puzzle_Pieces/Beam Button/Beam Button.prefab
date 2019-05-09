@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 33933598496217368}
   - component: {fileID: 23906096075421052}
   - component: {fileID: 54585472480595340}
+  - component: {fileID: 114684789841094734}
   m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -284,6 +285,7 @@ GameObject:
   - component: {fileID: 33352287170535840}
   - component: {fileID: 23971634425700138}
   - component: {fileID: 54034325069524700}
+  - component: {fileID: 114278820664711064}
   m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -388,6 +390,7 @@ GameObject:
   - component: {fileID: 33402381211164626}
   - component: {fileID: 23281571369006402}
   - component: {fileID: 54350117470745814}
+  - component: {fileID: 114139359350610254}
   m_Layer: 9
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -441,7 +444,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625869119408046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.19009286, y: -3.2514803, z: -0.011661454}
+  m_LocalPosition: {x: 0, y: -3.2514803, z: 0.86}
   m_LocalScale: {x: 0.6077533, y: 0.60775334, z: 0.60775334}
   m_Children:
   - {fileID: 4431740418800348}
@@ -692,7 +695,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2
   field of view: 61.2
   orthographic: 0
   orthographic size: 5
@@ -701,7 +704,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 512
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: ea31d0d579a9cbe459868aaa9b35c2b3, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 394d1e2b29c7abc4cafaf2af7c8b8fdb, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1437,6 +1440,18 @@ MonoBehaviour:
   startPos: -4.271
   endPos: -6.207
   speed: -0.3
+--- !u!114 &114139359350610254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1939605769029056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff94117a1b187c24dab0d4ef839477c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomRotation: 50
 --- !u!114 &114268714878492030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1452,6 +1467,18 @@ MonoBehaviour:
   greenArrow: {fileID: 2100000, guid: 952a04af0668e6649a45fcf90eabb9f3, type: 2}
   redArrow: {fileID: 2100000, guid: 9d8fd384eb8135646814e3428555bca4, type: 2}
   arrow: {fileID: 1307194792921464}
+--- !u!114 &114278820664711064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740516022021306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff94117a1b187c24dab0d4ef839477c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomRotation: 50
 --- !u!114 &114294811588057020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1481,7 +1508,6 @@ MonoBehaviour:
   - {fileID: 1103920466247322}
   - {fileID: 1740516022021306}
   - {fileID: 1939605769029056}
-  randomRotation: 50
 --- !u!114 &114544966316866948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1531,6 +1557,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: CIA
+--- !u!114 &114684789841094734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1103920466247322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff94117a1b187c24dab0d4ef839477c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomRotation: 50
 --- !u!114 &114733756918959090
 MonoBehaviour:
   m_ObjectHideFlags: 1

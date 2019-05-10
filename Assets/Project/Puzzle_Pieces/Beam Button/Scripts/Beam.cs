@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Beam : MonoBehaviour {
-
-
+    
     private void OnTriggerEnter(Collider other) {//addcubes, make them float
         GameObject obj = other.gameObject;
         if (obj.GetComponent<Weighted>()) {

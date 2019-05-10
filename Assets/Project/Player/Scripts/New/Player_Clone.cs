@@ -31,7 +31,6 @@ public class Player_Clone : MonoBehaviour {
         if (Input.GetMouseButtonDown(1)) {
             Scan(x, y);
         }
-
         if (Input.GetMouseButtonDown(0)) {
             if (!cloning) {
                 Clone();
@@ -39,7 +38,6 @@ public class Player_Clone : MonoBehaviour {
                 Drop();
             }
         }
-
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
@@ -54,9 +52,6 @@ public class Player_Clone : MonoBehaviour {
     }
 
     void CloneCarry(GameObject o) {
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
-
         Vector3 direction = (clonedObject.transform.position - mainCamera.transform.position).normalized;
         Ray cloneRay = new Ray(mainCamera.transform.position, direction * cloneDist);
         RaycastHit hit;

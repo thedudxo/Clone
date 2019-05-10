@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overButton: 0
+  destroyed: 0
 --- !u!1 &572505120
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +619,7 @@ GameObject:
   - component: {fileID: 1519695048}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: IgnoreClone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

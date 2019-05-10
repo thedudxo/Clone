@@ -68,25 +68,6 @@ public class Cloneable : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
-    public void destroyClone() {
-        Debug.Log("KILKLIGN THE CLONE");
-        if (Player_Pickup_Old.Instance.carriedObject == this.gameObject) {
-            Player_Pickup_Old.Instance.dropObject();
-            Debug.Log("dropped");
-        }
-
-        if(button != null) {
-            button.GetComponent<Button_Behaviour>().weights--;
-            Debug.Log("yuep");
-        }
-        Destroy(gameObject);
-    }
-
-    public void setButton(GameObject button) {
-        this.button = button;
-        Debug.Log(button);
-    }
-
     private void OnTriggerEnter(Collider other) {
         if (gameObject.GetComponent<Weighted>().overButton) { return; }
         if (PlayerManager.player_Clone.cloning) {

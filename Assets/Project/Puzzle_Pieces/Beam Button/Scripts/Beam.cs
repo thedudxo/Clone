@@ -24,6 +24,7 @@ public class Beam : MonoBehaviour {
     }
 
     IEnumerator WaitTrigger(Collider other) {
+        if (other.GetComponent<Weighted>().destroyed) { yield break; }
         yield return new WaitForEndOfFrame();
         other.GetComponent<Weighted>().overButton = false;
     }

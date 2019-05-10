@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weighted : MonoBehaviour {
 
     public bool overButton = false;
+    public bool destroyed = false;
 
     public void Gravity() {
         if(PlayerManager.player_Clone.clonedObject != gameObject && PlayerManager.player_Pickup.carriedObject != gameObject) {

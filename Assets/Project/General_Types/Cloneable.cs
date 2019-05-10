@@ -63,6 +63,8 @@ public class Cloneable : MonoBehaviour {
         }
         transform.position = reset.position;
         yield return new WaitForEndOfFrame();
+        gameObject.GetComponent<Weighted>().destroyed = true;
+        yield return new WaitForEndOfFrame();
         Destroy(this.gameObject);
     }
 
@@ -87,18 +89,18 @@ public class Cloneable : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (gameObject.GetComponent<Weighted>().overButton) { return; }
-        if (player.GetComponent<Player_Clone>().cloning) {
+        if (PlayerManager.player_Clone.cloning) {
             triggers++;
-            player.GetComponent<Player_Clone>().canClone = false;
+            PlayerManager.player_Clone.canClone = false;
         }//Debug.Log(triggers);
     }
 
     private void OnTriggerExit(Collider other) {
         if (gameObject.GetComponent<Weighted>().overButton) { return; }
-        if (player.GetComponent<Player_Clone>().cloning) {
+        if (PlayerManager.player_Clone.cloning) {
             triggers--;
             if (triggers == 0) {
-                player.GetComponent<Player_Clone>().canClone = true;
+                PlayerManager.player_Clone.canClone = true;
             }
         }
     }

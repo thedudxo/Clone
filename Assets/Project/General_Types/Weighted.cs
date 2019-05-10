@@ -6,8 +6,9 @@ public class Weighted : MonoBehaviour {
 
     public bool overButton = false;
 
-    private void Update() {
-        
+    public void Gravity() {
+        if(PlayerManager.player_Clone.clonedObject != gameObject && PlayerManager.player_Pickup.carriedObject != gameObject) {
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
-
 }

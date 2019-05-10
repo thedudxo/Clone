@@ -32,6 +32,7 @@ public class Cloneable : MonoBehaviour {
         } else {
             materialize.SetColor("Color_711056C5", cloneColor);
         }
+        Debug.Log(triggers);
     }
 
     public void Die() {
@@ -98,7 +99,7 @@ public class Cloneable : MonoBehaviour {
             triggers--;
             if (triggers == 0) {
                 player.GetComponent<Player_Clone>().canClone = true;
-            }Debug.Log(triggers);
+            }
         }
     }
 }

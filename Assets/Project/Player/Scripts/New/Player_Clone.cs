@@ -62,12 +62,15 @@ public class Player_Clone : MonoBehaviour {
         RaycastHit hit;
         Physics.Raycast(cloneRay, out hit);
         if (hit.collider.gameObject != clonedObject) {
-            canClone = false;
-        } else if (hit.collider.gameObject == clonedObject && clonedObject.GetComponent<Cloneable>().triggers == 0)
-        {
+            if (hit.collider.gameObject.tag == "IgnoreClone") {
+                canClone = true;
+            } else {
+                canClone = false;
+            }
+        } else if (hit.collider.gameObject == clonedObject && clonedObject.GetComponent<Cloneable>().triggers == 0) {
             canClone = true;
         }
-            o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Time.deltaTime * smooth));
+        o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Time.deltaTime * smooth));
         if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloneDist != 10) {
             cloneDist++;
         }
@@ -78,6 +81,7 @@ public class Player_Clone : MonoBehaviour {
     }
 
     void Drop() {
+        cloneRb.velocity = new Vector3(0, 0, 0);
         cloneRb.freezeRotation = false;
         render.shadowCastingMode = ShadowCastingMode.On;
         render.receiveShadows = true;

@@ -18,12 +18,13 @@ public class Beam : MonoBehaviour {
         if (other.GetComponent<Weighted>()) {
             PuzzleManager.beamButton.cubes--;
             PuzzleManager.beamButton.checkArrow();
-            other.GetComponent<Weighted>().overButton = false;
-            //StartCoroutine(WaitTrigger());
+            other.GetComponent<Weighted>().Gravity();
+            StartCoroutine(WaitTrigger(other));
         }
     }
 
-    IEnumerator WaitTrigger() {
+    IEnumerator WaitTrigger(Collider other) {
         yield return new WaitForEndOfFrame();
+        other.GetComponent<Weighted>().overButton = false;
     }
 }

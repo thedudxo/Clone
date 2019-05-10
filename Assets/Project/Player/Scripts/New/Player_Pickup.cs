@@ -37,6 +37,7 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     public void Drop() {
+        carriedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         carrying = false;
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
         carrier.GetComponent<SphereCollider>().enabled = false;

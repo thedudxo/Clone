@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33875777523928352}
   - component: {fileID: 23112523578738810}
   m_Layer: 0
-  m_Name: Sliding_Parts_Sliding_parts_pCube12
+  m_Name: Sliding_Parts_Sliding_parts_pCube12_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33967439159274398}
   - component: {fileID: 23408358426144094}
   m_Layer: 0
-  m_Name: Sliding_parts_pCube14_Sliding_Parts
+  m_Name: Sliding_parts_pCube14_Sliding_Parts_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 33389122465519516}
   - component: {fileID: 23574521512602896}
   m_Layer: 0
-  m_Name: Sliding_Parts_Sliding_parts_pCube22
+  m_Name: Sliding_Parts_Sliding_parts_pCube22_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 33604855085238432}
   - component: {fileID: 23471907250233422}
   m_Layer: 0
-  m_Name: Onecubedoor (2)
+  m_Name: NumCubesDoor_Three
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 33204375476743518}
   - component: {fileID: 23201678893414524}
   m_Layer: 0
-  m_Name: Back_Bricks4
+  m_Name: Back_Bricks4_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 33891820874108624}
   - component: {fileID: 23177258088640336}
   m_Layer: 0
-  m_Name: Sliding_Parts_Sliding_parts_pCube23
+  m_Name: Sliding_Parts_Sliding_parts_pCube23_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 33936527229434932}
   - component: {fileID: 23675488129851582}
   m_Layer: 0
-  m_Name: Sliding_Parts_Sliding_parts_pCube17
+  m_Name: Sliding_Parts_Sliding_parts_pCube17_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 33111359745374310}
   - component: {fileID: 23113993194816342}
   m_Layer: 0
-  m_Name: Onecubedoor
+  m_Name: NumCubesdoor_Two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 33177490855597106}
   - component: {fileID: 23639392510429274}
   m_Layer: 0
-  m_Name: Sliding_Parts_Sliding_parts_pCube20
+  m_Name: Sliding_Parts_Sliding_parts_pCube20_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 33241540732649384}
   - component: {fileID: 23952313262392536}
   m_Layer: 0
-  m_Name: Wall4
+  m_Name: Wall4_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 33876170144225992}
   - component: {fileID: 23538805766416332}
   m_Layer: 0
-  m_Name: Sliding_Parts_Sliding_parts_pCube19
+  m_Name: Sliding_Parts_Sliding_parts_pCube19_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 33155140501196652}
   - component: {fileID: 23590594691912694}
   m_Layer: 0
-  m_Name: Doorframe5
+  m_Name: Doorframe5_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 33413647034759666}
   - component: {fileID: 23347424380135496}
   m_Layer: 0
-  m_Name: Onecubedoor (1)
+  m_Name: NumCubesDoor_One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,9 +256,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4931270537443590}
-  - component: {fileID: 111294589128710330}
   m_Layer: 0
-  m_Name: Door_Obj L1 1
+  m_Name: GreyBox_OldDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +274,7 @@ GameObject:
   - component: {fileID: 33075465033074618}
   - component: {fileID: 23332686321665730}
   m_Layer: 0
-  m_Name: Back_Bricks3
+  m_Name: Back_Bricks3_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1092,20 +1091,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062923860980528}
   m_Mesh: {fileID: 4300006, guid: d826f60b5e031dd4fb37871b9511d724, type: 3}
---- !u!111 &111294589128710330
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762839855983972}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 54ace57634d7a644eb12d66d6795425d, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114071194864447604
 MonoBehaviour:
   m_ObjectHideFlags: 1

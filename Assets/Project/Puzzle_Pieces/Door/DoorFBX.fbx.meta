@@ -16,6 +16,9 @@ ModelImporter:
     100020: Sliding_Parts
     100022: Collider
     100024: Screen
+    100026: screen
+    100028: tv
+    100030: Animated_Parts
     400000: Base
     400002: //RootNode
     400004: Secret_Compartment
@@ -29,6 +32,9 @@ ModelImporter:
     400020: Sliding_Parts
     400022: Collider
     400024: Screen
+    400026: screen
+    400028: tv
+    400030: Animated_Parts
     2100000: lambert1
     2300000: Base
     2300002: Secret_Compartment
@@ -41,6 +47,8 @@ ModelImporter:
     2300016: slide7
     2300018: Collider
     2300020: Screen
+    2300022: screen
+    2300024: tv
     3300000: Base
     3300002: Secret_Compartment
     3300004: slide1
@@ -52,6 +60,8 @@ ModelImporter:
     3300016: slide7
     3300018: Collider
     3300020: Screen
+    3300022: screen
+    3300024: tv
     4300000: Base
     4300002: Secret_Compartment
     4300004: slide1
@@ -63,6 +73,8 @@ ModelImporter:
     4300016: slide7
     4300018: Collider
     4300020: Screen
+    4300022: screen
+    4300024: tv
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -6,9 +6,11 @@ public class Door : MonoBehaviour{
 
     [SerializeField] private BeamButton[] buttons;
     [SerializeField] private int cubesRequired; //set to a negative number for regular buttonage
+    [SerializeField] Collider doorCollider;
     [SerializeField] Animator doorOpenAnimation;
-    
+
     void Start () {
+        
 	}
 	
 	void Update () {
@@ -23,13 +25,13 @@ public class Door : MonoBehaviour{
 
         if (buttonsPressed >= buttons.Length)
         {
-            //doorOpenAnimation.SetBool("ButtonPush", true);
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            doorOpenAnimation.SetBool("ButtonPush", true);
+            doorCollider.enabled = false;
         }
         else
         {
-            gameObject.GetComponent<MeshRenderer>().enabled = true;
-            //doorOpenAnimation.SetBool("ButtonPush", false);
+            doorCollider.enabled = true;
+            doorOpenAnimation.SetBool("ButtonPush", false);
         }
     }
 }

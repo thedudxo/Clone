@@ -9,7 +9,7 @@ public class EwokDestinations : MonoBehaviour
     [SerializeField]
     List<DrawGizmos> ewokPoints;
     public int startWayPointIndex;
-    public bool goPickupCube = false;
+    public static bool goPickupCube = false;
     public bool thisEwokPicksUpCubes;
     public int dropWayPointIndex;
     public GameObject targetCube;

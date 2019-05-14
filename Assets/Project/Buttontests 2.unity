@@ -676,6 +676,11 @@ Prefab:
       propertyPath: m_Name
       value: Door (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114165722236909128, guid: 56b86dd641a139948b96dd3040bbc80d,
+        type: 2}
+      propertyPath: cubesRequired
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56b86dd641a139948b96dd3040bbc80d, type: 2}
   m_IsPrefabParent: 0

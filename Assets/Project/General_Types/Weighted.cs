@@ -12,4 +12,10 @@ public class Weighted : MonoBehaviour {
             gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }
+
+    private void Update() {
+        if (overButton && PlayerManager.player_Pickup.carriedObject != gameObject) {
+            Debug.Log("Hover");
+        }
+    }
 }

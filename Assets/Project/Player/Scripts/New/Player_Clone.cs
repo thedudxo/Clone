@@ -111,6 +111,7 @@ public class Player_Clone : MonoBehaviour {
                 prevClone.GetComponent<Cloneable>().die = true;
                 prevClone.GetComponent<Cloneable>().Die();
             }
+            cloneDist = 3;
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
             clonedObject.GetComponent<Weighted>().overButton = false;

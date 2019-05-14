@@ -45,6 +45,7 @@ public class Player_Pickup : MonoBehaviour {
         if (!carriedObject.GetComponent<Weighted>().overButton) {
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
         }
+        carriedObject = null;
     }
 
     void Pickup() {

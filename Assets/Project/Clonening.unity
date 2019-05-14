@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408973670}
   m_Layer: 0
-  m_Name: Raycast
+  m_Name: Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

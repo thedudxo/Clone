@@ -15,7 +15,6 @@ public class Weighted : MonoBehaviour {
 
     private void Update() {
         if (overButton && PlayerManager.player_Pickup.carriedObject != gameObject) {
-            Hover(gameObject);
         }
     }
 }

@@ -464,7 +464,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646659727359418}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.17, y: 0.385, z: -4.46}
+  m_LocalPosition: {x: -1.17, y: 0.385, z: -16.21}
   m_LocalScale: {x: 0.1747979, y: 0.1747979, z: 0.1747979}
   m_Children:
   - {fileID: 4579700994033464}
@@ -1011,6 +1011,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 0}
-  cubesRequired: 1
+  cubesRequired: 2
   doorCollider: {fileID: 65502876748395126}
   doorOpenAnimation: {fileID: 95045199528170034}

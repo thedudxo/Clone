@@ -10,6 +10,7 @@ public class Beam : MonoBehaviour {
             PuzzleManager.beamButton.cubes++;
             PuzzleManager.beamButton.checkArrow();
             obj.GetComponent<Weighted>().overButton = true;
+            if()
         }
     }
 

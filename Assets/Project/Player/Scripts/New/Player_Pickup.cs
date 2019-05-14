@@ -44,6 +44,8 @@ public class Player_Pickup : MonoBehaviour {
         carrier.GetComponent<SphereCollider>().enabled = false;
         if (!carriedObject.GetComponent<Weighted>().overButton) {
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
+        } else {
+            carriedObject.GetComponent<Weighted>().MovePosition();
         }
         carriedObject = null;
     }

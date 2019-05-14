@@ -9,7 +9,7 @@ public class Grabbable : MonoBehaviour {
     public bool carried = false;
 
     private void OnTriggerExit(Collider other) {
-        if (other == dropMe && this == PlayerManager.player_Pickup.carriedObject) {
+        if (other == dropMe && gameObject == PlayerManager.player_Pickup.carriedObject) {
             PlayerManager.player_Pickup.Drop();
         }
     }

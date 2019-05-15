@@ -19,19 +19,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture_192C183B:
-        m_Texture: {fileID: 2800000, guid: e705936a9b4bd1a4092b9469f04ac297, type: 3}
+        m_Texture: {fileID: 2800000, guid: 01fe27f8f6d262c469f7ff5c4970d45a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture_5E1CA425:
-        m_Texture: {fileID: 2800000, guid: 7f1f54a8b349bad49b4af361cdf1d423, type: 3}
+        m_Texture: {fileID: 2800000, guid: 364f86151ce5afd4fa929351824df036, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture_7D15E9A2:
-        m_Texture: {fileID: 2800000, guid: 9ecced0b0d655ff49b885573dcefee40, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85b2fff38239da946a7fbf313a42d526, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture_F1A76A8:
-        m_Texture: {fileID: 2800000, guid: 871495a51ddc5264aa55463c8fdf2b19, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1db01e04fd855824ca543c5fca1c7832, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -76,10 +76,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_122D890F: 0.05
-    - Vector1_9860A3FA: 7
+    - Vector1_9860A3FA: 2.64
     - Vector1_B5345175: 30
-    - Vector1_F6AE66A0: 1
-    - Vector1_FA6C32DC: 0.5
+    - Vector1_F6AE66A0: 0
+    - Vector1_FA6C32DC: -1.0905315
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

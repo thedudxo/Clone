@@ -676,11 +676,6 @@ Prefab:
       propertyPath: m_Name
       value: Door (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114165722236909128, guid: 56b86dd641a139948b96dd3040bbc80d,
-        type: 2}
-      propertyPath: cubesRequired
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56b86dd641a139948b96dd3040bbc80d, type: 2}
   m_IsPrefabParent: 0
@@ -1236,23 +1231,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 486776785}
   m_Mesh: {fileID: 4300024, guid: eec9899ed9889444fba15c4ed6ec56cc, type: 3}
---- !u!1 &521603212 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1103920466247322, guid: e186f432459ebbc49a6565f9727c5f4e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1117586279}
---- !u!114 &521603217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 521603212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff94117a1b187c24dab0d4ef839477c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomRotation: 50
 --- !u!1 &563074074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,23 +1677,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732326195}
   m_Mesh: {fileID: 4300008, guid: eec9899ed9889444fba15c4ed6ec56cc, type: 3}
---- !u!1 &804906518 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1939605769029056, guid: e186f432459ebbc49a6565f9727c5f4e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1117586279}
---- !u!114 &804906523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 804906518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff94117a1b187c24dab0d4ef839477c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomRotation: 50
 --- !u!1001 &809760629
 Prefab:
   m_ObjectHideFlags: 0
@@ -1770,6 +1731,11 @@ Prefab:
       propertyPath: reset
       value: 
       objectReference: {fileID: 1793590173}
+    - target: {fileID: 23199798965774614, guid: 5c5334826399eef4a9955406318f124b,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c1471ceac9b2604fa94e1b2b022b07a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c5334826399eef4a9955406318f124b, type: 2}
   m_IsPrefabParent: 0
@@ -2337,24 +2303,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4199932525543738, guid: e186f432459ebbc49a6565f9727c5f4e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199932525543738, guid: e186f432459ebbc49a6565f9727c5f4e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 20616082581860154, guid: e186f432459ebbc49a6565f9727c5f4e,
-        type: 2}
-      propertyPath: far clip plane
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 20616082581860154, guid: e186f432459ebbc49a6565f9727c5f4e,
-        type: 2}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 8400000, guid: 394d1e2b29c7abc4cafaf2af7c8b8fdb, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e186f432459ebbc49a6565f9727c5f4e, type: 2}
   m_IsPrefabParent: 0
@@ -3711,23 +3659,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1741436587}
   m_Mesh: {fileID: 4300000, guid: eec9899ed9889444fba15c4ed6ec56cc, type: 3}
---- !u!1 &1762310808 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1740516022021306, guid: e186f432459ebbc49a6565f9727c5f4e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1117586279}
---- !u!114 &1762310813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1762310808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff94117a1b187c24dab0d4ef839477c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomRotation: 50
 --- !u!1 &1782445793
 GameObject:
   m_ObjectHideFlags: 0

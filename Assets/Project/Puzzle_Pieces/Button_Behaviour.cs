@@ -43,7 +43,7 @@ public class Button_Behaviour : MonoBehaviour {
 
             if(collision.gameObject.GetComponent<Cloneable>() != null)
             {
-                collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
+//collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
             }
         }
     }
@@ -60,7 +60,7 @@ public class Button_Behaviour : MonoBehaviour {
 
             if (collision.gameObject.GetComponent<Cloneable>() != null)
             {
-                collision.gameObject.GetComponent<Cloneable>().setButton(null);
+                //collision.gameObject.GetComponent<Cloneable>().setButton(null);
             }
         }
     }

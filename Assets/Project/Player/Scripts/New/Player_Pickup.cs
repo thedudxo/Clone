@@ -37,11 +37,17 @@ public class Player_Pickup : MonoBehaviour {
         }
     }
 
-    public void Drop(){
+    public void Drop() {
+        carriedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         carrying = false;
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
-        carriedObject.GetComponent<Rigidbody>().useGravity = true;
         carrier.GetComponent<SphereCollider>().enabled = false;
+        if (!carriedObject.GetComponent<Weighted>().overButton) {
+            carriedObject.GetComponent<Rigidbody>().useGravity = true;
+        } else {
+            carriedObject.GetComponent<Weighted>().MovePosition();
+        }
+        carriedObject = null;
     }
 
     void Pickup() {

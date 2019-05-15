@@ -32,6 +32,7 @@ public class Cloneable : MonoBehaviour {
         } else {
             materialize.SetColor("Color_711056C5", cloneColor);
         }
+        Debug.Log(triggers);
     }
 
     public void Die() {
@@ -62,43 +63,26 @@ public class Cloneable : MonoBehaviour {
         }
         transform.position = reset.position;
         yield return new WaitForEndOfFrame();
+        gameObject.GetComponent<Weighted>().destroyed = true;
+        yield return new WaitForEndOfFrame();
         Destroy(this.gameObject);
     }
 
-    public void destroyClone() {
-        Debug.Log("KILKLIGN THE CLONE");
-        if (Player_Pickup_Old.Instance.carriedObject == this.gameObject) {
-            Player_Pickup_Old.Instance.dropObject();
-            Debug.Log("dropped");
-        }
-
-        if(button != null) {
-            button.GetComponent<Button_Behaviour>().weights--;
-            Debug.Log("yuep");
-        }
-        Destroy(gameObject);
-    }
-
-    public void setButton(GameObject button) {
-        this.button = button;
-        Debug.Log(button);
-    }
-
     private void OnTriggerEnter(Collider other) {
-        
-        if (player.GetComponent<Player_Clone>().cloning) {
+        if (gameObject.GetComponent<Weighted>().overButton) { return; }
+        if (PlayerManager.player_Clone.cloning) {
             triggers++;
-            player.GetComponent<Player_Clone>().canClone = false;
+            PlayerManager.player_Clone.canClone = false;
         }//Debug.Log(triggers);
     }
 
     private void OnTriggerExit(Collider other) {
-        
-        if (player.GetComponent<Player_Clone>().cloning) {
+        if (gameObject.GetComponent<Weighted>().overButton) { return; }
+        if (PlayerManager.player_Clone.cloning) {
             triggers--;
             if (triggers == 0) {
-                player.GetComponent<Player_Clone>().canClone = true;
-            }Debug.Log(triggers);
+                PlayerManager.player_Clone.canClone = true;
+            }
         }
     }
 }

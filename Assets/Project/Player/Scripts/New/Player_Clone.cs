@@ -83,7 +83,11 @@ public class Player_Clone : MonoBehaviour {
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         if (!clonedObject.GetComponent<Weighted>().overButton) {
             cloneRb.useGravity = true;
-            clonedObject.GetComponent<Weighted>().distance = 5;
+            clonedObject.GetComponent<Weighted>().distance = 3;
+            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
+                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
+            }
         } else {
             PuzzleManager.beamButton.cubesOverButton.Add(clonedObject);
             clonedObject.GetComponent<Weighted>().movePos = true;

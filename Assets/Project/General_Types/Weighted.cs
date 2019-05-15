@@ -9,8 +9,7 @@ public class Weighted : MonoBehaviour {
     Vector3 moveTo;
     public bool destroyed = false;
     public bool movePos = false;
-    public int distance = 5;
-    public int cubeID;
+    public int distance = 3;
 
     public void Update() {
         if (movePos) {

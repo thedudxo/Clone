@@ -7,10 +7,6 @@ public class Beam : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {//addcubes, make them float
         GameObject obj = other.gameObject;
         if (obj.GetComponent<Weighted>()) {
-            foreach(GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
-                c.GetComponent<Weighted>().overBeam(true, transform.position);
-            }
             PuzzleManager.beamButton.cubes++;
             PuzzleManager.beamButton.checkArrow();
             obj.GetComponent<Weighted>().overBeam(true, transform.position);
@@ -20,10 +16,6 @@ public class Beam : MonoBehaviour {
     private void OnTriggerExit(Collider other) {//removecubes
         if (other.GetComponent<Weighted>()) {
             PuzzleManager.beamButton.cubesOverButton.Remove(other.gameObject);
-            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
-                c.GetComponent<Weighted>().overBeam(true, transform.position);
-            }
             PuzzleManager.beamButton.cubes--;
             PuzzleManager.beamButton.checkArrow();
             other.GetComponent<Weighted>().movePos = false;

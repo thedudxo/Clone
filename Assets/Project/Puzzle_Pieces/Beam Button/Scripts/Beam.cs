@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Beam : MonoBehaviour {
-    
+
     private void OnTriggerEnter(Collider other) {//addcubes, make them float
         GameObject obj = other.gameObject;
         if (obj.GetComponent<Weighted>()) {
+            foreach(GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
+                c.GetComponent<Weighted>().overBeam(true, transform.position);
+            }
             PuzzleManager.beamButton.cubes++;
             PuzzleManager.beamButton.checkArrow();
-            obj.GetComponent<Weighted>().overButton = true;
-            //if()
+            obj.GetComponent<Weighted>().overBeam(true, transform.position);
         }
     }
 
     private void OnTriggerExit(Collider other) {//removecubes
         if (other.GetComponent<Weighted>()) {
+            PuzzleManager.beamButton.cubesOverButton.Remove(other.gameObject);
+            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
+                c.GetComponent<Weighted>().overBeam(true, transform.position);
+            }
             PuzzleManager.beamButton.cubes--;
             PuzzleManager.beamButton.checkArrow();
+            other.GetComponent<Weighted>().movePos = false;
             other.GetComponent<Weighted>().Gravity();
             StartCoroutine(WaitTrigger(other));
         }

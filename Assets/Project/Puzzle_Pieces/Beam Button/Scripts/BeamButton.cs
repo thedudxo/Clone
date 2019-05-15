@@ -7,6 +7,7 @@ public class BeamButton : MonoBehaviour {
     //this script detects how many cubes are in the button, and holds the cubes there.
 
     public int cubes = 0;
+    public List<GameObject> cubesOverButton = new List<GameObject>();
     [SerializeField] Material greenArrow;
     [SerializeField] Material redArrow;
     [SerializeField] GameObject arrow;

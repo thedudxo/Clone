@@ -17,7 +17,7 @@ public class BeamButton : MonoBehaviour {
         PuzzleManager.beamButton = this;
         tvscreen = gameObject.GetComponent<TVscreen>();
         tvscreen.displayCubes(cubes);
-        tvscreen.displayCubes(cubes);
+        
     }
 
     public void checkArrow() { //change to red/green
@@ -26,5 +26,6 @@ public class BeamButton : MonoBehaviour {
         } else {
             arrow.GetComponent<Renderer>().material = redArrow;
         }
+        tvscreen.displayCubes(cubes);
     }
 }

@@ -14,7 +14,7 @@ public class Weighted : MonoBehaviour {
         }
     }
 
-    public void MovePosition() {
-
+    public void MovePosition() {
+
     }
 }

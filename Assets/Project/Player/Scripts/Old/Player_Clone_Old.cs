@@ -28,7 +28,8 @@ public class Player_Clone_Old : MonoBehaviour {
         }
 
         Debug.Log("yehp");
-        if(clonedObject != null) { clonedObject.GetComponent<Cloneable>().destroyClone(); }
+        if(clonedObject != null) { //clonedObject.GetComponent<Cloneable>().destroyClone();
+        }
         cloned = false;
     }
 

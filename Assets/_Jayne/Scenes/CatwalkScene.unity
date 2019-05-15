@@ -3817,7 +3817,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1328416133650202, guid: ed84a50f02745d14aab52ab88da7b96d, type: 2}
       propertyPath: m_Name
-      value: Cube Original (1)
+      value: Cube Clone
       objectReference: {fileID: 0}
     - target: {fileID: 114128237759313532, guid: ed84a50f02745d14aab52ab88da7b96d,
         type: 2}
@@ -3859,6 +3859,16 @@ Prefab:
       propertyPath: materialize
       value: 
       objectReference: {fileID: 2100000, guid: 19b5f8ce272b8ec49a4e191296a89bd2, type: 2}
+    - target: {fileID: 114539276030082048, guid: ed84a50f02745d14aab52ab88da7b96d,
+        type: 2}
+      propertyPath: isClone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23762817899322482, guid: ed84a50f02745d14aab52ab88da7b96d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48dc2d0a988c4ac45bf233d9c6ed4cd8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed84a50f02745d14aab52ab88da7b96d, type: 2}
   m_IsPrefabParent: 0

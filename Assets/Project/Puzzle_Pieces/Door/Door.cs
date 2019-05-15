@@ -7,10 +7,10 @@ public class Door : MonoBehaviour{
     [SerializeField] private BeamButton[] buttons;
     [SerializeField] private int cubesRequired; //set to a negative number for regular buttonage
     [SerializeField] Collider doorCollider;
-    Animator doorOpenAnimation;
+    [SerializeField] Animator doorOpenAnimation;
 
     void Start () {
-        doorOpenAnimation = GetComponent<Animator>();
+        
 	}
 	
 	void Update () {

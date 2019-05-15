@@ -29,7 +29,7 @@ public class Resseter_Behaviour : MonoBehaviour {
             {
                 if (other.gameObject.GetComponent<Cloneable>().isClone)
                 {
-                    other.gameObject.GetComponent<Cloneable>().destroyClone();
+                    //other.gameObject.GetComponent<Cloneable>().destroyClone();
                     player.GetComponent<Player_Clone_Old>().cloned = false;
                 }
                 else

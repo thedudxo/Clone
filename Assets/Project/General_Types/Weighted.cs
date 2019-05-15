@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Weighted : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool overButton = false;
+    public bool destroyed = false;
+    public int distance = 5;
+
+    public void Gravity() {
+        if(PlayerManager.player_Clone.clonedObject != gameObject && PlayerManager.player_Pickup.carriedObject != gameObject) {
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
+    }
+
+    public void MovePosition() {
+
+    }
 }

@@ -66,7 +66,7 @@ public class Player_Clone : MonoBehaviour {
             canClone = true;
         }
         o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Time.deltaTime * smooth));
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloneDist != 10) {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloneDist != 14) {
             cloneDist++;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && cloneDist != 2) {

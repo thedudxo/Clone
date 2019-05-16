@@ -14,8 +14,6 @@ public class Cloneable : MonoBehaviour {
     private Color errorColor = new Color(1, 0, 0);
     public Material materialize;
     public Material dissolve;
-    public GameObject player;
-    public Transform reset;
 
     public void Start() {
         materialize.SetFloat(dissolveAnim, 0.5f);
@@ -27,7 +25,7 @@ public class Cloneable : MonoBehaviour {
     }
 
     public void Update() {
-        if(player.GetComponent<Player_Clone>().canClone == false) {
+        if(PlayerManager.player_Clone.canClone == false) {
             materialize.SetColor("Color_711056C5", errorColor);
         } else {
             materialize.SetColor("Color_711056C5", cloneColor);
@@ -46,6 +44,12 @@ public class Cloneable : MonoBehaviour {
     }
 
     public IEnumerator Materialize() {
+        if (!gameObject.GetComponent<Weighted>().overButton) {
+            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
+                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
+            }
+        }
         float lerp = 0.0f;
         while (lerp <= 1) {
             materialize.SetFloat(dissolveAnim, Mathf.Lerp(0.5f, -1.1f, lerp));
@@ -61,7 +65,13 @@ public class Cloneable : MonoBehaviour {
             lerp += Time.deltaTime;
             yield return lerp;
         }
-        transform.position = reset.position;
+        transform.position = new Vector3(0, -100, 0);
+        if (gameObject.GetComponent<Weighted>().overButton) {
+            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
+                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
+            }
+        }
         yield return new WaitForEndOfFrame();
         gameObject.GetComponent<Weighted>().destroyed = true;
         yield return new WaitForEndOfFrame();

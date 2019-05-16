@@ -125,6 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49a59d391e85fd4a9560bbbe53bcaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overButton: 0
+  destroyed: 0
+  movePos: 0
+  distance: 3
 --- !u!114 &114731485731920720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,3 +142,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropMe: {fileID: 0}
   player: {fileID: 1549587991539514, guid: 2634406b84cf7b746b0dcfd64540ec93, type: 2}
+  carried: 0

@@ -19,6 +19,10 @@ public class Player_Clone : MonoBehaviour {
     public bool hasCloned = false;
     public float smooth;
 
+    int particleEmitAmmount = 150;
+    [SerializeField] ParticleSystem copyParticles;
+    [SerializeField] ParticleSystem failParticles;
+
     void Start() {
         mainCamera = GameObject.FindWithTag("MainCamera");
         PlayerManager.player_Clone = this;
@@ -30,17 +34,21 @@ public class Player_Clone : MonoBehaviour {
         int y = Screen.height / 2;
         if (Input.GetMouseButtonDown(1)) {
             Scan(x, y);
+            
         }
         if (Input.GetMouseButtonDown(0)) {
             if (!cloning) {
                 Clone();
+               
             } else if (cloning && canClone){
                 Drop();
+                copyParticles.Emit(particleEmitAmmount);
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
+                copyParticles.Emit(particleEmitAmmount);
             }
         }
     }
@@ -100,16 +108,29 @@ public class Player_Clone : MonoBehaviour {
     void Scan(int x, int y) {
         Ray cloneRay = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         RaycastHit hit;
+        bool didHit = false;
+
         if (Physics.Raycast(cloneRay, out hit)) {
             lookingAt = hit.transform.gameObject;
             if (lookingAt.GetComponent<Cloneable>() != null) {
                 clipboard = lookingAt;
                 Debug.Log("Can clone");
+                didHit = true;
             }
             else
             {
             Debug.Log("Cant clone " + hit.transform.gameObject);
             }
+        }
+
+        //which particles to emit
+        if (!didHit)
+        {
+            failParticles.Emit(particleEmitAmmount);
+        }
+        else
+        {
+            copyParticles.Emit(particleEmitAmmount);
         }
     }
 
@@ -133,6 +154,11 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;
+
+            copyParticles.Emit(particleEmitAmmount);
+        } else
+        {
+            failParticles.Emit(particleEmitAmmount);
         }
     }
 }

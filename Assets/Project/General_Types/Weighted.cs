@@ -34,7 +34,20 @@ public class Weighted : MonoBehaviour {
         gameObject.GetComponent<Rigidbody>().AddTorque(
                      Random.Range(-randomRotation, randomRotation),
                      Random.Range(-randomRotation, randomRotation),
-                     Random.Range(-randomRotation, randomRotation)
-                     );
+                     Random.Range(-randomRotation, randomRotation));
+    }
+
+    public void ButtonRise() {
+        foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+            c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
+            c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
+        }
+    }
+
+    public void ButtonFall() {
+        foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
+            c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
+            c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
+        }
     }
 }

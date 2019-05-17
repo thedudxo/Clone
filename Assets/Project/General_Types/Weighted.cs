@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weighted : MonoBehaviour {
 
     private float randomRotation = 1;
+    public int iD;
     public bool overButton = false;
     Vector3 moveTo;
     public bool destroyed = false;
@@ -15,6 +16,10 @@ public class Weighted : MonoBehaviour {
         if (movePos) {
             MovePosition();
         }
+    }
+
+    public void ChangeIndex() {
+            iD = ButtonLevel.cubesOverButton.IndexOf(gameObject);
     }
 
     public void Gravity() {
@@ -35,19 +40,5 @@ public class Weighted : MonoBehaviour {
                      Random.Range(-randomRotation, randomRotation),
                      Random.Range(-randomRotation, randomRotation),
                      Random.Range(-randomRotation, randomRotation));
-    }
-
-    public void ButtonRise() {
-        foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-            c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
-            c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
-        }
-    }
-
-    public void ButtonFall() {
-        foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-            c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
-            c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
-        }
     }
 }

@@ -44,7 +44,7 @@ public class Cloneable : MonoBehaviour {
 
     public IEnumerator Materialize() {
         if (!gameObject.GetComponent<Weighted>().overButton) {
-            gameObject.GetComponent<Weighted>().ButtonRise();
+            //ButtonLevel.ButtonRise();
         }
         float lerp = 0.0f;
         while (lerp <= 1) {
@@ -69,7 +69,7 @@ public class Cloneable : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (gameObject.GetComponent<Weighted>().overButton) { return; }
+        if (other.gameObject.tag == "IgnoreClone") { return; }
         if (gameObject == PlayerManager.player_Clone.clonedObject) {
             triggers++;
             PlayerManager.player_Clone.canClone = false;
@@ -77,13 +77,12 @@ public class Cloneable : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {
-        if (gameObject.GetComponent<Weighted>().overButton) { return; }
+        if (other.gameObject.tag == "IgnoreClone") { return; }
         if (gameObject == PlayerManager.player_Clone.clonedObject) {
             triggers--;
             if (triggers == 0) {
                 PlayerManager.player_Clone.canClone = true;
             }
         }
-        Debug.Log(triggers);
     }
 }

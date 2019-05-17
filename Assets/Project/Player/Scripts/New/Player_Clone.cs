@@ -83,9 +83,10 @@ public class Player_Clone : MonoBehaviour {
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         if (!clonedObject.GetComponent<Weighted>().overButton) {
             cloneRb.useGravity = true;
-            clonedObject.GetComponent<Weighted>().ButtonFall();
+            ButtonLevel.ButtonFall();
         } else {
-            PuzzleManager.beamButton.cubesOverButton.Add(clonedObject);
+            ButtonLevel.cubesOverButton.Add(clonedObject);
+            clonedObject.GetComponent<Weighted>().ChangeIndex();
             clonedObject.GetComponent<Weighted>().movePos = true;
         }
         prevClone = clonedObject;
@@ -100,10 +101,7 @@ public class Player_Clone : MonoBehaviour {
             lookingAt = hit.transform.gameObject;
             if (lookingAt.GetComponent<Cloneable>() != null) {
                 clipboard = lookingAt;
-                Debug.Log("Can clone");
-            }
-            else
-            {
+            } else {
             Debug.Log("Cant clone " + hit.transform.gameObject);
             }
         }
@@ -130,6 +128,13 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;
+            if(prevClone == null) {
+                ButtonLevel.ButtonRise();
+                return;
+            }
+            if (!prevClone.gameObject.GetComponent<Weighted>().overButton) {
+                ButtonLevel.ButtonRise();
+            }
         }
     }
 }

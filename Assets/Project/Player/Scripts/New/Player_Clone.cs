@@ -111,13 +111,10 @@ public class Player_Clone : MonoBehaviour {
             lookingAt = hit.transform.gameObject;
             if (lookingAt.GetComponent<Cloneable>() != null) {
                 clipboard = lookingAt;
-            } else {
                 Debug.Log("Can clone");
                 didHit = true;
-            }
-            else
-            {
-            Debug.Log("Cant clone " + hit.transform.gameObject);
+            } else {
+                Debug.Log("Cant clone " + hit.transform.gameObject);
             }
         }
 

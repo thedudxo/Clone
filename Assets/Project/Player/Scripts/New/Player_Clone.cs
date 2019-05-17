@@ -91,13 +91,10 @@ public class Player_Clone : MonoBehaviour {
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         if (!clonedObject.GetComponent<Weighted>().overButton) {
             cloneRb.useGravity = true;
-            clonedObject.GetComponent<Weighted>().distance = 3;
-            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
-                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
-            }
+            ButtonLevel.ButtonFall();
         } else {
-            PuzzleManager.beamButton.cubesOverButton.Add(clonedObject);
+            ButtonLevel.cubesOverButton.Add(clonedObject);
+            clonedObject.GetComponent<Weighted>().ChangeIndex();
             clonedObject.GetComponent<Weighted>().movePos = true;
         }
         prevClone = clonedObject;
@@ -116,10 +113,8 @@ public class Player_Clone : MonoBehaviour {
                 clipboard = lookingAt;
                 Debug.Log("Can clone");
                 didHit = true;
-            }
-            else
-            {
-            Debug.Log("Cant clone " + hit.transform.gameObject);
+            } else {
+                Debug.Log("Cant clone " + hit.transform.gameObject);
             }
         }
 
@@ -143,6 +138,7 @@ public class Player_Clone : MonoBehaviour {
             cloneDist = 3;
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
+            clonedObject.GetComponent<Weighted>().distance = 3;
             clonedObject.GetComponent<Weighted>().movePos = false;
             clonedObject.GetComponent<Weighted>().overButton = false;
             render = clonedObject.GetComponent<Renderer>();

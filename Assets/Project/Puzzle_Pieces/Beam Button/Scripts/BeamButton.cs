@@ -13,10 +13,16 @@ public class BeamButton : MonoBehaviour {
 
     TVscreen tvscreen;
 
+    ButtonLevel level1;
+    ButtonLevel level2;
+
     private void Start() {
         PuzzleManager.beamButton = this;
         tvscreen = gameObject.GetComponent<TVscreen>();
         tvscreen.displayCubes(cubes);
+
+        level1 = new ButtonLevel(1);
+        level2 = new ButtonLevel(2);
     }
 
     public void checkArrow() { //change to red/green

@@ -43,9 +43,13 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
         carrier.GetComponent<SphereCollider>().enabled = false;
         if (!carriedObject.GetComponent<Weighted>().overButton) {
+            ButtonLevel.ButtonFall();
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
+            carriedObject.GetComponent<Weighted>().distance = 3;
         } else {
-            carriedObject.GetComponent<Weighted>().MovePosition();
+            ButtonLevel.cubesOverButton.Add(carriedObject);
+            carriedObject.GetComponent<Weighted>().ChangeIndex();
+            carriedObject.GetComponent<Weighted>().movePos = true;
         }
         carriedObject = null;
     }
@@ -59,6 +63,9 @@ public class Player_Pickup : MonoBehaviour {
             if (Physics.Raycast(ray, out hit)) {
                 Grabbable g = hit.collider.GetComponent<Grabbable>();
                 if(g != null && hit.distance <= pickupDist) {
+                    if (!g.gameObject.GetComponent<Weighted>().overButton) {
+                        ButtonLevel.ButtonRise();
+                    }
                     carrying = true;
                     g.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                     g.gameObject.GetComponent<Rigidbody>().useGravity = false;

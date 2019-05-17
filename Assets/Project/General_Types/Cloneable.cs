@@ -14,8 +14,6 @@ public class Cloneable : MonoBehaviour {
     private Color errorColor = new Color(1, 0, 0);
     public Material materialize;
     public Material dissolve;
-    public GameObject player;
-    public Transform reset;
 
     public void Start() {
         materialize.SetFloat(dissolveAnim, 0.5f);
@@ -27,12 +25,11 @@ public class Cloneable : MonoBehaviour {
     }
 
     public void Update() {
-        if(player.GetComponent<Player_Clone>().canClone == false) {
-            materialize.SetColor("Color_711056C5", errorColor);
+        if(PlayerManager.player_Clone.canClone == false) {
+            materialize.SetColor("Color_ED5ABF3C", errorColor);
         } else {
-            materialize.SetColor("Color_711056C5", cloneColor);
+            materialize.SetColor("Color_ED5ABF3C", cloneColor);
         }
-        Debug.Log(triggers);
     }
 
     public void Die() {
@@ -46,6 +43,9 @@ public class Cloneable : MonoBehaviour {
     }
 
     public IEnumerator Materialize() {
+        if (!gameObject.GetComponent<Weighted>().overButton) {
+            //ButtonLevel.ButtonRise();
+        }
         float lerp = 0.0f;
         while (lerp <= 1) {
             materialize.SetFloat(dissolveAnim, Mathf.Lerp(0.5f, -1.1f, lerp));
@@ -61,7 +61,7 @@ public class Cloneable : MonoBehaviour {
             lerp += Time.deltaTime;
             yield return lerp;
         }
-        transform.position = reset.position;
+        transform.position = new Vector3(0, -100, 0);
         yield return new WaitForEndOfFrame();
         gameObject.GetComponent<Weighted>().destroyed = true;
         yield return new WaitForEndOfFrame();
@@ -69,16 +69,16 @@ public class Cloneable : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (gameObject.GetComponent<Weighted>().overButton) { return; }
-        if (PlayerManager.player_Clone.cloning) {
+        if (other.gameObject.tag == "IgnoreClone") { return; }
+        if (gameObject == PlayerManager.player_Clone.clonedObject) {
             triggers++;
             PlayerManager.player_Clone.canClone = false;
-        }//Debug.Log(triggers);
+        }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (gameObject.GetComponent<Weighted>().overButton) { return; }
-        if (PlayerManager.player_Clone.cloning) {
+        if (other.gameObject.tag == "IgnoreClone") { return; }
+        if (gameObject == PlayerManager.player_Clone.clonedObject) {
             triggers--;
             if (triggers == 0) {
                 PlayerManager.player_Clone.canClone = true;

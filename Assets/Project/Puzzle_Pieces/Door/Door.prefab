@@ -187,7 +187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4964829082023986}
   - component: {fileID: 114165722236909128}
-  - component: {fileID: 65109130992392488}
   - component: {fileID: 65502876748395126}
   m_Layer: 0
   m_Name: Door
@@ -956,18 +955,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300018, guid: eec9899ed9889444fba15c4ed6ec56cc, type: 3}
---- !u!65 &65109130992392488
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646659727359418}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 14.942328, y: 31.321749, z: 3.430762}
-  m_Center: {x: -0.2833819, y: 6.376065, z: -6.910421}
 --- !u!65 &65502876748395126
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1011,6 +998,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 0}
-  cubesRequired: 1
+  cubesRequired: 2
   doorCollider: {fileID: 65502876748395126}
   doorOpenAnimation: {fileID: 95045199528170034}

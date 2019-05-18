@@ -15,7 +15,9 @@ public class Beam : MonoBehaviour {
 
     private void OnTriggerExit(Collider other) {//removecubes
         if (other.GetComponent<Weighted>()) {
-            ButtonLevel.ResetCubes(other.gameObject);
+            if (ButtonLevel.cubesOverButton.Contains(other.gameObject)) {
+                ButtonLevel.ResetCubes(other.gameObject);
+            }
             ButtonLevel.cubesOverButton.Remove(other.gameObject);
             foreach(GameObject c in ButtonLevel.cubesOverButton) {
                 c.GetComponent<Weighted>().ChangeIndex();

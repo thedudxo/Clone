@@ -42,13 +42,13 @@ public class Player_Clone : MonoBehaviour {
                
             } else if (cloning && canClone){
                 Drop();
-                copyParticles.Emit(particleEmitAmmount);
+                //copyParticles.Emit(particleEmitAmmount);
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
-                copyParticles.Emit(particleEmitAmmount);
+                //copyParticles.Emit(particleEmitAmmount);
             }
         }
     }
@@ -121,11 +121,11 @@ public class Player_Clone : MonoBehaviour {
         //which particles to emit
         if (!didHit)
         {
-            failParticles.Emit(particleEmitAmmount);
+            //failParticles.Emit(particleEmitAmmount);
         }
         else
         {
-            copyParticles.Emit(particleEmitAmmount);
+            //copyParticles.Emit(particleEmitAmmount);
         }
     }
 
@@ -150,11 +150,18 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;
+            if (prevClone == null) {
+                ButtonLevel.ButtonRise();
+                return;
+            }
+            if (!prevClone.gameObject.GetComponent<Weighted>().overButton) {
+                ButtonLevel.ButtonRise();
+            }
 
-            copyParticles.Emit(particleEmitAmmount);
+            //copyParticles.Emit(particleEmitAmmount);
         } else
         {
-            failParticles.Emit(particleEmitAmmount);
+            //failParticles.Emit(particleEmitAmmount);
         }
     }
 }

@@ -42,6 +42,7 @@ public class AudioManager : MonoBehaviour
     {
 
         Play("Theme");
+        Play("Wind");
 
     }
 

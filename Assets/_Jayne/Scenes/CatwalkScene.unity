@@ -2976,7 +2976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 95
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &344905259
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4313,7 +4313,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.3
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6907,7 +6907,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: MUSIC
+  m_text: 'GAME VOLUME
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f76ef802b8b940c46a31f9027f2b0158, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: f76ef802b8b940c46a31f9027f2b0158, type: 2}
@@ -6984,11 +6986,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -7146,11 +7148,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1391065361}
   m_Script: {fileID: 11500000, guid: 2e663b7a006b8044689e2d0ca174fb61, type: 3}
---- !u!81 &998561054 stripped
-AudioListener:
-  m_PrefabParentObject: {fileID: 81379731258678818, guid: 2634406b84cf7b746b0dcfd64540ec93,
-    type: 2}
-  m_PrefabInternal: {fileID: 1391065361}
 --- !u!20 &998561056 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20306358922021158, guid: 2634406b84cf7b746b0dcfd64540ec93,
@@ -7787,9 +7784,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'SOUNDS
-
-'
+  m_text: MENU VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f76ef802b8b940c46a31f9027f2b0158, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: f76ef802b8b940c46a31f9027f2b0158, type: 2}
@@ -7866,11 +7861,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -8186,7 +8181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1221597702
 Transform:
   m_ObjectHideFlags: 0
@@ -9124,6 +9119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 978705039}
   pauseKey: 27
+  gameVolSlider: {fileID: 1530220508}
 --- !u!114 &1422277522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9832,14 +9828,14 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 998561054}
-        m_MethodName: set_volume
+      - m_Target: {fileID: 2108690683}
+        m_MethodName: SetGameVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -12897,7 +12893,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2108690684}
   - component: {fileID: 2108690683}
-  - component: {fileID: 2108690685}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -12964,17 +12959,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2108690685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2108690682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e017d88c113f3ad45acb4f395e17f672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2114486088
 GameObject:
   m_ObjectHideFlags: 0

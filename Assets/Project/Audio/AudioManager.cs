@@ -1,6 +1,7 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
@@ -33,25 +33,19 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.mute = s.mute;
             s.source.outputAudioMixerGroup = s.output;
-
         }
-
     }
 
     void Start()
     {
-
         Play("Theme");
         Play("Wind");
-
     }
 
     public void Play(string name)
     {
-
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
-
     }
 
     public void Stop(string name)
@@ -59,4 +53,13 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Stop();
     }
+
+    public void SetGameVolume(float vol)
+    {
+        foreach (Sound s in sounds)
+        {
+            s.volume = vol * s.volume;
+        }
+    }
+
 }

@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public KeyCode pauseKey;
     AudioSource pauseMenuSource;
+    public Slider gameVolSlider;
 
     // Use this for initialization
     void Start () {
@@ -21,6 +22,8 @@ public class PauseMenu : MonoBehaviour {
         {
             pauseMenu.SetActive(true);
             AudioListener.pause = true;
+            AudioManager.instance.Stop("Theme");
+            AudioManager.instance.Stop("Wind");
             pauseMenuSource.ignoreListenerPause = true;
             pauseMenuSource.Play();
             Cursor.lockState = CursorLockMode.None;
@@ -33,9 +36,14 @@ public class PauseMenu : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         AudioListener.pause = false;
-        pauseMenu.SetActive(false);
         pauseMenuSource.Stop();
         Time.timeScale = 1.0f;
+        Debug.Log("gameVolSlider.value is " + gameVolSlider.value);
+        AudioManager.instance.SetGameVolume(gameVolSlider.value);
+        AudioManager.instance.Play("Theme");
+  //      AudioManager.instance.SetGameVolume(gameVolSlider.value, "Wind");
+        AudioManager.instance.Play("Wind");
+        pauseMenu.SetActive(false);
     }
 
     public void LoadMainMenu()
@@ -50,6 +58,5 @@ public class PauseMenu : MonoBehaviour {
     {
         Application.Quit();
     }
-
 
 }

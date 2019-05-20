@@ -91,10 +91,9 @@ public class Player_Clone : MonoBehaviour {
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         if (!clonedObject.GetComponent<Weighted>().overButton) {
             cloneRb.useGravity = true;
-            ButtonLevel.ButtonFall();
+            //ButtonLevel.ButtonFall();
         } else {
-            ButtonLevel.cubesOverButton.Add(clonedObject);
-            clonedObject.GetComponent<Weighted>().ChangeIndex();
+            PuzzleManager.beamButton.CheckCubeHeight(clonedObject);
             clonedObject.GetComponent<Weighted>().movePos = true;
         }
         prevClone = clonedObject;

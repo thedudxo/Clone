@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TestCubeMovement : MonoBehaviour {
-    
+    /*
 	void Start () {
 		
 	}
@@ -15,5 +15,5 @@ public class TestCubeMovement : MonoBehaviour {
                 c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
             }
         }
-    }
+    }*/
 }

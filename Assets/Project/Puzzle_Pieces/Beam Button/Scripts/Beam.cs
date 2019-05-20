@@ -14,14 +14,13 @@ public class Beam : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {//removecubes
+
+        ButtonLevel level = PuzzleManager.beamButton.CheckCubeHeight(other.gameObject);
         if (other.GetComponent<Weighted>()) {
-            if (ButtonLevel.cubesOverButton.Contains(other.gameObject)) {
-                ButtonLevel.ResetCubes(other.gameObject);
+            if (level.cubesOverButton.Contains(other.gameObject)) {
+                level.ResetCubes(other.gameObject);
             }
-            ButtonLevel.cubesOverButton.Remove(other.gameObject);
-            foreach(GameObject c in ButtonLevel.cubesOverButton) {
-                c.GetComponent<Weighted>().ChangeIndex();
-            }
+            level.cubesOverButton.Remove(other.gameObject);
             PuzzleManager.beamButton.cubes--;
             PuzzleManager.beamButton.checkArrow();
             other.GetComponent<Weighted>().movePos = false;

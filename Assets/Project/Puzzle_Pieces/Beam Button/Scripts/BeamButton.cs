@@ -13,16 +13,19 @@ public class BeamButton : MonoBehaviour {
 
     TVscreen tvscreen;
 
-    ButtonLevel level1;
-    ButtonLevel level2;
+    public ButtonLevel[] levels;
+
 
     private void Start() {
         PuzzleManager.beamButton = this;
         tvscreen = gameObject.GetComponent<TVscreen>();
         tvscreen.displayCubes(cubes);
 
-        level1 = new ButtonLevel(1);
-        level2 = new ButtonLevel(2);
+        levels = new ButtonLevel[] {
+            new ButtonLevel(0),
+            new ButtonLevel(1)
+        };
+        
     }
 
     public void checkArrow() { //change to red/green
@@ -32,5 +35,14 @@ public class BeamButton : MonoBehaviour {
             arrow.GetComponent<Renderer>().material = redArrow;
         }
         tvscreen.displayCubes(cubes);
+    }
+
+    public ButtonLevel CheckCubeHeight(GameObject cube) {
+        float cubeHeight = cube.transform.position.y;
+
+        int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
+        levels[level].cubesOverButton.Add(cube);
+
+        return levels[level];
     }
 }

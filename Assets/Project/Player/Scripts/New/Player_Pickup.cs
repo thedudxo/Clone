@@ -43,12 +43,11 @@ public class Player_Pickup : MonoBehaviour {
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
         carrier.GetComponent<SphereCollider>().enabled = false;
         if (!carriedObject.GetComponent<Weighted>().overButton) {
-            ButtonLevel.ButtonFall();
+            //ButtonLevel.ButtonFall();
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
             carriedObject.GetComponent<Weighted>().distance = 3;
         } else {
-            ButtonLevel.cubesOverButton.Add(carriedObject);
-            carriedObject.GetComponent<Weighted>().ChangeIndex();
+            PuzzleManager.beamButton.CheckCubeHeight(carriedObject);
             carriedObject.GetComponent<Weighted>().movePos = true;
         }
         carriedObject = null;

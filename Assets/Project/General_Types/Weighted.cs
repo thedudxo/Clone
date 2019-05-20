@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weighted : MonoBehaviour {
 
     private float randomRotation = 1;
-    public int iD;
+    public int buttonPos;
     public bool overButton = false;
     Vector3 moveTo;
     public bool destroyed = false;
@@ -16,10 +16,6 @@ public class Weighted : MonoBehaviour {
         if (movePos) {
             MovePosition();
         }
-    }
-
-    public void ChangeIndex() {
-            iD = ButtonLevel.cubesOverButton.IndexOf(gameObject);
     }
 
     public void Gravity() {

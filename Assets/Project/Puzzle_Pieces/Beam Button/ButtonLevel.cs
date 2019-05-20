@@ -17,7 +17,7 @@ public class ButtonLevel {
         foreach (ButtonLevel level in PuzzleManager.beamButton.levels) {
             foreach (GameObject c in cubesOverButton) {
                 if (level.cubesOverButton.IndexOf(cube) < level.cubesOverButton.IndexOf(c)) {
-                    c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
+                    c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2 + (this.level * (int)levelHeight);
                     c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
                 }
             }

@@ -41,6 +41,7 @@ public class BeamButton : MonoBehaviour {
         float cubeHeight = cube.transform.position.y;
 
         int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
+        Debug.Log(level);
         levels[level].cubesOverButton.Add(cube);
 
         return levels[level];

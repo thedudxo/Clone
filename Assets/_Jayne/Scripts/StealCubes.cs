@@ -8,7 +8,7 @@ public class StealCubes : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            EwokDestinations.goPickupCube = true;
+            EwokDestinations.goDeliverCube = true;
         }
     }
 

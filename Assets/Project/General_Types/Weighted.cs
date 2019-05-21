@@ -9,11 +9,11 @@ public class Weighted : MonoBehaviour {
     public bool overButton = false;
     Vector3 moveTo;
     public bool destroyed = false;
-    public bool movePos = false;
+    public bool moveRot = false;
     public int distance = 3;
 
     public void Update() {
-        if (movePos) {
+        if (moveRot) {
             MovePosition();
         }
     }
@@ -24,10 +24,9 @@ public class Weighted : MonoBehaviour {
         }
     }
 
-    public void overBeam(bool overButton, Vector3 buttonPos) {
-        this.overButton = overButton;
+    public void overBeam(Vector3 buttonPos, int level) {
         moveTo = buttonPos;
-        moveTo.y = moveTo.y + distance;
+        moveTo.y = moveTo.y + distance + (ButtonLevel.levelHeight * level);
     }
 
     public void MovePosition() {

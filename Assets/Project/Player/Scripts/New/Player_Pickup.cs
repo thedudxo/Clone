@@ -38,17 +38,20 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     public void Drop() {
+        //Object Rigidbody
         carriedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        carrying = false;
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
-        carrier.GetComponent<SphereCollider>().enabled = false;
+        carrying = false;
+        carrier.GetComponent<SphereCollider>().enabled = false;                                    
         if (!carriedObject.GetComponent<Weighted>().overButton) {
-            //ButtonLevel.ButtonFall();
+            ButtonLevel.ButtonFall();
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
             carriedObject.GetComponent<Weighted>().distance = 3;
         } else {
-            PuzzleManager.beamButton.CheckCubeHeight(carriedObject);
-            carriedObject.GetComponent<Weighted>().movePos = true;
+
+            PuzzleManager.beamButton.addCube(carriedObject, PuzzleManager.beamButton.CheckCubeHeight(carriedObject).level);
+            //allows the cube to move position and start rotating over the button
+            carriedObject.GetComponent<Weighted>().moveRot = true;
         }
         carriedObject = null;
     }

@@ -9,13 +9,14 @@ public class Beam : MonoBehaviour {
         if (obj.GetComponent<Weighted>()) {
             PuzzleManager.beamButton.cubes++;
             PuzzleManager.beamButton.checkArrow();
-            obj.GetComponent<Weighted>().overBeam(true, transform.position);
+            obj.GetComponent<Weighted>().overButton = true;
         }
     }
 
     private void OnTriggerExit(Collider other) {//removecubes
 
         ButtonLevel level = PuzzleManager.beamButton.CheckCubeHeight(other.gameObject);
+
         if (other.GetComponent<Weighted>()) {
             if (level.cubesOverButton.Contains(other.gameObject)) {
                 level.ResetCubes(other.gameObject);
@@ -23,7 +24,7 @@ public class Beam : MonoBehaviour {
             level.cubesOverButton.Remove(other.gameObject);
             PuzzleManager.beamButton.cubes--;
             PuzzleManager.beamButton.checkArrow();
-            other.GetComponent<Weighted>().movePos = false;
+            other.GetComponent<Weighted>().moveRot = false;
             other.GetComponent<Weighted>().Gravity();
             StartCoroutine(WaitTrigger(other));
         }

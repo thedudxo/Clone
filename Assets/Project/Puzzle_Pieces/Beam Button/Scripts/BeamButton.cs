@@ -40,17 +40,13 @@ public class BeamButton : MonoBehaviour {
     public ButtonLevel CheckCubeHeight(GameObject cube) {
         //Checks height of cube and adds the object to the correct level list
         float cubeHeight = cube.transform.position.y;
-
         int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
-       
         cube.GetComponent<Weighted>().overBeam(gameObject.transform.position, level);
-        ButtonLevel.DropIndividual(cube);
         return levels[level];
     }
 
     public ButtonLevel CheckList(GameObject cube) {
-        int level
-        return levels[level];
+        return null;
     }
 
     public void addCube(GameObject cube, int level)

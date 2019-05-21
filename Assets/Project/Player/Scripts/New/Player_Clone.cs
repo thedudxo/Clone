@@ -42,13 +42,13 @@ public class Player_Clone : MonoBehaviour {
                
             } else if (cloning && canClone){
                 Drop();
-                copyParticles.Emit(particleEmitAmmount);
+                //copyParticles.Emit(particleEmitAmmount);
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
-                copyParticles.Emit(particleEmitAmmount);
+                //copyParticles.Emit(particleEmitAmmount);
             }
         }
     }
@@ -91,12 +91,10 @@ public class Player_Clone : MonoBehaviour {
         clonedObject.GetComponent<BoxCollider>().isTrigger = false;
         if (!clonedObject.GetComponent<Weighted>().overButton) {
             cloneRb.useGravity = true;
-            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
-                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
-            }
+            ButtonLevel.ButtonFall();
         } else {
-            PuzzleManager.beamButton.cubesOverButton.Add(clonedObject);
+            ButtonLevel.cubesOverButton.Add(clonedObject);
+            clonedObject.GetComponent<Weighted>().ChangeIndex();
             clonedObject.GetComponent<Weighted>().movePos = true;
         }
         prevClone = clonedObject;
@@ -115,21 +113,19 @@ public class Player_Clone : MonoBehaviour {
                 clipboard = lookingAt;
                 Debug.Log("Can clone");
                 didHit = true;
-            }
-            else
-            {
-            Debug.Log("Cant clone " + hit.transform.gameObject);
+            } else {
+                Debug.Log("Cant clone " + hit.transform.gameObject);
             }
         }
 
         //which particles to emit
         if (!didHit)
         {
-            failParticles.Emit(particleEmitAmmount);
+            //failParticles.Emit(particleEmitAmmount);
         }
         else
         {
-            copyParticles.Emit(particleEmitAmmount);
+            //copyParticles.Emit(particleEmitAmmount);
         }
     }
 
@@ -142,6 +138,7 @@ public class Player_Clone : MonoBehaviour {
             cloneDist = 3;
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
+            clonedObject.GetComponent<Weighted>().distance = 3;
             clonedObject.GetComponent<Weighted>().movePos = false;
             clonedObject.GetComponent<Weighted>().overButton = false;
             render = clonedObject.GetComponent<Renderer>();
@@ -153,13 +150,18 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;
+            if (prevClone == null) {
+                ButtonLevel.ButtonRise();
+                return;
+            }
+            if (!prevClone.gameObject.GetComponent<Weighted>().overButton) {
+                ButtonLevel.ButtonRise();
+            }
 
-            clonedObject.GetComponent<Weighted>().distance = 3;
-
-            copyParticles.Emit(particleEmitAmmount);
+            //copyParticles.Emit(particleEmitAmmount);
         } else
         {
-            failParticles.Emit(particleEmitAmmount);
+            //failParticles.Emit(particleEmitAmmount);
         }
     }
 }

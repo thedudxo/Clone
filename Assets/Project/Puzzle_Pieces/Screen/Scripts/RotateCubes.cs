@@ -8,7 +8,6 @@ public class RotateCubes : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("yehs");
         gameObject.GetComponent<Rigidbody>().AddTorque(
             Random.Range(-randomRotation, randomRotation),
             Random.Range(-randomRotation, randomRotation),

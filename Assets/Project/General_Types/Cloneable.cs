@@ -12,6 +12,7 @@ public class Cloneable : MonoBehaviour {
     private string dissolveAnim = "Vector1_FA6C32DC";
     private Color cloneColor = new Color(0, 0.8f, 1);
     private Color errorColor = new Color(1, 0, 0);
+    private Color buttonColor = new Color(0, 1, 0);
     public Material materialize;
     public Material dissolve;
 
@@ -26,11 +27,16 @@ public class Cloneable : MonoBehaviour {
 
     public void Update() {
         if(PlayerManager.player_Clone.canClone == false) {
-            materialize.SetColor("Color_711056C5", errorColor);
+            materialize.SetColor("Color_ED5ABF3C", errorColor);
+            materialize.SetFloat("Vector1_1A249BD6", 0.4f);
         } else {
-            materialize.SetColor("Color_711056C5", cloneColor);
+            materialize.SetColor("Color_ED5ABF3C", cloneColor);
+            materialize.SetFloat("Vector1_1A249BD6", 0.4f);
         }
-        Debug.Log(triggers);
+        if (gameObject.GetComponent<Weighted>().overButton) {
+            materialize.SetFloat("Vector1_1A249BD6", -1);
+            materialize.SetColor("Color_ED5ABF3C", buttonColor);
+        }
     }
 
     public void Die() {
@@ -45,10 +51,7 @@ public class Cloneable : MonoBehaviour {
 
     public IEnumerator Materialize() {
         if (!gameObject.GetComponent<Weighted>().overButton) {
-            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + 2;
-                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
-            }
+            //ButtonLevel.ButtonRise();
         }
         float lerp = 0.0f;
         while (lerp <= 1) {
@@ -66,12 +69,6 @@ public class Cloneable : MonoBehaviour {
             yield return lerp;
         }
         transform.position = new Vector3(0, -100, 0);
-        if (gameObject.GetComponent<Weighted>().overButton) {
-            foreach (GameObject c in PuzzleManager.beamButton.cubesOverButton) {
-                c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance - 2;
-                c.GetComponent<Weighted>().overBeam(true, PuzzleManager.beamButton.gameObject.transform.position);
-            }
-        }
         yield return new WaitForEndOfFrame();
         gameObject.GetComponent<Weighted>().destroyed = true;
         yield return new WaitForEndOfFrame();
@@ -79,16 +76,19 @@ public class Cloneable : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (gameObject.GetComponent<Weighted>().overButton) { return; }
-        if (PlayerManager.player_Clone.cloning) {
+        if (other.gameObject.tag == "IgnoreClone") {
+            Debug.Log("Change Color");
+            return;
+        }
+        if (gameObject == PlayerManager.player_Clone.clonedObject) {
             triggers++;
             PlayerManager.player_Clone.canClone = false;
-        }//Debug.Log(triggers);
+        }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (gameObject.GetComponent<Weighted>().overButton) { return; }
-        if (PlayerManager.player_Clone.cloning) {
+        if (other.gameObject.tag == "IgnoreClone") { return; }
+        if (gameObject == PlayerManager.player_Clone.clonedObject) {
             triggers--;
             if (triggers == 0) {
                 PlayerManager.player_Clone.canClone = true;

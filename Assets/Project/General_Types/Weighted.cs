@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weighted : MonoBehaviour {
 
     private float randomRotation = 1;
+    public int iD;
     public bool overButton = false;
     Vector3 moveTo;
     public bool destroyed = false;
@@ -15,6 +16,10 @@ public class Weighted : MonoBehaviour {
         if (movePos) {
             MovePosition();
         }
+    }
+
+    public void ChangeIndex() {
+            iD = ButtonLevel.cubesOverButton.IndexOf(gameObject);
     }
 
     public void Gravity() {
@@ -34,7 +39,6 @@ public class Weighted : MonoBehaviour {
         gameObject.GetComponent<Rigidbody>().AddTorque(
                      Random.Range(-randomRotation, randomRotation),
                      Random.Range(-randomRotation, randomRotation),
-                     Random.Range(-randomRotation, randomRotation)
-                     );
+                     Random.Range(-randomRotation, randomRotation));
     }
 }

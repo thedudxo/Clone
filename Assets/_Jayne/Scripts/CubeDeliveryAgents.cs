@@ -1,57 +1,100 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CubeDeliveryAgents : MonoBehaviour {
 
     public bool goDeliverCube = false;
-    UnityEngine.AI.NavMeshAgent navmeshAgent;
-    Transform spawnPos;
+    public GameObject CubeHolder;
+    Vector3 spawnPos;
+    public float pickupProximity = 1.0f;
+    [HideInInspector]
+    public Vector3 deliverPos;
+    [HideInInspector]
+    public GameObject cubeToCarry;
+    public GameObject defaultDeliverGizmo;   //eg the Big Altar or for playtesting, in the room you are testing
+    public GameObject defaultSpawnGizmo;    //eg for playtesting, on the navmesh just outside the room you are testing
+    NavMeshAgent deliveryAgent;
     Transform thisAgentTransform;
     Collider cubeCollider;
     Rigidbody cubeRigidBody;
     bool isCarrying = false;
-    bool assignedToDeliver = false;
     string cubeName;
 
-    // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        deliverPos = defaultDeliverGizmo.GetComponent<Transform>().position;
+        spawnPos = defaultSpawnGizmo.GetComponent<Transform>().position; 
+        deliveryAgent = GetComponent<NavMeshAgent>();
+        thisAgentTransform = gameObject.transform;
+    }
 
-        if (goDeliverCube && !isCarrying)
+    void Update ()
+    {
+        if (isCarrying)
         {
-            CollectDelivery();
-            if (navmeshAgent.remainingDistance <= pickupProximity)
+            CarryCube(cubeToCarry);
+            if (deliveryAgent.remainingDistance <= pickupProximity)
             {
-                GrabCube();
+                DropCube(cubeToCarry);
             }
         }
 
+        if (goDeliverCube && !isCarrying)
+        {
+            CollectDelivery(cubeToCarry);
+            if (deliveryAgent.remainingDistance <= pickupProximity)
+            {
+                GrabCube(cubeToCarry);
+            }
+        }
 
     }
 
-    public void TargetCube() // Face and go to Cube 
+    public GameObject CollectDelivery(GameObject cubeToCarry) // Face and go to Cube 
     {
-        cubePickupPoint = spawnPos.transform;
-        thisAgentTransform.LookAt(cubePickupPoint);
-        Vector3 targetCubeVector = cubePickupPoint.position;
-        navmeshAgent.SetDestination(targetCubeVector);
+        Vector3 pos = cubeToCarry.GetComponent<CubeSpawnDeets>().spawnPos;
+        Debug.Log("arrived at CollectDelivery, Pos is " + pos);
+        thisAgentTransform.LookAt(pos);
+        Debug.Log("arrived at CollectDelivery, spawnPos is " + pos);
+        deliveryAgent.SetDestination(pos);
+        return cubeToCarry;
     }
 
-    public void CollectDelivery(Vector3 spawnPos)
+    private GameObject GrabCube(GameObject cubeToCarry)
     {
-        thisAgentTransform.LookAt(spawnPos);
-        navmeshAgent.SetDestination(spawnPos);
+        cubeCollider = cubeToCarry.GetComponent<Collider>();
+        cubeRigidBody = cubeToCarry.GetComponent<Rigidbody>();
+        cubeCollider.enabled = false;
+        cubeRigidBody.detectCollisions = false;
+        isCarrying = true;
+        Deliver(cubeToCarry);
+        return cubeToCarry;
     }
 
-    private void Deliver(Vector3 deliverPos)
+    private GameObject CarryCube(GameObject cubeToCarry)
     {
-        navmeshAgent.SetDestination(deliverPos);
+        cubeToCarry.transform.position = CubeHolder.transform.position;
+        goDeliverCube = false;
+        return cubeToCarry;
     }
+
+    public void DropCube (GameObject cubeToCarry) // Drop Cube at Altar
+    {
+        cubeCollider.enabled = true;
+        cubeRigidBody.detectCollisions = true;
+        isCarrying = false;
+    }
+
+    public GameObject Deliver(GameObject CubeToCarry)
+    {
+        Vector3 deliverPos = cubeToCarry.GetComponent<CubeSpawnDeets>().deliverPos;
+        deliveryAgent.SetDestination(deliverPos);
+        return cubeToCarry;
+    }
+
+
+
 
 
 

@@ -4,42 +4,12 @@ using UnityEngine;
 
 public class RespawnCubes : MonoBehaviour {
 
-    public GameObject L1YesCube_RespawnPoint;
-    public GameObject L1NoCube_RespawnPoint;
-    public GameObject L2YesCube_RespawnPoint;
-    public GameObject L2NoCube_RespawnPoint;
-    public GameObject L1_Player_RespawnPoint;
- //   public GameObject L2_Player_RespawnPoint;
-
     public void OnTriggerEnter (Collider other)
     {
         if (other.tag == "Cube" || other.tag == "Player")
         {
+            Debug.Log("Cube has fallen " + other.name);
             other.GetComponent<CubeSpawnDeets>().Respawn();
         }
-
-
-
-
-        if (other.tag == "NoCube")
-        {
-            other.transform.position = L2NoCube_RespawnPoint.transform.position;
-            EwokDestinations.goCarryCube = true;
-        }
-        if (other.tag == "L1YesCube")
-        {
-            other.transform.position = L1YesCube_RespawnPoint.transform.position;
-            EwokDestinations.goCarryCube = true;
-        }
-        if (other.tag == "L1NoCube")
-        {
-            other.transform.position = L1NoCube_RespawnPoint.transform.position;
-            EwokDestinations.goCarryCube = true;
-        }
-        if (other.tag == "Player")
-        {
-            other.transform.position = L1_Player_RespawnPoint.transform.position;
-        }
-
     }
 }

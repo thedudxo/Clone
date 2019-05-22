@@ -9,6 +9,7 @@ TagManager:
   - Yes Cube
   - L1YesCube
   - L1NoCube
+  - Cube
   layers:
   - Default
   - TransparentFX

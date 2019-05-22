@@ -77,10 +77,10 @@ Material:
     m_Floats:
     - Vector1_122D890F: 0.01
     - Vector1_1A249BD6: 0.4
-    - Vector1_9860A3FA: 6
+    - Vector1_9860A3FA: 20
     - Vector1_B5345175: 30
     - Vector1_F6AE66A0: 0.62
-    - Vector1_FA6C32DC: 0.49040565
+    - Vector1_FA6C32DC: 0.49056274
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

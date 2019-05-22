@@ -13,25 +13,28 @@ public class RespawnCubes : MonoBehaviour {
 
     public void OnTriggerEnter (Collider other)
     {
-        if (other.tag == "Yes Cube")
+        if (other.tag == "Cube" || other.tag == "Player")
         {
-            other.transform.position = L2YesCube_RespawnPoint.transform.position;
-            EwokDestinations.goDeliverCube = true;
+            other.GetComponent<CubeSpawnDeets>().Respawn();
         }
+
+
+
+
         if (other.tag == "NoCube")
         {
             other.transform.position = L2NoCube_RespawnPoint.transform.position;
-            EwokDestinations.goDeliverCube = true;
+            EwokDestinations.goCarryCube = true;
         }
         if (other.tag == "L1YesCube")
         {
             other.transform.position = L1YesCube_RespawnPoint.transform.position;
-            EwokDestinations.goDeliverCube = true;
+            EwokDestinations.goCarryCube = true;
         }
         if (other.tag == "L1NoCube")
         {
             other.transform.position = L1NoCube_RespawnPoint.transform.position;
-            EwokDestinations.goDeliverCube = true;
+            EwokDestinations.goCarryCube = true;
         }
         if (other.tag == "Player")
         {

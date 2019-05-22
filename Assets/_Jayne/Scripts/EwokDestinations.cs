@@ -9,16 +9,16 @@ public class EwokDestinations : MonoBehaviour
     [SerializeField]
     List<DrawGizmos> cubeDropPoints;
     public int startWayPointIndex;
-    public static bool goDeliverCube = false;
-    public bool thisAgentDeliversCubes;
+    public static bool goCarryCube = false;
+    public bool thisAgentCarriesCubes;
     public int dropWayPointIndex;
-    public GameObject cubeToDeliver;
+    public GameObject cubeToCarry;
     public float pickupProximity = 0.8f;
     public GameObject CubeHolder;
 
     int currentWayPointIndex;
     NavMeshAgent navmeshAgent;
-    Transform targetCubePos;
+    Transform cubePickupPoint;
     Transform thisAgentTransform;
     Collider cubeCollider;
     Rigidbody cubeRigidBody;
@@ -28,13 +28,13 @@ public class EwokDestinations : MonoBehaviour
     void Start()
     {
         navmeshAgent = gameObject.GetComponent<NavMeshAgent>();
-        if (thisAgentDeliversCubes)
+        if (thisAgentCarriesCubes)
         {
-            targetCubePos = cubeToDeliver.transform;
+            cubePickupPoint = cubeToCarry.transform;
             thisAgentTransform = gameObject.transform;
-            cubeCollider = cubeToDeliver.GetComponent<Collider>();
-            cubeRigidBody = cubeToDeliver.GetComponent<Rigidbody>();
-            cubeName = cubeToDeliver.name;
+            cubeCollider = cubeToCarry.GetComponent<Collider>();
+            cubeRigidBody = cubeToCarry.GetComponent<Rigidbody>();
+            cubeName = cubeToCarry.name;
         }
         #region 
         if (navmeshAgent == null) // This is only needed during development, not for the build
@@ -61,10 +61,10 @@ public class EwokDestinations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         //            if (one of the target cubes sets off the fallRespawn collider OnTriggerEnter function )
         {
-            goDeliverCube = true;
+            goCarryCube = true;
         }
         //if carrying a Cube, when close to drop point, drop it
-        if (thisAgentDeliversCubes && isCarrying)
+        if (thisAgentCarriesCubes && isCarrying)
         {
             CarryCube();
             if (navmeshAgent.remainingDistance <= pickupProximity)
@@ -73,7 +73,7 @@ public class EwokDestinations : MonoBehaviour
             }
         }
         //        if told to pick up a cube, go to it and when close, pick it up
-        if (goDeliverCube && thisAgentDeliversCubes && !isCarrying)
+        if (goCarryCube && thisAgentCarriesCubes && !isCarrying)
         {
             TargetCube();
             if (navmeshAgent.remainingDistance <= pickupProximity)
@@ -82,8 +82,8 @@ public class EwokDestinations : MonoBehaviour
             }
         }
 
-        //if not picking up cubes or carruing them, wander around randomly
-        if (!thisAgentDeliversCubes || (!goDeliverCube && !isCarrying))
+        //if not picking up cubes or carrying them, wander around randomly
+        if (!thisAgentCarriesCubes || (!goCarryCube && !isCarrying))
             if (navmeshAgent.remainingDistance <= pickupProximity)
             {
                 int newWaypointIndex = UnityEngine.Random.Range(1, cubeDropPoints.Count);
@@ -93,9 +93,9 @@ public class EwokDestinations : MonoBehaviour
 
     public void TargetCube() // Face and go to Cube 
     {
-        targetCubePos = cubeToDeliver.transform;
-        thisAgentTransform.LookAt(targetCubePos);
-        Vector3 targetCubeVector = targetCubePos.position;
+        cubePickupPoint = cubeToCarry.transform;
+        thisAgentTransform.LookAt(cubePickupPoint);
+        Vector3 targetCubeVector = cubePickupPoint.position;
         navmeshAgent.SetDestination(targetCubeVector);
     }
 
@@ -109,9 +109,10 @@ public class EwokDestinations : MonoBehaviour
 
     private void CarryCube()
     {
-        cubeToDeliver.transform.position = CubeHolder.transform.position;
-        goDeliverCube = false;
+        cubeToCarry.transform.position = CubeHolder.transform.position;
+        goCarryCube = false;
     }
+
 
     private void GoToAltar()
     {

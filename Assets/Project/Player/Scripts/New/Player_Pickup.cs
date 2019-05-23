@@ -28,7 +28,11 @@ public class Player_Pickup : MonoBehaviour {
 	}
 
     void Carry(GameObject o) {
-        o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, carrier.transform.position, Time.deltaTime * smooth));
+        var body = o.GetComponent<Rigidbody>();
+        body.MovePosition(Vector3.Lerp(
+            body.transform.position,
+            carrier.transform.position,
+            Time.deltaTime * smooth));
     }
 
     void CheckDrop() {

@@ -42,13 +42,13 @@ public class Player_Clone : MonoBehaviour {
                
             } else if (cloning && canClone){
                 Drop();
-                //copyParticles.Emit(particleEmitAmmount);
+                copyParticles.Emit(particleEmitAmmount);
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
-                //copyParticles.Emit(particleEmitAmmount);
+                copyParticles.Emit(particleEmitAmmount);
             }
         }
     }
@@ -124,10 +124,13 @@ public class Player_Clone : MonoBehaviour {
             }
         }
         //which particles to emit
-        if (!didHit) {
-            //failParticles.Emit(particleEmitAmmount);
-        } else {
-            //copyParticles.Emit(particleEmitAmmount);
+        if (!didHit)
+        {
+            failParticles.Emit(particleEmitAmmount);
+        }
+        else
+        {
+            copyParticles.Emit(particleEmitAmmount);
         }
     }
 
@@ -169,10 +172,10 @@ public class Player_Clone : MonoBehaviour {
                 ButtonLevel.ButtonRise();
             }
 
-            //copyParticles.Emit(particleEmitAmmount);
+            copyParticles.Emit(particleEmitAmmount);
         } else
         {
-            //failParticles.Emit(particleEmitAmmount);
+            failParticles.Emit(particleEmitAmmount);
         }
     }
 }

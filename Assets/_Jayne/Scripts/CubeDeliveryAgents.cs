@@ -29,7 +29,7 @@ public class CubeDeliveryAgents : MonoBehaviour {
         thisAgentTransform = gameObject.transform;
     }
 
-    void Update ()
+    void FixedUpdate ()
     {
         if (isCarrying)
         {
@@ -53,7 +53,8 @@ public class CubeDeliveryAgents : MonoBehaviour {
 
     public GameObject CollectDelivery(GameObject cubeToCarry) // Face and go to Cube 
     {
-        Vector3 pos = cubeToCarry.GetComponent<CubeSpawnDeets>().spawnPos;
+ //       Vector3 pos = cubeToCarry.GetComponent<CubeSpawnDeets>().spawnPos;
+        Vector3 pos = cubeToCarry.GetComponent<Transform>().position;
         Debug.Log("arrived at CollectDelivery, Pos is " + pos);
         thisAgentTransform.LookAt(pos);
         Debug.Log("arrived at CollectDelivery, spawnPos is " + pos);

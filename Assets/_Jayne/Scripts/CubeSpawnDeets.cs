@@ -56,6 +56,8 @@ public class CubeSpawnDeets : MonoBehaviour {
         gameObject.transform.position = spawnPos;
         Debug.Log("Calling Collect Delivery on gameObject" + gameObject + " at spawnPos " + spawnPos);
         deliveryAgent.GetComponent<CubeDeliveryAgents>().goDeliverCube = true;
-        deliveryAgent.GetComponent<CubeDeliveryAgents>().CollectDelivery(gameObject);    
+        deliveryAgent.GetComponent<CubeDeliveryAgents>().cubeToCarry = gameObject;
+
+ //       deliveryAgent.GetComponent<CubeDeliveryAgents>().CollectDelivery(gameObject);    
     }
 }

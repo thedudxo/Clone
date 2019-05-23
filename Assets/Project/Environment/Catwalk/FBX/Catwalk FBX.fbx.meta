@@ -239,6 +239,8 @@ ModelImporter:
     100466: Stairs
     100468: Stairs 1
     100470: pCube35
+    100472: pCube36
+    100474: pCube37
     400000: bolt
     400002: bolt 1
     400004: bolt 10
@@ -475,6 +477,8 @@ ModelImporter:
     400466: Stairs
     400468: Stairs 1
     400470: pCube35
+    400472: pCube36
+    400474: pCube37
     2100000: lambert1
     2100002: lambert2
     2300000: bolt
@@ -671,6 +675,8 @@ ModelImporter:
     2300382: stair 9
     2300384: //RootNode
     2300386: pCube35
+    2300388: pCube36
+    2300390: pCube37
     3300000: bolt
     3300002: bolt 1
     3300004: bolt 10
@@ -865,6 +871,8 @@ ModelImporter:
     3300382: stair 9
     3300384: //RootNode
     3300386: pCube35
+    3300388: pCube36
+    3300390: pCube37
     4300000: pCube30
     4300002: pCube33
     4300004: pCube34
@@ -1059,6 +1067,8 @@ ModelImporter:
     4300382: bolt6
     4300384: Catwalk_Stairs
     4300386: pCube35
+    4300388: pCube36
+    4300390: pCube37
   externalObjects:
   - first:
       type: UnityEngine:Material

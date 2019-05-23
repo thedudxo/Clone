@@ -13,16 +13,19 @@ public class BeamButton : MonoBehaviour {
 
     TVscreen tvscreen;
 
-    ButtonLevel level1;
-    ButtonLevel level2;
+    public ButtonLevel[] levels;
+
 
     private void Start() {
         PuzzleManager.beamButton = this;
         tvscreen = gameObject.GetComponent<TVscreen>();
         tvscreen.displayCubes(cubes);
 
-        level1 = new ButtonLevel(1);
-        level2 = new ButtonLevel(2);
+        levels = new ButtonLevel[] {
+            new ButtonLevel(0),
+            new ButtonLevel(1)
+        };
+        
     }
 
     public void checkArrow() { //change to red/green
@@ -32,5 +35,28 @@ public class BeamButton : MonoBehaviour {
             arrow.GetComponent<Renderer>().material = redArrow;
         }
         tvscreen.displayCubes(cubes);
+    }
+
+    public ButtonLevel CheckCubeHeight(GameObject cube) {
+        //Checks height of cube and adds the object to the correct level list
+        float cubeHeight = cube.transform.position.y;
+        if(cubeHeight < 0) { cubeHeight = 0; }
+        int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
+        cube.GetComponent<Weighted>().overBeam(gameObject.transform.position, level);
+        return levels[level];
+    }
+
+    public void ChangeList(int toLevel, int fromLevel) {
+        levels[toLevel].RiseNextLevel(levels[fromLevel].cubesOverButton.Count);
+        foreach (GameObject c in levels[fromLevel].cubesOverButton) {
+            levels[toLevel].cubesOverButton.Add(c);
+            c.GetComponent<Weighted>().overBeam(gameObject.transform.position, toLevel);
+        }
+        levels[fromLevel].cubesOverButton.Clear();
+        Debug.Log(levels[fromLevel].cubesOverButton.Count);
+    }
+
+    public void addCube(GameObject cube, int level) {
+        levels[level].cubesOverButton.Add(cube);
     }
 }

@@ -46,8 +46,14 @@ public class BeamButton : MonoBehaviour {
         return levels[level];
     }
 
-    public ButtonLevel CheckList(GameObject cube) {
-        return null;
+    public void ChangeList(int toLevel, int fromLevel) {
+        levels[toLevel].RiseNextLevel(levels[fromLevel].cubesOverButton.Count);
+        foreach (GameObject c in levels[fromLevel].cubesOverButton) {
+            levels[toLevel].cubesOverButton.Add(c);
+            c.GetComponent<Weighted>().overBeam(gameObject.transform.position, toLevel);
+        }
+        levels[fromLevel].cubesOverButton.Clear();
+        Debug.Log(levels[fromLevel].cubesOverButton.Count);
     }
 
     public void addCube(GameObject cube, int level) {

@@ -46,7 +46,6 @@ public class Player_Pickup : MonoBehaviour {
         if (!carriedObject.GetComponent<Weighted>().overButton) {
             ButtonLevel.ButtonFall();
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
-            carriedObject.GetComponent<Weighted>().distance = 3;
         } else {
             PuzzleManager.beamButton.addCube(carriedObject, PuzzleManager.beamButton.CheckCubeHeight(carriedObject).level);
             ButtonLevel.DropLevelCubes(carriedObject);
@@ -72,6 +71,7 @@ public class Player_Pickup : MonoBehaviour {
                     carrying = true;
                     g.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                     g.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    g.gameObject.GetComponent<Weighted>().distance = 3;
                     carriedObject = g.gameObject;
                     carriedObject.transform.rotation = Quaternion.identity;
                     carrier.GetComponent<SphereCollider>().enabled = true;

@@ -65,4 +65,11 @@ public class ButtonLevel {
             }
         }
     }
+
+    public void RiseNextLevel(int noOfCubes) {
+        foreach(GameObject c in cubesOverButton) {
+            c.GetComponent<Weighted>().distance = c.GetComponent<Weighted>().distance + (noOfCubes * 2);
+            c.GetComponent<Weighted>().overBeam(PuzzleManager.beamButton.gameObject.transform.position, level);
+        }
+    }
 }

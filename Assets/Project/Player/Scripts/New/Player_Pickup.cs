@@ -42,18 +42,18 @@ public class Player_Pickup : MonoBehaviour {
     }
 
     public void Drop() {
+        //Object Rigidbody
         carriedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        carrying = false;
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
+        carrying = false;
         carrier.GetComponent<SphereCollider>().enabled = false;
         if (!carriedObject.GetComponent<Weighted>().overButton) {
             ButtonLevel.ButtonFall();
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
-            carriedObject.GetComponent<Weighted>().distance = 3;
         } else {
-            ButtonLevel.cubesOverButton.Add(carriedObject);
-            carriedObject.GetComponent<Weighted>().ChangeIndex();
-            carriedObject.GetComponent<Weighted>().movePos = true;
+            PuzzleManager.beamButton.addCube(carriedObject, PuzzleManager.beamButton.CheckCubeHeight(carriedObject).level);
+            ButtonLevel.DropLevelCubes(carriedObject);
+            carriedObject.GetComponent<Weighted>().moveRot = true;
         }
         carriedObject = null;
     }
@@ -69,10 +69,13 @@ public class Player_Pickup : MonoBehaviour {
                 if(g != null && hit.distance <= pickupDist) {
                     if (!g.gameObject.GetComponent<Weighted>().overButton) {
                         ButtonLevel.ButtonRise();
+                    } else {
+                        ButtonLevel.RiseIndivCube(g.gameObject);
                     }
                     carrying = true;
                     g.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                     g.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    g.gameObject.GetComponent<Weighted>().distance = 3;
                     carriedObject = g.gameObject;
                     carriedObject.transform.rotation = Quaternion.identity;
                     carrier.GetComponent<SphereCollider>().enabled = true;

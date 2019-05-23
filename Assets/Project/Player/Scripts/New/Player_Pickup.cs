@@ -49,8 +49,7 @@ public class Player_Pickup : MonoBehaviour {
             carriedObject.GetComponent<Weighted>().distance = 3;
         } else {
             PuzzleManager.beamButton.addCube(carriedObject, PuzzleManager.beamButton.CheckCubeHeight(carriedObject).level);
-            ButtonLevel.DropIndividual(carriedObject);
-            //allows the cube to move position and start rotating over the button
+            ButtonLevel.DropLevelCubes(carriedObject);
             carriedObject.GetComponent<Weighted>().moveRot = true;
         }
         carriedObject = null;
@@ -67,6 +66,8 @@ public class Player_Pickup : MonoBehaviour {
                 if(g != null && hit.distance <= pickupDist) {
                     if (!g.gameObject.GetComponent<Weighted>().overButton) {
                         ButtonLevel.ButtonRise();
+                    } else {
+                        ButtonLevel.RiseIndivCube(g.gameObject);
                     }
                     carrying = true;
                     g.gameObject.GetComponent<Rigidbody>().freezeRotation = true;

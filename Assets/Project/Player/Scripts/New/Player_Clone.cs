@@ -96,12 +96,14 @@ public class Player_Clone : MonoBehaviour {
         render.receiveShadows = true;
         clonedObject.GetComponent<BoxCollider>().isTrigger = false; //turns off the trigger, making collisions possible
         if (!clonedObject.GetComponent<Weighted>().overButton) {
+            ButtonLevel.ButtonFall();
             //if cube is not over button
             cloneRb.useGravity = true;
-            //ButtonLevel.ButtonFall();
+            clonedObject.GetComponent<Weighted>().distance = 3;
         } else {
             //if cube is over button
-            PuzzleManager.beamButton.CheckCubeHeight(clonedObject); //Check cube height in BeamButton.cs
+            PuzzleManager.beamButton.addCube(clonedObject, PuzzleManager.beamButton.CheckCubeHeight(clonedObject).level);   //Check cube height in BeamButton.cs
+            ButtonLevel.DropLevelCubes(clonedObject);
             clonedObject.GetComponent<Weighted>().moveRot = true;
         }
         prevClone = clonedObject;
@@ -160,7 +162,9 @@ public class Player_Clone : MonoBehaviour {
                 ButtonLevel.ButtonRise();
                 return; //return to not run the next update because prevClone doesn't exist yet.
             }
-            if (!prevClone.gameObject.GetComponent<Weighted>().overButton) {
+            if (prevClone.gameObject.GetComponent<Weighted>().overButton) {
+                ButtonLevel.RiseIndivCube(prevClone);
+            } else {
                 //if previous clone was not over button
                 ButtonLevel.ButtonRise();
             }

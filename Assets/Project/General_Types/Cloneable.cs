@@ -26,14 +26,14 @@ public class Cloneable : MonoBehaviour {
     }
 
     public void Update() {
-        if(PlayerManager.player_Clone.canClone == false) {
+        if(!PlayerManager.player_Clone.canClone) {
             materialize.SetColor("Color_ED5ABF3C", errorColor);
             materialize.SetFloat("Vector1_1A249BD6", 0.4f);
         } else {
             materialize.SetColor("Color_ED5ABF3C", cloneColor);
             materialize.SetFloat("Vector1_1A249BD6", 0.4f);
         }
-        if (gameObject.GetComponent<Weighted>().overButton) {
+        if (gameObject.GetComponent<Weighted>().overButton && PlayerManager.player_Clone.canClone) {
             materialize.SetFloat("Vector1_1A249BD6", -1);
             materialize.SetColor("Color_ED5ABF3C", buttonColor);
         }
@@ -45,6 +45,7 @@ public class Cloneable : MonoBehaviour {
         } else {
             this.GetComponent<Renderer>().material = dissolve;
             this.GetComponent<MeshRenderer>().shadowCastingMode = ShadowCastingMode.Off;
+            gameObject.GetComponent<BoxCollider>().isTrigger = true;
             StartCoroutine(Dissolve());
         }
     }
@@ -68,7 +69,7 @@ public class Cloneable : MonoBehaviour {
             lerp += Time.deltaTime;
             yield return lerp;
         }
-        transform.position = new Vector3(0, -100, 0);
+        transform.position = new Vector3(100, transform.position.y, 0);
         yield return new WaitForEndOfFrame();
         gameObject.GetComponent<Weighted>().destroyed = true;
         yield return new WaitForEndOfFrame();
@@ -77,7 +78,6 @@ public class Cloneable : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "IgnoreClone") {
-            Debug.Log("Change Color");
             return;
         }
         if (gameObject == PlayerManager.player_Clone.clonedObject) {

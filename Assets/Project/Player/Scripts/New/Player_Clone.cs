@@ -150,6 +150,13 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;
+            if (prevClone == null) {
+                ButtonLevel.ButtonRise();
+                return;
+            }
+            if (!prevClone.gameObject.GetComponent<Weighted>().overButton) {
+                ButtonLevel.ButtonRise();
+            }
 
             copyParticles.Emit(particleEmitAmmount);
         } else

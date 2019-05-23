@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RespawnCubes : MonoBehaviour {
+    public GameObject playerRespawnPos;
 
     public void OnTriggerEnter (Collider other)
     {
-        if (other.tag == "Cube" || other.tag == "Player")
+        if (other.tag == "Cube")
         {
-            Debug.Log("Cube has fallen " + other.name);
             other.GetComponent<CubeSpawnDeets>().Respawn();
         }
+        if (other.tag == "Player")
+        {
+            other.transform.position = playerRespawnPos.transform.position;
+        }
+
     }
 }

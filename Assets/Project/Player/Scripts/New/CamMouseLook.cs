@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamMouseLook : MonoBehaviour {
 
 	public float mouseSensitivity;
-	public GameObject playerBody;
+    public GameObject playerBody;
 	
 	float xAxisClamp = 0;
 	
@@ -50,4 +50,10 @@ public class CamMouseLook : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(targetRotCam);
 		playerBody.transform.rotation = Quaternion.Euler(targetRotBody);
 	}
+    public void SetMouseSensitivity(float sens)
+    {
+        mouseSensitivity = sens;
+    }
+
+
 }

@@ -6,7 +6,7 @@ public class ButtonLevel {
 
     public List<GameObject> cubesOverButton = new List<GameObject>();
     public int level;
-    public static readonly float levelHeight = 13;
+    public static readonly float levelHeight = 11;
 
     public ButtonLevel(int level) {
         this.level = level;

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - IgnoreClone
   - Cube
+  - UpStair
+  - DownStair
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,529 @@
+fileFormatVersion: 2
+guid: 34ceaf204fe867f459e83414d36ef750
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CubeNum1
+    100002: CubeNum3
+    100004: InsideWalls2HALF
+    100006: //RootNode
+    100008: L1Ramp
+    100010: L1Wall2
+    100012: L1Wall3
+    100014: L1Wall4
+    100016: L1Wall5
+    100018: L1Wall6
+    100020: L1Wall7
+    100022: L2DoorSlab1
+    100024: L2OutsideFloor1
+    100026: NewLayout:BaseFloor
+    100028: NewLayout:CubeNum1
+    100030: NewLayout:CubeNum1 1
+    100032: NewLayout:CubeNum1 2
+    100034: NewLayout:CubeNum1 3
+    100036: NewLayout:CubeNum2
+    100038: NewLayout:CubeNum3
+    100040: NewLayout:DoorSlab1
+    100042: NewLayout:DoorSlab2
+    100044: NewLayout:DoorSlab3
+    100046: NewLayout:L1Wall1
+    100048: NewLayout:L1Wall2
+    100050: NewLayout:L2DoorSlab0
+    100052: NewLayout:L2DoorSlab1
+    100054: NewLayout:WindowL1
+    100056: NewLayout:WindowL2
+    100058: Animated_Parts
+    100060: Animated_Parts 1
+    100062: Base
+    100064: Base 1
+    100066: Butress
+    100068: Butress1
+    100070: Collider
+    100072: Collider 1
+    100074: Dome
+    100076: Dome 1
+    100078: door
+    100080: door1
+    100082: hidden_idk
+    100084: InsideWalls
+    100086: InsideWalls2Whole
+    100088: j
+    100090: L2OutsideFloor
+    100092: NewLayout:InsideWalls
+    100094: NewLayout:L1Ramp
+    100096: NewLayout:L1Ramp1
+    100098: NewLayout:L2OutsideFloor
+    100100: NewLayout:L2Window1
+    100102: NewLayout:L2Window2
+    100104: NewLayout:L2Window3
+    100106: NewLayout:polySurface1
+    100108: NewLayout:polySurface2
+    100110: NewLayout:polySurface3
+    100112: pCylinder8
+    100114: polySurface13
+    100116: polySurface14
+    100118: polySurface15
+    100120: polySurface16
+    100122: polySurface17
+    100124: polySurface2
+    100126: polySurface20
+    100128: polySurface21
+    100130: Rafter
+    100132: Rafter1
+    100134: Rafter2
+    100136: Rafter3
+    100138: Rafter4
+    100140: Rafter5
+    100142: Screen
+    100144: screen
+    100146: Screen 1
+    100148: screen 1
+    100150: second_floor
+    100152: Secret_Compartment
+    100154: Secret_Compartment 1
+    100156: slide1
+    100158: slide1 1
+    100160: slide2
+    100162: slide2 1
+    100164: slide3
+    100166: slide3 1
+    100168: slide4
+    100170: slide4 1
+    100172: slide5
+    100174: slide5 1
+    100176: slide6
+    100178: slide6 1
+    100180: slide7
+    100182: slide7 1
+    100184: transform10
+    100186: transform11
+    100188: transform12
+    100190: transform7
+    100192: transform8
+    100194: transform9
+    100196: tv
+    100198: tv 1
+    400000: CubeNum1
+    400002: CubeNum3
+    400004: InsideWalls2HALF
+    400006: //RootNode
+    400008: L1Ramp
+    400010: L1Wall2
+    400012: L1Wall3
+    400014: L1Wall4
+    400016: L1Wall5
+    400018: L1Wall6
+    400020: L1Wall7
+    400022: L2DoorSlab1
+    400024: L2OutsideFloor1
+    400026: NewLayout:BaseFloor
+    400028: NewLayout:CubeNum1
+    400030: NewLayout:CubeNum1 1
+    400032: NewLayout:CubeNum1 2
+    400034: NewLayout:CubeNum1 3
+    400036: NewLayout:CubeNum2
+    400038: NewLayout:CubeNum3
+    400040: NewLayout:DoorSlab1
+    400042: NewLayout:DoorSlab2
+    400044: NewLayout:DoorSlab3
+    400046: NewLayout:L1Wall1
+    400048: NewLayout:L1Wall2
+    400050: NewLayout:L2DoorSlab0
+    400052: NewLayout:L2DoorSlab1
+    400054: NewLayout:WindowL1
+    400056: NewLayout:WindowL2
+    400058: Animated_Parts
+    400060: Animated_Parts 1
+    400062: Base
+    400064: Base 1
+    400066: Butress
+    400068: Butress1
+    400070: Collider
+    400072: Collider 1
+    400074: Dome
+    400076: Dome 1
+    400078: door
+    400080: door1
+    400082: hidden_idk
+    400084: InsideWalls
+    400086: InsideWalls2Whole
+    400088: j
+    400090: L2OutsideFloor
+    400092: NewLayout:InsideWalls
+    400094: NewLayout:L1Ramp
+    400096: NewLayout:L1Ramp1
+    400098: NewLayout:L2OutsideFloor
+    400100: NewLayout:L2Window1
+    400102: NewLayout:L2Window2
+    400104: NewLayout:L2Window3
+    400106: NewLayout:polySurface1
+    400108: NewLayout:polySurface2
+    400110: NewLayout:polySurface3
+    400112: pCylinder8
+    400114: polySurface13
+    400116: polySurface14
+    400118: polySurface15
+    400120: polySurface16
+    400122: polySurface17
+    400124: polySurface2
+    400126: polySurface20
+    400128: polySurface21
+    400130: Rafter
+    400132: Rafter1
+    400134: Rafter2
+    400136: Rafter3
+    400138: Rafter4
+    400140: Rafter5
+    400142: Screen
+    400144: screen
+    400146: Screen 1
+    400148: screen 1
+    400150: second_floor
+    400152: Secret_Compartment
+    400154: Secret_Compartment 1
+    400156: slide1
+    400158: slide1 1
+    400160: slide2
+    400162: slide2 1
+    400164: slide3
+    400166: slide3 1
+    400168: slide4
+    400170: slide4 1
+    400172: slide5
+    400174: slide5 1
+    400176: slide6
+    400178: slide6 1
+    400180: slide7
+    400182: slide7 1
+    400184: transform10
+    400186: transform11
+    400188: transform12
+    400190: transform7
+    400192: transform8
+    400194: transform9
+    400196: tv
+    400198: tv 1
+    2100000: lambert1
+    2100002: NewLayout_blinn3
+    2100004: NewLayout_blinn1
+    2100006: NewLayout_blinn2
+    2100008: lambert2
+    2300000: CubeNum1
+    2300002: CubeNum3
+    2300004: InsideWalls2HALF
+    2300006: L1Ramp
+    2300008: L1Wall2
+    2300010: L1Wall3
+    2300012: L1Wall4
+    2300014: L1Wall5
+    2300016: L1Wall6
+    2300018: L1Wall7
+    2300020: L2DoorSlab1
+    2300022: L2OutsideFloor1
+    2300024: NewLayout:BaseFloor
+    2300026: NewLayout:CubeNum1
+    2300028: NewLayout:CubeNum1 1
+    2300030: NewLayout:CubeNum1 2
+    2300032: NewLayout:CubeNum1 3
+    2300034: NewLayout:CubeNum2
+    2300036: NewLayout:CubeNum3
+    2300038: NewLayout:DoorSlab1
+    2300040: NewLayout:DoorSlab2
+    2300042: NewLayout:DoorSlab3
+    2300044: NewLayout:L1Wall1
+    2300046: NewLayout:L1Wall2
+    2300048: NewLayout:L2DoorSlab0
+    2300050: NewLayout:L2DoorSlab1
+    2300052: NewLayout:WindowL1
+    2300054: NewLayout:WindowL2
+    2300056: //RootNode
+    2300058: Base
+    2300060: Base 1
+    2300062: Butress
+    2300064: Butress1
+    2300066: Collider
+    2300068: Collider 1
+    2300070: Dome 1
+    2300072: InsideWalls
+    2300074: InsideWalls2Whole
+    2300076: L2OutsideFloor
+    2300078: NewLayout:InsideWalls
+    2300080: NewLayout:L1Ramp
+    2300082: NewLayout:L1Ramp1
+    2300084: NewLayout:L2OutsideFloor
+    2300086: NewLayout:L2Window1
+    2300088: NewLayout:L2Window2
+    2300090: NewLayout:L2Window3
+    2300092: NewLayout:polySurface1
+    2300094: NewLayout:polySurface2
+    2300096: NewLayout:polySurface3
+    2300098: pCylinder8
+    2300100: polySurface16
+    2300102: polySurface20
+    2300104: polySurface21
+    2300106: Rafter
+    2300108: Rafter1
+    2300110: Rafter2
+    2300112: Rafter3
+    2300114: Rafter4
+    2300116: Rafter5
+    2300118: screen
+    2300120: screen 1
+    2300122: Secret_Compartment
+    2300124: Secret_Compartment 1
+    2300126: slide1
+    2300128: slide1 1
+    2300130: slide2
+    2300132: slide2 1
+    2300134: slide3
+    2300136: slide3 1
+    2300138: slide4
+    2300140: slide4 1
+    2300142: slide5
+    2300144: slide5 1
+    2300146: slide6
+    2300148: slide6 1
+    2300150: slide7
+    2300152: slide7 1
+    2300154: tv
+    2300156: tv 1
+    3300000: CubeNum1
+    3300002: CubeNum3
+    3300004: InsideWalls2HALF
+    3300006: L1Ramp
+    3300008: L1Wall2
+    3300010: L1Wall3
+    3300012: L1Wall4
+    3300014: L1Wall5
+    3300016: L1Wall6
+    3300018: L1Wall7
+    3300020: L2DoorSlab1
+    3300022: L2OutsideFloor1
+    3300024: NewLayout:BaseFloor
+    3300026: NewLayout:CubeNum1
+    3300028: NewLayout:CubeNum1 1
+    3300030: NewLayout:CubeNum1 2
+    3300032: NewLayout:CubeNum1 3
+    3300034: NewLayout:CubeNum2
+    3300036: NewLayout:CubeNum3
+    3300038: NewLayout:DoorSlab1
+    3300040: NewLayout:DoorSlab2
+    3300042: NewLayout:DoorSlab3
+    3300044: NewLayout:L1Wall1
+    3300046: NewLayout:L1Wall2
+    3300048: NewLayout:L2DoorSlab0
+    3300050: NewLayout:L2DoorSlab1
+    3300052: NewLayout:WindowL1
+    3300054: NewLayout:WindowL2
+    3300056: //RootNode
+    3300058: Base
+    3300060: Base 1
+    3300062: Butress
+    3300064: Butress1
+    3300066: Collider
+    3300068: Collider 1
+    3300070: Dome 1
+    3300072: InsideWalls
+    3300074: InsideWalls2Whole
+    3300076: L2OutsideFloor
+    3300078: NewLayout:InsideWalls
+    3300080: NewLayout:L1Ramp
+    3300082: NewLayout:L1Ramp1
+    3300084: NewLayout:L2OutsideFloor
+    3300086: NewLayout:L2Window1
+    3300088: NewLayout:L2Window2
+    3300090: NewLayout:L2Window3
+    3300092: NewLayout:polySurface1
+    3300094: NewLayout:polySurface2
+    3300096: NewLayout:polySurface3
+    3300098: pCylinder8
+    3300100: polySurface16
+    3300102: polySurface20
+    3300104: polySurface21
+    3300106: Rafter
+    3300108: Rafter1
+    3300110: Rafter2
+    3300112: Rafter3
+    3300114: Rafter4
+    3300116: Rafter5
+    3300118: screen
+    3300120: screen 1
+    3300122: Secret_Compartment
+    3300124: Secret_Compartment 1
+    3300126: slide1
+    3300128: slide1 1
+    3300130: slide2
+    3300132: slide2 1
+    3300134: slide3
+    3300136: slide3 1
+    3300138: slide4
+    3300140: slide4 1
+    3300142: slide5
+    3300144: slide5 1
+    3300146: slide6
+    3300148: slide6 1
+    3300150: slide7
+    3300152: slide7 1
+    3300154: tv
+    3300156: tv 1
+    4300000: NewLayout:BaseFloor
+    4300002: NewLayout:DoorSlab1
+    4300004: NewLayout:CubeNum1
+    4300006: NewLayout:WindowL1
+    4300008: NewLayout:WindowL2
+    4300010: NewLayout:DoorSlab2
+    4300012: NewLayout:CubeNum1
+    4300014: NewLayout:CubeNum2
+    4300016: NewLayout:DoorSlab3
+    4300018: NewLayout:CubeNum1
+    4300020: NewLayout:L1Wall1
+    4300022: NewLayout:L1Wall2
+    4300024: NewLayout:L2DoorSlab0
+    4300026: NewLayout:L2DoorSlab1
+    4300028: NewLayout:CubeNum1
+    4300030: NewLayout:CubeNum3
+    4300032: L1Wall2
+    4300034: L2DoorSlab1
+    4300036: CubeNum1
+    4300038: CubeNum3
+    4300040: L1Wall3
+    4300042: L1Wall4
+    4300044: L1Wall5
+    4300046: L1Wall6
+    4300048: L1Wall7
+    4300050: L2OutsideFloor1
+    4300052: L1Ramp
+    4300054: InsideWalls2HALF
+    4300056: NewLayout:InsideWalls2HALF
+    4300058: Butress
+    4300060: Dome
+    4300062: Rafter
+    4300064: Rafter1
+    4300066: Rafter2
+    4300068: Rafter3
+    4300070: Rafter4
+    4300072: Rafter5
+    4300074: polySurface21
+    4300076: NewLayout:InsideWalls
+    4300078: NewLayout:L2Window1
+    4300080: NewLayout:L2Window2
+    4300082: NewLayout:L2Window3
+    4300084: NewLayout:L1Ramp1
+    4300086: L2OutsideFloor
+    4300088: NewLayout:L2OutsideFloor
+    4300090: InsideWalls
+    4300092: InsideWalls2Whole
+    4300094: NewLayout:L1Ramp
+    4300096: NewLayout:polySurface3
+    4300098: NewLayout:polySurface2
+    4300100: NewLayout:polySurface1
+    4300102: polySurface16
+    4300104: Base
+    4300106: Collider
+    4300108: screen
+    4300110: tv
+    4300112: Secret_Compartment
+    4300114: slide1
+    4300116: slide2
+    4300118: slide3
+    4300120: slide4
+    4300122: slide5
+    4300124: slide6
+    4300126: slide7
+    4300128: Base
+    4300130: Collider
+    4300132: screen
+    4300134: tv
+    4300136: Secret_Compartment
+    4300138: slide1
+    4300140: slide2
+    4300142: slide3
+    4300144: slide4
+    4300146: slide5
+    4300148: slide6
+    4300150: slide7
+    4300152: polySurface20
+    4300154: pCylinder8
+    4300156: Butress1
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float accel = 1000;
-    public float airAccel = 0.1f;
-    public float deccel = 5;
-    public float maxSpeed = 20;
-    public float jumpForce = 800;
-    public float maxSlope = 60;
+    [SerializeField] private float accel = 1000;
+    [SerializeField] private float airAccel = 0.1f;
+    [SerializeField] private float deccel = 5;
+    [SerializeField] private float maxSpeed = 20;
+    [SerializeField] private float jumpForce = 800;
+    [SerializeField] private float maxSlope = 60;
     private Rigidbody rb;
     private Vector2 horizontalMovement;
     private bool grounded = false;
@@ -18,45 +18,39 @@ public class PlayerController : MonoBehaviour
     private float deccelZ = 0;
 
 
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate() {
-        float speed = rb.velocity.magnitude;
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        if (grounded) {
-            //Relative force push in the direction player is facing.
-            rb.AddRelativeForce(moveHorizontal * accel * Time.deltaTime, 0, moveVertical * accel * Time.deltaTime, ForceMode.VelocityChange);
-        } else {
-            //if not grounded limit the movement. also prevents sticking to walls in the air.
-            rb.AddRelativeForce(moveHorizontal * accel * airAccel * Time.deltaTime, 0, moveVertical * accel * airAccel * Time.deltaTime);
-        }
-        var vel = rb.velocity;
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 && grounded) {
-            vel.x = Mathf.SmoothDamp(rb.velocity.x, 0, ref deccelX, deccel);
-            vel.z = Mathf.SmoothDamp(rb.velocity.z, 0, ref deccelZ, deccel);
-            rb.velocity = vel;
-        }
-        /* ---SET MAX SPEED--- */
-        // use vector2 so if the character falls the max speed doesnt affect the local y axis
+        //Max Speed
         horizontalMovement = new Vector2(rb.velocity.x, rb.velocity.z);
-        if (horizontalMovement.magnitude > maxSpeed) {
+        if(horizontalMovement.magnitude > maxSpeed) {
             horizontalMovement = horizontalMovement.normalized * maxSpeed;
         }
         rb.velocity = new Vector3(horizontalMovement.x, rb.velocity.y, horizontalMovement.y);
-        /* ---SET MAX SPEED--- */
-
-        if (Input.GetButtonDown("Jump") && grounded) {
+        //Decceleration
+        var vel = rb.velocity;
+        if(grounded) {
+            vel.x = Mathf.SmoothDamp(vel.x, 0, ref deccelX, deccel);
+            vel.z = Mathf.SmoothDamp(vel.z, 0, ref deccelZ, deccel);
+            rb.velocity = vel;
+        }
+        //Movement
+        if (grounded) {
+            rb.AddRelativeForce(Input.GetAxis("Horizontal") * accel * Time.deltaTime, 0, Input.GetAxis("Vertical") * accel * Time.deltaTime);
+        } else {
+            rb.AddRelativeForce(Input.GetAxis("Horizontal") * accel * airAccel * Time.deltaTime, 0, Input.GetAxis("Vertical") * accel * airAccel * Time.deltaTime);
+        }
+        //Jump
+        if(Input.GetButtonDown("Jump") && grounded) {
             rb.AddForce(0, jumpForce, 0);
         }
     }
 
     private void OnCollisionStay(Collision collision) {
-        foreach (ContactPoint point in collision.contacts) {
-            if (Vector3.Angle(point.normal, Vector3.up) <= maxSlope) {
+        foreach(ContactPoint contact in collision.contacts) {
+            if (Vector3.Angle(contact.normal, Vector3.up) < maxSlope) {
                 grounded = true;
             }
         }
@@ -64,5 +58,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision) {
         grounded = false;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        var vel = rb.velocity;
+        if(other.transform.tag == "UpStair") {
+            if(!Input.GetButton("Jump") && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
+                if(rb.velocity.y > 0) {
+                    vel.y = 0;
+                    rb.velocity = vel;
+                }
+            }
+        }
+        if (other.transform.tag == "DownStair") {
+            if (!Input.GetButton("Jump") && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
+                rb.AddForce(0, -1000, 0);
+            }
+        }
     }
 }

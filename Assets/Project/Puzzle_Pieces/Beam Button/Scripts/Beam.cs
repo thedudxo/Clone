@@ -14,7 +14,7 @@ public class Beam : MonoBehaviour {
     }
 
     private void OnTriggerExit(Collider other) {//removecubes
-        if(other.tag == "IgnoreClone") { return; }
+        if(other.tag == "IgnoreClone" || other.tag == "Player") { return; }
         ButtonLevel level = PuzzleManager.beamButton.CheckCubeHeight(other.gameObject);
         if (other.GetComponent<Weighted>()) {
             if (level.cubesOverButton.Contains(other.gameObject)) {

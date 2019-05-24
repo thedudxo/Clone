@@ -12,9 +12,9 @@ public class PauseMenu : MonoBehaviour {
     public Slider gameVolSlider;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         pauseMenuSource = gameObject.GetComponent<AudioSource>();
-	}
+    }
 
     private void Update()
     {
@@ -38,10 +38,9 @@ public class PauseMenu : MonoBehaviour {
         AudioListener.pause = false;
         pauseMenuSource.Stop();
         Time.timeScale = 1.0f;
-        Debug.Log("gameVolSlider.value is " + gameVolSlider.value);
         AudioManager.instance.SetGameVolume(gameVolSlider.value);
         AudioManager.instance.Play("Theme");
-  //      AudioManager.instance.SetGameVolume(gameVolSlider.value, "Wind");
+        //      AudioManager.instance.SetGameVolume(gameVolSlider.value, "Wind");
         AudioManager.instance.Play("Wind");
         pauseMenu.SetActive(false);
     }
@@ -58,5 +57,4 @@ public class PauseMenu : MonoBehaviour {
     {
         Application.Quit();
     }
-
 }

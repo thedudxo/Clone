@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         var vel = rb.velocity;
         if(other.transform.tag == "UpStair") {
-            if(!Input.GetButton("Jump") && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
+            if(grounded && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
                 if(rb.velocity.y > 0) {
                     vel.y = 0;
                     rb.velocity = vel;
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         if (other.transform.tag == "DownStair") {
-            if (!Input.GetButton("Jump") && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
+            if (grounded && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
                 rb.AddForce(0, -1000, 0);
             }
         }

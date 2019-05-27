@@ -102,7 +102,7 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.GetComponent<Weighted>().distance = 3;
         } else {
             //if cube is over button
-            PuzzleManager.beamButton.addCube(clonedObject, PuzzleManager.beamButton.CheckCubeHeight(clonedObject).level);   //Check cube height in BeamButton.cs
+            PuzzleManager.beamButton.AddCube(clonedObject, PuzzleManager.beamButton.CheckCubeHeight(clonedObject).level);   //Check cube height in BeamButton.cs
             ButtonLevel.DropLevelCubes(clonedObject);
             clonedObject.GetComponent<Weighted>().moveRot = true;
         }

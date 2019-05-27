@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,9 +8,11 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
+    public GameObject winScreen;
     public KeyCode pauseKey;
     AudioSource pauseMenuSource;
     public Slider gameVolSlider;
+    public GameObject winCollider;
 
     // Use this for initialization
     void Start() {
@@ -30,7 +33,13 @@ public class PauseMenu : MonoBehaviour {
             Cursor.visible = true;
             Time.timeScale = 0.0f;
         }
+
+        if (WinTrigger.isWin)
+        {
+            WinScreen();
+        }
     }
+
     public void GameResume()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -43,6 +52,7 @@ public class PauseMenu : MonoBehaviour {
         //      AudioManager.instance.SetGameVolume(gameVolSlider.value, "Wind");
         AudioManager.instance.Play("Wind");
         pauseMenu.SetActive(false);
+        WinTrigger.isWin = false;
     }
 
     public void LoadMainMenu()
@@ -51,7 +61,22 @@ public class PauseMenu : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 1.0f;
+        WinTrigger.isWin = false;
     }
+
+    void WinScreen()
+    {
+        winScreen.SetActive(true);
+        AudioListener.pause = true;
+        AudioManager.instance.Stop("Theme");
+        AudioManager.instance.Stop("Wind");
+        pauseMenuSource.ignoreListenerPause = true;
+        pauseMenuSource.Play();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0.0f;
+    }
+
 
     public void ReallyQuit()
     {

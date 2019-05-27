@@ -28,7 +28,7 @@ public class BeamButton : MonoBehaviour {
         
     }
 
-    public void checkArrow() { //change to red/green
+    public void CheckArrow() { //change to red/green
         if (cubes > 0) {
             arrow.GetComponent<Renderer>().material = greenArrow;
         } else {
@@ -56,7 +56,7 @@ public class BeamButton : MonoBehaviour {
         Debug.Log(levels[fromLevel].cubesOverButton.Count);
     }
 
-    public void addCube(GameObject cube, int level) {
+    public void AddCube(GameObject cube, int level) {
         levels[level].cubesOverButton.Add(cube);
     }
 }

@@ -11,12 +11,14 @@ public class PauseMenu : MonoBehaviour {
     public GameObject winScreen;
     public KeyCode pauseKey;
     AudioSource pauseMenuSource;
+    AudioSource winMenuSource;
     public Slider gameVolSlider;
     public GameObject winCollider;
 
     // Use this for initialization
     void Start() {
         pauseMenuSource = gameObject.GetComponent<AudioSource>();
+        winMenuSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -70,8 +72,8 @@ public class PauseMenu : MonoBehaviour {
         AudioListener.pause = true;
         AudioManager.instance.Stop("Theme");
         AudioManager.instance.Stop("Wind");
-        pauseMenuSource.ignoreListenerPause = true;
-        pauseMenuSource.Play();
+        winMenuSource.ignoreListenerPause = true;
+ //       winMenuSource.Play();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0.0f;

@@ -41,11 +41,12 @@ public class Button_Behaviour : MonoBehaviour {
             weights++;
             isPressed = true;
 
- /*           if(collision.gameObject.GetComponent<Cloneable>() != null)
+            if(collision.gameObject.GetComponent<Cloneable>() != null)
             {
-                collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
+                Debug.Log("need setButton method");
+//                collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
             }
-*/
+
         }
     }
 

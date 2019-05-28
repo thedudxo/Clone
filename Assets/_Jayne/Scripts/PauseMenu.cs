@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject winScreen;
     public KeyCode pauseKey;
+    public Texture2D crossHair;
+    Vector2 hotSpot = Vector2.zero;
     AudioSource pauseMenuSource;
     AudioSource winMenuSource;
     public Slider gameVolSlider;
@@ -18,7 +20,8 @@ public class PauseMenu : MonoBehaviour {
     // Use this for initialization
     void Start() {
         pauseMenuSource = gameObject.GetComponent<AudioSource>();
-        winMenuSource = gameObject.GetComponent<AudioSource>();
+        winMenuSource = winScreen.GetComponent<AudioSource>();
+        WinTrigger.isWin = false;
     }
 
     private void Update()
@@ -27,12 +30,11 @@ public class PauseMenu : MonoBehaviour {
         {
             pauseMenu.SetActive(true);
             AudioListener.pause = true;
-            AudioManager.instance.Stop("Theme");
-            AudioManager.instance.Stop("Wind");
             pauseMenuSource.ignoreListenerPause = true;
             pauseMenuSource.Play();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             Time.timeScale = 0.0f;
         }
 
@@ -44,24 +46,22 @@ public class PauseMenu : MonoBehaviour {
 
     public void GameResume()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+ //      Cursor.lockState = CursorLockMode.Locked;
+        Cursor.SetCursor(crossHair, Vector2.zero, CursorMode.Auto);
         AudioListener.pause = false;
         pauseMenuSource.Stop();
         Time.timeScale = 1.0f;
-        AudioManager.instance.SetGameVolume(gameVolSlider.value);
-        AudioManager.instance.Play("Theme");
-        //      AudioManager.instance.SetGameVolume(gameVolSlider.value, "Wind");
-        AudioManager.instance.Play("Wind");
+//       AudioManager.instance.SetGameVolume(gameVolSlider.value);
+ //      AudioManager.instance.Play("Theme");
+ //      AudioManager.instance.Play("Wind");
         pauseMenu.SetActive(false);
-        WinTrigger.isWin = false;
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         Time.timeScale = 1.0f;
         WinTrigger.isWin = false;
     }
@@ -69,16 +69,15 @@ public class PauseMenu : MonoBehaviour {
     void WinScreen()
     {
         winScreen.SetActive(true);
+        winMenuSource = winScreen.GetComponent<AudioSource>();
         AudioListener.pause = true;
-        AudioManager.instance.Stop("Theme");
-        AudioManager.instance.Stop("Wind");
         winMenuSource.ignoreListenerPause = true;
- //       winMenuSource.Play();
+        winMenuSource.Play();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         Time.timeScale = 0.0f;
     }
-
 
     public void ReallyQuit()
     {

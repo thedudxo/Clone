@@ -43,12 +43,14 @@ public class Player_Clone : MonoBehaviour {
             } else if (cloning && canClone){
                 Drop();
                 copyParticles.Emit(particleEmitAmmount);
+                FindObjectOfType<AudioManager>().Play("Clone_Success");
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
                 copyParticles.Emit(particleEmitAmmount);
+                FindObjectOfType<AudioManager>().Play("Clone_Success");
             }
         }
     }
@@ -127,10 +129,13 @@ public class Player_Clone : MonoBehaviour {
         if (!didHit)
         {
             failParticles.Emit(particleEmitAmmount);
+            FindObjectOfType<AudioManager>().Play("Error_Clone");
+
         }
         else
         {
             copyParticles.Emit(particleEmitAmmount);
+            FindObjectOfType<AudioManager>().Play("Clone_Success");
         }
     }
 
@@ -173,9 +178,13 @@ public class Player_Clone : MonoBehaviour {
             }
 
             copyParticles.Emit(particleEmitAmmount);
-        } else
+            FindObjectOfType<AudioManager>().Play("Clone_Success");
+
+        }
+        else
         {
             failParticles.Emit(particleEmitAmmount);
+            FindObjectOfType<AudioManager>().Play("Error_Clone");
         }
     }
 }

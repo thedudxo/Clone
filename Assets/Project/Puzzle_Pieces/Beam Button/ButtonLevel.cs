@@ -7,16 +7,20 @@ public class ButtonLevel {
     public List<GameObject> cubesOverButton = new List<GameObject>();
     public int level;
     public static readonly float levelHeight = 10.5f;
-
     public ButtonLevel(int level) {
         this.level = level;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("tab"))
+        if (BeamButton.buttonButton.GetComponent<Button_Behaviour>().isPressed)
         {
-            RiseNextLevel(2);
+            RiseNextLevel(cubesOverButton.Count);
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            RiseNextLevel(cubesOverButton.Count);
         }
 
     }

@@ -8,7 +8,7 @@ public class TVscreen : MonoBehaviour {
 
     public void displayCubes(int ammount)
     {
-        
+        Debug.Log("Yeees");
         int i = 1;
         foreach (GameObject cube in cubes)
         {

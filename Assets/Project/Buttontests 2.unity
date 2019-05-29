@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 5cecbf250be295f46956af121138e089,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -11449,6 +11450,21 @@ Prefab:
       propertyPath: failParticles
       value: 
       objectReference: {fileID: 185184315}
+    - target: {fileID: 114298335190167526, guid: 2634406b84cf7b746b0dcfd64540ec93,
+        type: 2}
+      propertyPath: accel
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114298335190167526, guid: 2634406b84cf7b746b0dcfd64540ec93,
+        type: 2}
+      propertyPath: airAccel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114298335190167526, guid: 2634406b84cf7b746b0dcfd64540ec93,
+        type: 2}
+      propertyPath: jumpForce
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2634406b84cf7b746b0dcfd64540ec93, type: 2}
   m_IsPrefabParent: 0

@@ -26,12 +26,12 @@ public class PauseMenu : MonoBehaviour {
         if (Input.GetKeyDown(pauseKey))
         {
             pauseMenu.SetActive(true);
+            Time.timeScale = 0.0f;
             AudioListener.pause = true;
             pauseMenuSource.ignoreListenerPause = true;
             pauseMenuSource.Play();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Time.timeScale = 0.0f;
         }
 
         if (WinTrigger.isWin)
@@ -46,10 +46,10 @@ public class PauseMenu : MonoBehaviour {
         Cursor.visible = false;
         AudioListener.pause = false;
         pauseMenuSource.Stop();
-        Time.timeScale = 1.0f;
- //       AudioManager.instance.SetGameVolume(gameVolSlider.value);
+//       AudioManager.instance.SetGameVolume(gameVolSlider.value);
  //      AudioManager.instance.Play("Theme");
         pauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     public void LoadMainMenu()

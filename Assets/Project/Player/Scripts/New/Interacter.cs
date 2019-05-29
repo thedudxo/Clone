@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interacter : MonoBehaviour {
 
     private GameObject mainCamera;
-    private float interDist = 3;
+    private float interDist = 4;
 
     private void Start() {
         mainCamera = GameObject.FindWithTag("MainCamera");

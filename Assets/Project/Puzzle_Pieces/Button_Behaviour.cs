@@ -6,7 +6,9 @@ public class Button_Behaviour : MonoBehaviour {
 
     public bool isPressed = false;
     public int weights = 0;
-    public Animator ButtonAnim;
+ //   public Animator ButtonAnim;
+    public int toLevelInt;
+    public int fromLevelInt;
 
     private static Button_Behaviour instance;
 
@@ -27,6 +29,7 @@ public class Button_Behaviour : MonoBehaviour {
         if(weights > 0)
         {
             isPressed = true;
+            PuzzleManager.beamButton.ChangeList(toLevelInt, fromLevelInt);
         }
         else
         {
@@ -37,7 +40,7 @@ public class Button_Behaviour : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Weighted>() != null){
-            ButtonAnim.SetBool("ButtonPress", true);
+ //           ButtonAnim.SetBool("ButtonPress", true);
             weights++;
             isPressed = true;
 
@@ -56,7 +59,7 @@ public class Button_Behaviour : MonoBehaviour {
         {
             weights--;
             if (weights == 0) {
-                ButtonAnim.SetBool("ButtonPress", false);
+ //               ButtonAnim.SetBool("ButtonPress", false);
                 isPressed = false;
             }
 

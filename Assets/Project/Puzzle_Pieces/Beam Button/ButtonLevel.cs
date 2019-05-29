@@ -13,11 +13,6 @@ public class ButtonLevel {
 
     void Update()
     {
-        if (BeamButton.buttonButton.GetComponent<Button_Behaviour>().isPressed)
-        {
-            RiseNextLevel(cubesOverButton.Count);
-        }
-
         if (Input.GetKeyDown(KeyCode.T))
         {
             RiseNextLevel(cubesOverButton.Count);

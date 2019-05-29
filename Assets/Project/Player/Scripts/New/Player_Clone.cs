@@ -14,7 +14,7 @@ public class Player_Clone : MonoBehaviour {
     public bool overButton = false;
     public bool canClone = true;
     private int cloneDist = 3;
-    [SerializeField] int maxCloneDist = 10;
+    [SerializeField] int maxCloneDist = 20;
     public GameObject clonedObject;
     public bool cloning = false;
     public bool hasCloned = false;
@@ -151,7 +151,7 @@ public class Player_Clone : MonoBehaviour {
             cloning = true;
             clonedObject = Instantiate(clipboard, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Quaternion.identity);
             //Resets Weighted settings
-            clonedObject.GetComponent<Weighted>().distance = 3;
+            clonedObject.GetComponent<Weighted>().distance = 4;
             clonedObject.GetComponent<Weighted>().moveRot = false;
             clonedObject.GetComponent<Weighted>().overButton = false;
             //Cloned renderer

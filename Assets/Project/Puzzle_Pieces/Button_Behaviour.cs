@@ -43,13 +43,6 @@ public class Button_Behaviour : MonoBehaviour {
  //           ButtonAnim.SetBool("ButtonPress", true);
             weights++;
             isPressed = true;
-
-            if(collision.gameObject.GetComponent<Cloneable>() != null)
-            {
-                Debug.Log("need setButton method");
-//                collision.gameObject.GetComponent<Cloneable>().setButton(gameObject);
-            }
-
         }
     }
 

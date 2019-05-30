@@ -44,7 +44,7 @@ public class BeamButton : MonoBehaviour {
         if(cubeHeight < 0) { cubeHeight = 0; }
         int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
         cube.GetComponent<Weighted>().overBeam(gameObject.transform.position, level);
-        Debug.Log("level " + level);
+ //       Debug.Log("level " + level);
         return levels[level];
 
     }
@@ -56,7 +56,7 @@ public class BeamButton : MonoBehaviour {
             c.GetComponent<Weighted>().overBeam(gameObject.transform.position, toLevel);
         }
         levels[fromLevel].cubesOverButton.Clear();
-        Debug.Log(levels[fromLevel].cubesOverButton.Count);
+  //      Debug.Log(levels[fromLevel].cubesOverButton.Count);
     }
 
     public void AddCube(GameObject cube, int level) {

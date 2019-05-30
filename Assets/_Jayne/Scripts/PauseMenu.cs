@@ -11,13 +11,13 @@ public class PauseMenu : MonoBehaviour {
     public GameObject winScreen;
     public KeyCode pauseKey;
     AudioSource pauseMenuSource;
-    AudioSource winMenuSource;
-    public Slider gameVolSlider;
+ //   AudioSource winMenuSource;
+ //   public Slider gameVolSlider;
     public GameObject winCollider;
 
     void Start() {
         pauseMenuSource = gameObject.GetComponent<AudioSource>();
-        winMenuSource = winScreen.GetComponent<AudioSource>();
+ //       winMenuSource = winScreen.GetComponent<AudioSource>();
         WinTrigger.isWin = false;
     }
 
@@ -64,10 +64,10 @@ public class PauseMenu : MonoBehaviour {
     public void WinScreen()
     {
         winScreen.SetActive(true);
-        winMenuSource = winScreen.GetComponent<AudioSource>();
+ //       winMenuSource = winScreen.GetComponent<AudioSource>();
         AudioListener.pause = true;
-        winMenuSource.ignoreListenerPause = true;
-        winMenuSource.Play();
+ //       winMenuSource.ignoreListenerPause = true;
+ //       winMenuSource.Play();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0.0f;

@@ -1,435 +1,69 @@
 fileFormatVersion: 2
-guid: 721654163ccfb214c80f67354142a3ef
+guid: 1ab6cc642119f1944b82300d82631584
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Big
-    100002: Big1
-    100004: Big2
-    100006: Big3
-    100008: Big4
-    100010: bolt4
-    100012: bolt4 1
-    100014: bolt4 2
-    100016: bolt4 3
-    100018: bolt4 4
-    100020: bolt4 5
-    100022: bolt4 6
-    100024: bolt4 7
-    100026: bolt5
-    100028: bolt5 1
-    100030: bolt5 2
-    100032: bolt5 3
-    100034: bolt5 4
-    100036: bolt5 5
-    100038: bolt5 6
-    100040: bolt5 7
-    100042: bolt6
-    100044: bolt6 1
-    100046: bolt6 2
-    100048: bolt6 3
-    100050: bolt6 4
-    100052: bolt6 5
-    100054: bolt6 6
-    100056: bolt6 7
-    100058: hold_railing5
-    100060: hold_railing5 1
-    100062: hold_railing5 2
-    100064: hold_railing5 3
-    100066: hold_railing6
-    100068: hold_railing6 1
-    100070: hold_railing6 2
-    100072: hold_railing6 3
-    100074: L2_Catwalk
-    100076: Long
-    100078: Long1
-    100080: pCube40
-    100082: pCube41
-    100084: polySurface22
-    100086: polySurface23
-    100088: railing4
-    100090: railing4 1
-    100092: railing4 2
-    100094: railing4 3
-    100096: railing4 4
-    100098: railing4 5
-    100100: railing4 6
-    100102: railing4 7
-    100104: railing5
-    100106: railing5 1
-    100108: railing5 2
-    100110: railing5 3
-    100112: railing5 4
-    100114: railing5 5
-    100116: railing5 6
-    100118: railing5 7
-    100120: railing6
-    100122: railing6 1
-    100124: railing6 2
-    100126: railing6 3
-    100128: railing6 4
-    100130: railing6 5
-    100132: railing6 6
-    100134: railing6 7
-    100136: railling
-    100138: railling 1
-    100140: railling 2
-    100142: railling 3
-    100144: railling 4
-    100146: railling1
-    100148: railling1 1
-    100150: railling1 2
-    100152: railling1 3
-    100154: railling3
-    100156: railling4
-    100158: railling5
-    100160: //RootNode
-    100162: second_floor
-    100164: transform1
-    100166: transform1 1
-    100168: transform1 2
-    100170: transform1 3
-    100172: transform2
-    100174: transform2 1
-    100176: transform2 2
-    100178: transform2 3
-    100180: transform3
-    100182: transform3 1
-    100184: transform3 2
-    100186: transform3 3
-    100188: transform4
-    100190: transform4 1
-    100192: transform4 2
-    100194: transform4 3
-    100196: Collider
-    100198: Collider1
-    100200: Collider2
-    100202: Collider3
-    100204: Collider4
-    100206: Colliders
-    400000: Big
-    400002: Big1
-    400004: Big2
-    400006: Big3
-    400008: Big4
-    400010: bolt4
-    400012: bolt4 1
-    400014: bolt4 2
-    400016: bolt4 3
-    400018: bolt4 4
-    400020: bolt4 5
-    400022: bolt4 6
-    400024: bolt4 7
-    400026: bolt5
-    400028: bolt5 1
-    400030: bolt5 2
-    400032: bolt5 3
-    400034: bolt5 4
-    400036: bolt5 5
-    400038: bolt5 6
-    400040: bolt5 7
-    400042: bolt6
-    400044: bolt6 1
-    400046: bolt6 2
-    400048: bolt6 3
-    400050: bolt6 4
-    400052: bolt6 5
-    400054: bolt6 6
-    400056: bolt6 7
-    400058: hold_railing5
-    400060: hold_railing5 1
-    400062: hold_railing5 2
-    400064: hold_railing5 3
-    400066: hold_railing6
-    400068: hold_railing6 1
-    400070: hold_railing6 2
-    400072: hold_railing6 3
-    400074: L2_Catwalk
-    400076: Long
-    400078: Long1
-    400080: pCube40
-    400082: pCube41
-    400084: polySurface22
-    400086: polySurface23
-    400088: railing4
-    400090: railing4 1
-    400092: railing4 2
-    400094: railing4 3
-    400096: railing4 4
-    400098: railing4 5
-    400100: railing4 6
-    400102: railing4 7
-    400104: railing5
-    400106: railing5 1
-    400108: railing5 2
-    400110: railing5 3
-    400112: railing5 4
-    400114: railing5 5
-    400116: railing5 6
-    400118: railing5 7
-    400120: railing6
-    400122: railing6 1
-    400124: railing6 2
-    400126: railing6 3
-    400128: railing6 4
-    400130: railing6 5
-    400132: railing6 6
-    400134: railing6 7
-    400136: railling
-    400138: railling 1
-    400140: railling 2
-    400142: railling 3
-    400144: railling 4
-    400146: railling1
-    400148: railling1 1
-    400150: railling1 2
-    400152: railling1 3
-    400154: railling3
-    400156: railling4
-    400158: railling5
-    400160: //RootNode
-    400162: second_floor
-    400164: transform1
-    400166: transform1 1
-    400168: transform1 2
-    400170: transform1 3
-    400172: transform2
-    400174: transform2 1
-    400176: transform2 2
-    400178: transform2 3
-    400180: transform3
-    400182: transform3 1
-    400184: transform3 2
-    400186: transform3 3
-    400188: transform4
-    400190: transform4 1
-    400192: transform4 2
-    400194: transform4 3
-    400196: Collider
-    400198: Collider1
-    400200: Collider2
-    400202: Collider3
-    400204: Collider4
-    400206: Colliders
-    2100000: lambert1
-    2100002: Catwalk_Flat_lambert3
-    2300000: Big
-    2300002: Big1
-    2300004: Big2
-    2300006: Big3
-    2300008: Big4
-    2300010: bolt4
-    2300012: bolt4 1
-    2300014: bolt4 2
-    2300016: bolt4 3
-    2300018: bolt4 4
-    2300020: bolt4 5
-    2300022: bolt4 6
-    2300024: bolt4 7
-    2300026: bolt5
-    2300028: bolt5 1
-    2300030: bolt5 2
-    2300032: bolt5 3
-    2300034: bolt5 4
-    2300036: bolt5 5
-    2300038: bolt5 6
-    2300040: bolt5 7
-    2300042: bolt6
-    2300044: bolt6 1
-    2300046: bolt6 2
-    2300048: bolt6 3
-    2300050: bolt6 4
-    2300052: bolt6 5
-    2300054: bolt6 6
-    2300056: bolt6 7
-    2300058: Long
-    2300060: Long1
-    2300062: pCube40
-    2300064: pCube41
-    2300066: polySurface22
-    2300068: polySurface23
-    2300070: railing4
-    2300072: railing4 1
-    2300074: railing4 2
-    2300076: railing4 3
-    2300078: railing4 4
-    2300080: railing4 5
-    2300082: railing4 6
-    2300084: railing4 7
-    2300086: railing5
-    2300088: railing5 1
-    2300090: railing5 2
-    2300092: railing5 3
-    2300094: railing5 4
-    2300096: railing5 5
-    2300098: railing5 6
-    2300100: railing5 7
-    2300102: railing6
-    2300104: railing6 1
-    2300106: railing6 2
-    2300108: railing6 3
-    2300110: railing6 4
-    2300112: railing6 5
-    2300114: railing6 6
-    2300116: railing6 7
-    2300118: railling 1
-    2300120: railling 2
-    2300122: railling 3
-    2300124: railling 4
-    2300126: railling1
-    2300128: railling1 1
-    2300130: railling1 2
-    2300132: railling1 3
-    2300134: Collider
-    2300136: Collider1
-    2300138: Collider2
-    2300140: Collider3
-    2300142: Collider4
-    3300000: Big
-    3300002: Big1
-    3300004: Big2
-    3300006: Big3
-    3300008: Big4
-    3300010: bolt4
-    3300012: bolt4 1
-    3300014: bolt4 2
-    3300016: bolt4 3
-    3300018: bolt4 4
-    3300020: bolt4 5
-    3300022: bolt4 6
-    3300024: bolt4 7
-    3300026: bolt5
-    3300028: bolt5 1
-    3300030: bolt5 2
-    3300032: bolt5 3
-    3300034: bolt5 4
-    3300036: bolt5 5
-    3300038: bolt5 6
-    3300040: bolt5 7
-    3300042: bolt6
-    3300044: bolt6 1
-    3300046: bolt6 2
-    3300048: bolt6 3
-    3300050: bolt6 4
-    3300052: bolt6 5
-    3300054: bolt6 6
-    3300056: bolt6 7
-    3300058: Long
-    3300060: Long1
-    3300062: pCube40
-    3300064: pCube41
-    3300066: polySurface22
-    3300068: polySurface23
-    3300070: railing4
-    3300072: railing4 1
-    3300074: railing4 2
-    3300076: railing4 3
-    3300078: railing4 4
-    3300080: railing4 5
-    3300082: railing4 6
-    3300084: railing4 7
-    3300086: railing5
-    3300088: railing5 1
-    3300090: railing5 2
-    3300092: railing5 3
-    3300094: railing5 4
-    3300096: railing5 5
-    3300098: railing5 6
-    3300100: railing5 7
-    3300102: railing6
-    3300104: railing6 1
-    3300106: railing6 2
-    3300108: railing6 3
-    3300110: railing6 4
-    3300112: railing6 5
-    3300114: railing6 6
-    3300116: railing6 7
-    3300118: railling 1
-    3300120: railling 2
-    3300122: railling 3
-    3300124: railling 4
-    3300126: railling1
-    3300128: railling1 1
-    3300130: railling1 2
-    3300132: railling1 3
-    3300134: Collider
-    3300136: Collider1
-    3300138: Collider2
-    3300140: Collider3
-    3300142: Collider4
-    4300000: Long
-    4300002: Long1
-    4300004: pCube40
-    4300006: pCube41
-    4300008: Big
-    4300010: Big1
-    4300012: Big2
-    4300014: Big3
-    4300016: Big4
-    4300018: bolt4
-    4300020: railing4
-    4300022: railing5
-    4300024: bolt5
-    4300026: railing6
-    4300028: bolt6
-    4300030: bolt4
-    4300032: railing4
-    4300034: railing5
-    4300036: bolt5
-    4300038: railing6
-    4300040: bolt6
-    4300042: railling
-    4300044: railling1
-    4300046: bolt4
-    4300048: railing4
-    4300050: railing5
-    4300052: bolt5
-    4300054: railing6
-    4300056: bolt6
-    4300058: bolt4
-    4300060: railing4
-    4300062: railing5
-    4300064: bolt5
-    4300066: railing6
-    4300068: bolt6
-    4300070: railling
-    4300072: railling1
-    4300074: bolt4
-    4300076: railing4
-    4300078: railing5
-    4300080: bolt5
-    4300082: railing6
-    4300084: bolt6
-    4300086: bolt4
-    4300088: railing4
-    4300090: railing5
-    4300092: bolt5
-    4300094: railing6
-    4300096: bolt6
-    4300098: railling
-    4300100: railling1
-    4300102: bolt4
-    4300104: railing4
-    4300106: railing5
-    4300108: bolt5
-    4300110: railing6
-    4300112: bolt6
-    4300114: bolt4
-    4300116: railing4
-    4300118: railing5
-    4300120: bolt5
-    4300122: railing6
-    4300124: bolt6
-    4300126: railling
-    4300128: railling1
-    4300130: polySurface23
-    4300132: polySurface22
-    4300134: Collider
-    4300136: Collider1
-    4300138: Collider2
-    4300140: Collider3
-    4300142: Collider4
-  externalObjects: {}
+    100000: Collider
+    100002: Collider1
+    100004: Collider2
+    100006: Collider3
+    100008: Collider4
+    100010: Collider5
+    100012: Collider6
+    100014: Colliders
+    100016: //RootNode
+    100018: L2_Catwalk_fbx
+    100020: second_floor
+    400000: Collider
+    400002: Collider1
+    400004: Collider2
+    400006: Collider3
+    400008: Collider4
+    400010: Collider5
+    400012: Collider6
+    400014: Colliders
+    400016: //RootNode
+    400018: L2_Catwalk_fbx
+    400020: second_floor
+    2100000: Catwalk_Flat_lambert3
+    2100002: Wood
+    2100004: Iron
+    2100006: lambert1
+    2300000: Collider
+    2300002: Collider1
+    2300004: Collider2
+    2300006: Collider3
+    2300008: Collider4
+    2300010: Collider5
+    2300012: Collider6
+    2300014: L2_Catwalk_fbx
+    3300000: Collider
+    3300002: Collider1
+    3300004: Collider2
+    3300006: Collider3
+    3300008: Collider4
+    3300010: Collider5
+    3300012: Collider6
+    3300014: L2_Catwalk_fbx
+    4300000: L2_Catwalk_fbx
+    4300002: Collider5
+    4300004: Collider6
+    4300006: Collider
+    4300008: Collider1
+    4300010: Collider2
+    4300012: Collider3
+    4300014: Collider4
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iron
+    second: {fileID: 2100000, guid: 926d9841436e49e4d8c837f53ff87183, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 7a9afb9a1e985534ab6b1af748db0af7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -485,7 +119,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

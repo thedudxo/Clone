@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Materialize
-  m_Shader: {fileID: 4800000, guid: 4552e6db91c06d942affae5e3f2c9380, type: 3}
-  m_ShaderKeywords: 
+  m_Name: Dirty Wood
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -18,24 +18,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture_192C183B:
-        m_Texture: {fileID: 2800000, guid: 01fe27f8f6d262c469f7ff5c4970d45a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture_5E1CA425:
-        m_Texture: {fileID: 2800000, guid: 7f1f54a8b349bad49b4af361cdf1d423, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture_7D15E9A2:
-        m_Texture: {fileID: 2800000, guid: 85b2fff38239da946a7fbf313a42d526, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture_F1A76A8:
-        m_Texture: {fileID: 2800000, guid: 1db01e04fd855824ca543c5fca1c7832, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 02658aaad71b7e14bbd06dd9e0542ff4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -55,11 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dcae0a92f54bc84449ef64805ce1a5bc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9f31d6a86ce8aa84f9108b7b600b981c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -75,12 +59,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_122D890F: 0.01
-    - Vector1_1A249BD6: 0.4
-    - Vector1_9860A3FA: 20
-    - Vector1_B5345175: 30
-    - Vector1_F6AE66A0: 1
-    - Vector1_FA6C32DC: -1.0988584
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -88,7 +66,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0.345
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
@@ -102,9 +80,6 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_711056C5: {r: 0, g: 0.8, b: 1, a: 1}
-    - Color_ED5ABF3C: {r: 0, g: 0.8, b: 1, a: 1}
-    - Color_FC0E4554: {r: 0, g: 0.047058824, b: 2.9960785, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

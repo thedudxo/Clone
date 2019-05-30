@@ -7,6 +7,7 @@ public class BeamButton : MonoBehaviour {
     //this script detects how many cubes are in the button, and holds the cubes there.
 
     public int cubes = 0;
+    public static GameObject buttonButton;
     [SerializeField] Material greenArrow;
     [SerializeField] Material redArrow;
     [SerializeField] GameObject arrow;
@@ -28,7 +29,7 @@ public class BeamButton : MonoBehaviour {
         
     }
 
-    public void checkArrow() { //change to red/green
+    public void CheckArrow() { //change to red/green
         if (cubes > 0) {
             arrow.GetComponent<Renderer>().material = greenArrow;
         } else {
@@ -43,7 +44,9 @@ public class BeamButton : MonoBehaviour {
         if(cubeHeight < 0) { cubeHeight = 0; }
         int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
         cube.GetComponent<Weighted>().overBeam(gameObject.transform.position, level);
+ //       Debug.Log("level " + level);
         return levels[level];
+
     }
 
     public void ChangeList(int toLevel, int fromLevel) {
@@ -53,10 +56,10 @@ public class BeamButton : MonoBehaviour {
             c.GetComponent<Weighted>().overBeam(gameObject.transform.position, toLevel);
         }
         levels[fromLevel].cubesOverButton.Clear();
-        Debug.Log(levels[fromLevel].cubesOverButton.Count);
+  //      Debug.Log(levels[fromLevel].cubesOverButton.Count);
     }
 
-    public void addCube(GameObject cube, int level) {
+    public void AddCube(GameObject cube, int level) {
         levels[level].cubesOverButton.Add(cube);
     }
 }

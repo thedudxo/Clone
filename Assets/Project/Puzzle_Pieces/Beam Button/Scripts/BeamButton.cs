@@ -44,7 +44,9 @@ public class BeamButton : MonoBehaviour {
         if(cubeHeight < 0) { cubeHeight = 0; }
         int level = Mathf.FloorToInt(cubeHeight / ButtonLevel.levelHeight);
         cube.GetComponent<Weighted>().overBeam(gameObject.transform.position, level);
+        Debug.Log("level " + level);
         return levels[level];
+
     }
 
     public void ChangeList(int toLevel, int fromLevel) {

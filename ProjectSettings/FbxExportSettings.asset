@@ -15,6 +15,7 @@
             "."
         ],
         "fbxSavePaths": [
+            "FbxExporters/Exports",
             "."
         ],
         "selectedFbxPath": 0,
@@ -26,10 +27,10 @@
             "rootMotionTransfer": "",
             "animatedSkinnedMesh": false,
             "mayaCompatibleNaming": true,
-            "include": 2,
+            "include": 0,
             "lodLevel": 0,
             "objectPosition": 0,
-            "exportUnrendered": true
+            "exportUnrendered": false
         },
         "convertToPrefabSettingsSerialize": {
             "exportFormat": 0,

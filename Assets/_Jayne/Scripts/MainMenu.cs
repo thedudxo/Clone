@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour {
         Cursor.visible = false;
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(thisSceneBuildIndex +1);
+        WinTrigger.isWin = false;
     }
 
     public void ReallyQuit()

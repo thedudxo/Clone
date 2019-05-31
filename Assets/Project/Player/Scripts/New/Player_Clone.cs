@@ -14,6 +14,7 @@ public class Player_Clone : MonoBehaviour {
     public bool overButton = false;
     public bool canClone = true;
     private int cloneDist = 3;
+    [SerializeField] int maxCloneDist = 20;
     public GameObject clonedObject;
     public bool cloning = false;
     public bool hasCloned = false;
@@ -43,12 +44,14 @@ public class Player_Clone : MonoBehaviour {
             } else if (cloning && canClone){
                 Drop();
                 copyParticles.Emit(particleEmitAmmount);
+                FindObjectOfType<AudioManager>().Play("Clone_Success");
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
                 copyParticles.Emit(particleEmitAmmount);
+                FindObjectOfType<AudioManager>().Play("Clone_Success");
             }
         }
     }
@@ -79,7 +82,7 @@ public class Player_Clone : MonoBehaviour {
         }
         o.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * cloneDist, Time.deltaTime * smooth));
         //Using the scollwheel on the mouse increases and decreases the distance
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloneDist != 14) {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && cloneDist != maxCloneDist) {
             cloneDist++;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && cloneDist != 2) {
@@ -102,7 +105,7 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.GetComponent<Weighted>().distance = 3;
         } else {
             //if cube is over button
-            PuzzleManager.beamButton.addCube(clonedObject, PuzzleManager.beamButton.CheckCubeHeight(clonedObject).level);   //Check cube height in BeamButton.cs
+            PuzzleManager.beamButton.AddCube(clonedObject, PuzzleManager.beamButton.CheckCubeHeight(clonedObject).level);   //Check cube height in BeamButton.cs
             ButtonLevel.DropLevelCubes(clonedObject);
             clonedObject.GetComponent<Weighted>().moveRot = true;
         }
@@ -127,10 +130,13 @@ public class Player_Clone : MonoBehaviour {
         if (!didHit)
         {
             failParticles.Emit(particleEmitAmmount);
+            FindObjectOfType<AudioManager>().Play("Error_Clone");
+
         }
         else
         {
             copyParticles.Emit(particleEmitAmmount);
+            FindObjectOfType<AudioManager>().Play("Clone_Success");
         }
     }
 
@@ -173,9 +179,13 @@ public class Player_Clone : MonoBehaviour {
             }
 
             copyParticles.Emit(particleEmitAmmount);
-        } else
+            FindObjectOfType<AudioManager>().Play("Clone_Success");
+
+        }
+        else
         {
             failParticles.Emit(particleEmitAmmount);
+            FindObjectOfType<AudioManager>().Play("Error_Clone");
         }
     }
 }

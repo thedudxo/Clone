@@ -7,7 +7,8 @@ public class RespawnCubes : MonoBehaviour {
 
     public void OnTriggerEnter (Collider other)
     {
-        if (other.tag == "Cube")
+
+        if (other.tag == "Cube" && !other.GetComponent<Cloneable>().isClone)
         {
             other.GetComponent<CubeSpawnDeets>().Respawn();
         }

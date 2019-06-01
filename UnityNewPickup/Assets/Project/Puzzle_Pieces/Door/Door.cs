@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Door : MonoBehaviour{
 
@@ -32,6 +33,7 @@ public class Door : MonoBehaviour{
         if (buttonsPressed >= buttons.Length)
         {
             doorOpenAnimation.SetBool("ButtonPush", true);
+            Analytics.CustomEvent(gameObject.name);
         }
         else
         {

@@ -9,15 +9,17 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject winScreen;
+    public GameObject WinAudioHolder;
+
     public KeyCode pauseKey;
     AudioSource pauseMenuSource;
- //   AudioSource winMenuSource;
+    AudioSource winMenuSource;
  //   public Slider gameVolSlider;
     public GameObject winCollider;
 
     void Start() {
         pauseMenuSource = gameObject.GetComponent<AudioSource>();
- //       winMenuSource = winScreen.GetComponent<AudioSource>();
+        winMenuSource = WinAudioHolder.GetComponent<AudioSource>();
         WinTrigger.isWin = false;
     }
 
@@ -66,8 +68,8 @@ public class PauseMenu : MonoBehaviour {
         winScreen.SetActive(true);
  //       winMenuSource = winScreen.GetComponent<AudioSource>();
         AudioListener.pause = true;
- //       winMenuSource.ignoreListenerPause = true;
- //       winMenuSource.Play();
+        winMenuSource.ignoreListenerPause = true;
+        winMenuSource.Play();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0.0f;

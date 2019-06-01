@@ -11,6 +11,8 @@ public class Player_Clone : MonoBehaviour {
     private Renderer render;
     private Rigidbody cloneRb;
     public GameObject prevClone;
+    public GameObject pauseMenu;
+    public GameObject howToMenu;  
     public bool overButton = false;
     public bool canClone = true;
     private int cloneDist = 3;
@@ -38,7 +40,7 @@ public class Player_Clone : MonoBehaviour {
             
         }
         if (Input.GetMouseButtonDown(0)) {
-            if (!cloning) {
+            if (!cloning && !pauseMenu.activeInHierarchy && !howToMenu.activeInHierarchy) {
                 Clone();
                
             } else if (cloning && canClone){
@@ -94,6 +96,7 @@ public class Player_Clone : MonoBehaviour {
         //Cloned Rigidbody
         cloneRb.velocity = new Vector3(0, 0, 0);
         cloneRb.freezeRotation = false;
+        FindObjectOfType<AudioManager>().Play("Pop");
         //Clone Renderer
         render.shadowCastingMode = ShadowCastingMode.On;
         render.receiveShadows = true;

@@ -25,6 +25,7 @@ public class Door : MonoBehaviour{
 
         if (buttonsPressed >= buttons.Length)
         {
+            FindObjectOfType<AudioManager>().Play("DoorClose");
             doorOpenAnimation.SetBool("ButtonPush", true);
             doorCollider.enabled = false;
         }
@@ -32,6 +33,7 @@ public class Door : MonoBehaviour{
         {
             doorCollider.enabled = true;
             doorOpenAnimation.SetBool("ButtonPush", false);
+            FindObjectOfType<AudioManager>().Play("DoorClose");
         }
     }
 }

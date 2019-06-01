@@ -43,6 +43,7 @@ public class Player_Pickup : MonoBehaviour {
 
     public void Drop() {
         //Object Rigidbody
+        FindObjectOfType<AudioManager>().Play("Pop");
         carriedObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         carriedObject.GetComponent<Rigidbody>().freezeRotation = false;
         carrying = false;

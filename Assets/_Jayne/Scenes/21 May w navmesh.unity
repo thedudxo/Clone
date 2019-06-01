@@ -8187,7 +8187,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6d295b473dc22b94d806734ec8ee570a, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d295b473dc22b94d806734ec8ee570a, type: 3}
@@ -11783,7 +11783,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 61a4ea91030e06a4986aaf23f24da922, type: 2}
     - target: {fileID: 100000, guid: 917241254a8e46640820ee90fb774617, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 917241254a8e46640820ee90fb774617, type: 3}
       propertyPath: m_StaticEditorFlags

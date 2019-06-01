@@ -8,7 +8,7 @@ public class Beam : MonoBehaviour {
         GameObject obj = other.gameObject;
         if (obj.GetComponent<Weighted>()) {
             PuzzleManager.beamButton.cubes++;
-            PuzzleManager.beamButton.checkArrow();
+            PuzzleManager.beamButton.CheckArrow();
             obj.GetComponent<Weighted>().overButton = true;
         }
     }
@@ -22,7 +22,7 @@ public class Beam : MonoBehaviour {
             }
             level.cubesOverButton.Remove(other.gameObject);
             PuzzleManager.beamButton.cubes--;
-            PuzzleManager.beamButton.checkArrow();
+            PuzzleManager.beamButton.CheckArrow();
             other.GetComponent<Weighted>().moveRot = false;
             other.GetComponent<Weighted>().Gravity();
             StartCoroutine(WaitTrigger(other));

@@ -51,7 +51,7 @@ public class Player_Pickup : MonoBehaviour {
             ButtonLevel.ButtonFall();
             carriedObject.GetComponent<Rigidbody>().useGravity = true;
         } else {
-            PuzzleManager.beamButton.addCube(carriedObject, PuzzleManager.beamButton.CheckCubeHeight(carriedObject).level);
+            PuzzleManager.beamButton.AddCube(carriedObject, PuzzleManager.beamButton.CheckCubeHeight(carriedObject).level);
             ButtonLevel.DropLevelCubes(carriedObject);
             carriedObject.GetComponent<Weighted>().moveRot = true;
         }

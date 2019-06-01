@@ -11,7 +11,7 @@ public class Player_Pickup : MonoBehaviour {
     public float smooth;
     public bool carrying = false;
 
-	void Start () {
+	void Awake () {
         PlayerManager.player_Pickup = this;
         PlayerManager.Player = gameObject;
         mainCamera = GameObject.FindWithTag("MainCamera");

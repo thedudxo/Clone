@@ -5,12 +5,15 @@ using UnityEngine;
 public class Grabbable : MonoBehaviour {
 
     Collider playerCarryCollider;
-    public GameObject player;
+    GameObject player;
     public bool carried = false;
+
+ 
 
     private void Start()
     {
         playerCarryCollider = PlayerManager.player_Pickup.carrier.GetComponent<SphereCollider>();
+        player = PlayerManager.Player;
     }
 
     private void OnTriggerExit(Collider other) {

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4040090414313024}
-  - component: {fileID: 114212386491633618}
+  - component: {fileID: 114146948024810684}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -33,14 +33,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458280430858920}
-  m_LocalRotation: {x: -0, y: -0.10786666, z: -0, w: 0.9941654}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 56.637405, y: 45.692173, z: 6.8410616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114212386491633618
+--- !u!114 &114146948024810684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -51,5 +51,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc0eb2864745974396227d32b6b8dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Error_Clone
+    clip: {fileID: 8300000, guid: 64a3df5583fb56045b9d8c29b32ac385, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    mute: 0
+    output: {fileID: 0}
+    source: {fileID: 0}
+  - name: Clone_Success
+    clip: {fileID: 8300000, guid: 8fc6457281f2c08449ce0c1ccef99707, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    mute: 0
+    output: {fileID: 0}
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 1cb3bcd5392216e40b41b0e683d1b648, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 1
+    mute: 0
+    output: {fileID: 0}
+    source: {fileID: 0}
+  - name: Wind
+    clip: {fileID: 8300000, guid: b7b5b36164894634d9415b0c478743ae, type: 3}
+    volume: 0.26
+    pitch: 1
+    loop: 1
+    mute: 0
+    output: {fileID: 0}
+    source: {fileID: 0}
+  - name: WinLoop
+    clip: {fileID: 8300000, guid: f258b831ac055a348ac9fc15e548e211, type: 3}
+    volume: 0.26
+    pitch: 1
+    loop: 1
+    mute: 0
+    output: {fileID: 0}
+    source: {fileID: 0}
   gameSlider: {fileID: 0}

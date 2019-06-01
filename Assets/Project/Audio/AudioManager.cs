@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-
+    //please use [serialisefeild] instead of public where possible
     public Sound[] sounds;
     public static AudioManager instance;
     public Slider gameSlider;
+
+    [SerializeField] bool disableSlider = false; //for scenes without Menu
+
     void Awake()
     {
         if (instance == null)
@@ -50,7 +53,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.volume = s.volume * gameSlider.value;
+
+        if (!disableSlider) { s.source.volume = s.volume * gameSlider.value; }
         s.source.Play();
     }
 

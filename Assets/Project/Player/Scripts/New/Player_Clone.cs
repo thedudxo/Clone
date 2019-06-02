@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Analytics;
 
 public class Player_Clone : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class Player_Clone : MonoBehaviour {
     public bool cloning = false;
     public bool hasCloned = false;
     public float smooth;
+    [HideInInspector]
+    public static bool firstCloner = true;
 
     int particleEmitAmmount = 150;
     [SerializeField] ParticleSystem copyParticles;
@@ -28,6 +31,7 @@ public class Player_Clone : MonoBehaviour {
         mainCamera = GameObject.FindWithTag("MainCamera");
         PlayerManager.player_Clone = this;
         canClone = true;
+        firstCloner = true;
     }
 
     void Update() {
@@ -50,7 +54,7 @@ public class Player_Clone : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
- //               copyParticles.Emit(particleEmitAmmount);
+                copyParticles.Emit(particleEmitAmmount);
             }
         }
     }
@@ -137,6 +141,11 @@ public class Player_Clone : MonoBehaviour {
         {
             copyParticles.Emit(particleEmitAmmount);
             FindObjectOfType<AudioManager>().Play("Clone_Success");
+            if (firstCloner)
+            {
+                Analytics.CustomEvent("First Scan Success");
+                firstCloner = false;
+            }
         }
     }
 

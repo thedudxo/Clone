@@ -63,6 +63,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1.0f;
         WinTrigger.isWin = false;
         gameIsPaused = true;
+        Player_Clone.firstCloner = true;
     }
 
     public void WinScreen()

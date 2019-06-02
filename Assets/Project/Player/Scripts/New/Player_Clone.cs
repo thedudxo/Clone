@@ -11,8 +11,6 @@ public class Player_Clone : MonoBehaviour {
     private Renderer render;
     private Rigidbody cloneRb;
     public GameObject prevClone;
-    public GameObject pauseMenu;
-    public GameObject howToMenu;  
     public bool overButton = false;
     public bool canClone = true;
     private int cloneDist = 3;
@@ -35,15 +33,15 @@ public class Player_Clone : MonoBehaviour {
     void Update() {
         int x = Screen.width / 2;
         int y = Screen.height / 2;
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetMouseButtonDown(1) && !PauseMenu.gameIsPaused) {
             Scan(x, y);
             
         }
         if (Input.GetMouseButtonDown(0)) {
-            if (!cloning && !pauseMenu.activeInHierarchy && !howToMenu.activeInHierarchy) {
+            if (!cloning && !PauseMenu.gameIsPaused) {
                 Clone();
                
-            } else if (cloning && canClone){
+            } else if (cloning && canClone &&!PauseMenu.gameIsPaused){
                 Drop();
                 copyParticles.Emit(particleEmitAmmount);
                 FindObjectOfType<AudioManager>().Play("Clone_Success");
@@ -52,8 +50,7 @@ public class Player_Clone : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E)) {
             if (cloning && canClone) {
                 Drop();
-                copyParticles.Emit(particleEmitAmmount);
-                FindObjectOfType<AudioManager>().Play("Clone_Success");
+ //               copyParticles.Emit(particleEmitAmmount);
             }
         }
     }
@@ -96,7 +93,6 @@ public class Player_Clone : MonoBehaviour {
         //Cloned Rigidbody
         cloneRb.velocity = new Vector3(0, 0, 0);
         cloneRb.freezeRotation = false;
-        FindObjectOfType<AudioManager>().Play("Pop");
         //Clone Renderer
         render.shadowCastingMode = ShadowCastingMode.On;
         render.receiveShadows = true;
@@ -115,6 +111,7 @@ public class Player_Clone : MonoBehaviour {
         prevClone = clonedObject;
         clonedObject = null;
         cloning = false;
+        FindObjectOfType<AudioManager>().Play("Pop");
     }
 
     void Scan(int x, int y) {
@@ -169,6 +166,7 @@ public class Player_Clone : MonoBehaviour {
             clonedObject.name = "Clone";
             clonedObject.GetComponent<Cloneable>().isClone = true;
             hasCloned = true;
+            FindObjectOfType<AudioManager>().Play("Pop");
             //Button Rise
             if (prevClone == null) {
                 ButtonLevel.ButtonRise();
@@ -182,13 +180,12 @@ public class Player_Clone : MonoBehaviour {
             }
 
             copyParticles.Emit(particleEmitAmmount);
-            FindObjectOfType<AudioManager>().Play("Clone_Success");
-
+            FindObjectOfType<AudioManager>().Play("Pop");
         }
         else
         {
             failParticles.Emit(particleEmitAmmount);
-            FindObjectOfType<AudioManager>().Play("Error_Clone");
+  //          FindObjectOfType<AudioManager>().Play("Error_Clone");
         }
     }
 }

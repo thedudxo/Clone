@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
     public static AudioManager instance;
-    public Slider gameSlider;
     void Awake()
     {
         if (instance == null)
@@ -50,7 +49,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.volume = s.volume * gameSlider.value;
+        s.source.volume = s.volume;
         s.source.Play();
     }
 

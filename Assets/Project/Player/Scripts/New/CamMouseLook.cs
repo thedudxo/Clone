@@ -14,10 +14,12 @@ public class CamMouseLook : MonoBehaviour {
 	}
 	
 	void Update () {
-		RotateCamera();
-        if(transform.rotation.eulerAngles.x >= 50 && transform.rotation.eulerAngles.x <= 269 && PlayerManager.player_Pickup.carrying) { PlayerManager.player_Pickup.Drop(); }
+        if (!PauseMenu.gameIsPaused) {
+            RotateCamera();
+            if (transform.rotation.eulerAngles.x >= 50 && transform.rotation.eulerAngles.x <= 269 && PlayerManager.player_Pickup.carrying)
+            { PlayerManager.player_Pickup.Drop(); }
+        }
 	}
-	
 	
 	void RotateCamera () {
 		float mouseX = Input.GetAxis("Mouse X");

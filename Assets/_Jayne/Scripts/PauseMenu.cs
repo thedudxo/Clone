@@ -10,17 +10,17 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject winScreen;
     public GameObject WinAudioHolder;
-
+    public static bool gameIsPaused;
     public KeyCode pauseKey;
     AudioSource pauseMenuSource;
     AudioSource winMenuSource;
- //   public Slider gameVolSlider;
     public GameObject winCollider;
 
     void Start() {
         pauseMenuSource = gameObject.GetComponent<AudioSource>();
         winMenuSource = WinAudioHolder.GetComponent<AudioSource>();
         WinTrigger.isWin = false;
+        gameIsPaused = true;
     }
 
     private void Update()
@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour {
         if (Input.GetKeyDown(pauseKey))
         {
             pauseMenu.SetActive(true);
+            gameIsPaused = true;
             Time.timeScale = 0.0f;
             AudioListener.pause = true;
             pauseMenuSource.ignoreListenerPause = true;
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour {
         if (WinTrigger.isWin)
         {
             WinScreen();
+            gameIsPaused = true;
         }
     }
 
@@ -48,8 +50,7 @@ public class PauseMenu : MonoBehaviour {
         Cursor.visible = false;
         AudioListener.pause = false;
         pauseMenuSource.Stop();
-//       AudioManager.instance.SetGameVolume(gameVolSlider.value);
- //      AudioManager.instance.Play("Theme");
+        gameIsPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }
@@ -58,15 +59,17 @@ public class PauseMenu : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
         Cursor.lockState = CursorLockMode.None;
-        AudioListener.pause = false;
+        AudioListener.pause = true;
         Time.timeScale = 1.0f;
         WinTrigger.isWin = false;
+        gameIsPaused = true;
     }
 
     public void WinScreen()
     {
         winScreen.SetActive(true);
- //       winMenuSource = winScreen.GetComponent<AudioSource>();
+        gameIsPaused = true;
+        //       winMenuSource = winScreen.GetComponent<AudioSource>();
         AudioListener.pause = true;
         winMenuSource.ignoreListenerPause = true;
         winMenuSource.Play();

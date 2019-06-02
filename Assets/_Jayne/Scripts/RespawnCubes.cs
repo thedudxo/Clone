@@ -8,14 +8,23 @@ public class RespawnCubes : MonoBehaviour {
     public void OnTriggerEnter (Collider other)
     {
 
-        if (other.tag == "Cube" && !other.GetComponent<Cloneable>().isClone)
+//If its a Yes Cube, but NOT already a Clone
+        if (other.tag == "Cube" && other.GetComponent<Cloneable>() != null)
+        {
+            if (!other.GetComponent<Cloneable>().isClone)
+            {
+                other.GetComponent<CubeSpawnDeets>().Respawn();
+            }
+        }
+//If its a No Cube
+        if (other.tag == "Cube" && other.GetComponent<Cloneable>()==null)
         {
             other.GetComponent<CubeSpawnDeets>().Respawn();
         }
+
         if (other.tag == "Player")
         {
             other.transform.position = playerRespawnPos.transform.position;
         }
-
     }
 }

@@ -34,3 +34,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+Assets/Project/Puzzle_Pieces/Cube/Textures/Shaders/Materialize\.mat

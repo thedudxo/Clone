@@ -80,7 +80,11 @@ Material:
     - Vector1_9860A3FA: 20
     - Vector1_B5345175: 30
     - Vector1_F6AE66A0: 1
+<<<<<<< HEAD
     - Vector1_FA6C32DC: -1.0890294
+=======
+    - Vector1_FA6C32DC: -1.0803801
+>>>>>>> MasterV2
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

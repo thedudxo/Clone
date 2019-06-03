@@ -20,9 +20,8 @@ public class PlayerController : MonoBehaviour
 
     void Start() {
         rb = GetComponent<Rigidbody>();
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void FixedUpdate() {
@@ -66,15 +65,16 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         var vel = rb.velocity;
         if(other.transform.tag == "UpStair") {
-            if(!Input.GetButton("Jump") && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
+            if(grounded && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
                 if(rb.velocity.y > 0) {
+                    Debug.Log("Trigger");
                     vel.y = 0;
                     rb.velocity = vel;
                 }
             }
         }
         if (other.transform.tag == "DownStair") {
-            if (!Input.GetButton("Jump") && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
+            if (grounded && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
                 rb.AddForce(0, -1000, 0);
             }
         }

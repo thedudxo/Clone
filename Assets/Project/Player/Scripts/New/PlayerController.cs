@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         if(other.transform.tag == "UpStair") {
             if(grounded && Vector3.Angle(rb.velocity, other.transform.forward) < 90) {
                 if(rb.velocity.y > 0) {
+                    Debug.Log("Trigger");
                     vel.y = 0;
                     rb.velocity = vel;
                 }
